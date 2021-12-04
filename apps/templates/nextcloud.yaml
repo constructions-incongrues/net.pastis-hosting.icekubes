@@ -39,6 +39,8 @@ spec:
                   'app.jeancloude.club'
                 ]
               ];
+          defaultConfigs:
+            swift.config.php: true
         ingress:
           enabled: true
         extraEnv:
