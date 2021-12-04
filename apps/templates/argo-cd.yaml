@@ -12,8 +12,8 @@ spec:
   project: default
   source:
     path: charts/argo-cd
-    # repoURL: https://github.com/arthurk/argocd-example-install.git
-    # targetRevision: HEAD
+    repoURL: https://github.com/constructions-incongrues/club.jeancloude.k8s.git
+    targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true
