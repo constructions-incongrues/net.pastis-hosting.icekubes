@@ -27,36 +27,6 @@ spec:
         nextcloud:
           host: app.jeancloude.club
         configs:
-          objectstore.config.php: |-
-            <?php
-            $CONFIG = [
-                'objectstore' => [
-                    'class' => 'OC\\Files\\ObjectStore\\Swift',
-                    'arguments' => [
-                        'autocreate' => true,
-                        'user' => [
-                            'name' => 'NOMUTILISATEUR',
-                            'password' => 'MOTDEPASSE',
-                            'domain' => [
-                                'name' => 'Default',
-                            ]
-                        ],
-                        'scope' => [
-                            'project' => [
-                                'name' => '608113XXXXXXXX',
-                                'domain' => [
-                                    'name' => 'Default',
-                                ]
-                            ]
-                        ],
-                        'serviceName' => 'swift',
-                        'region' => 'GRA',
-                        'url' => 'https://auth.cloud.ovh.net/v3/',
-                        'bucket' => 'securecloud',
-                    ]
-                ]
-            ];
-
           custom.config.php: |-
             <?php
             $CONFIG = [
@@ -71,6 +41,20 @@ spec:
             ];
         ingress:
           enabled: true
+          extraEnv:
+            - name: OBJECTSTORE_SWIFT_URL
+              value: "https://auth.cloud.ovh.net/v3/"
+            - name: OBJECTSTORE_SWIFT_AUTOCREATE
+              value: "true"
+            - name: OBJECTSTORE_SWIFT_USER_NAME
+              value: "user-KPNf2CXgFmYY"
+            - name: OBJECTSTORE_SWIFT_USER_PASSWORD
+              value: "ChaDQNt8R6CpWeaHfDNeWmzd6edhDmwW"
+            - name: OBJECTSTORE_SWIFT_REGION
+              value: "GRA"
+            - name: OBJECTSTORE_SWIFT_CONTAINER_NAME
+              value: "club-jeancloude-nextcloud-1"
+
     repoURL: https://nextcloud.github.io/helm
     targetRevision: 2.10.2
   syncPolicy:
