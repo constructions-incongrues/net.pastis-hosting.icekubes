@@ -20,6 +20,9 @@ spec:
             username: mongo
             password: mongo
             database: rocketchat
+        host: allo.jeancloude.club
+        ingress:
+          enabled: true
     repoURL: https://rocketchat.github.io/helm-charts
     targetRevision: 3.1.0
   syncPolicy:
