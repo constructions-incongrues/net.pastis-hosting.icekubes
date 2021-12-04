@@ -30,52 +30,45 @@ spec:
           objectstore.config.php: |-
             <?php
             $CONFIG = [
-              'objectstore' =>
-              array (
-                'class' => 'OC\\Files\\ObjectStore\\Swift',
-                'arguments' =>
-                array (
-                  'autocreate' => true,
-                  'user' =>
-                  array (
-                    'name' => 'NOMUTILISATEUR',
-                    'password' => 'MOTDEPASSE',
-                    'domain' =>
-                    array (
-                      'name' => 'Default',
-                    ),
-                  ),
-                  'scope' =>
-                  array (
-                    'project' =>
-                    array (
-                      'name' => '608113XXXXXXXX',
-                      'domain' =>
-                      array (
-                        'name' => 'Default',
-                      ),
-                    ),
-                  ),
-                  'serviceName' => 'swift',
-                  'region' => 'GRA',
-                  'url' => 'https://auth.cloud.ovh.net/v3/',
-                  'bucket' => 'securecloud',
-                ),
-              ),
-              ];
+                'objectstore' => [
+                    'class' => 'OC\\Files\\ObjectStore\\Swift',
+                    'arguments' => [
+                        'autocreate' => true,
+                        'user' => [
+                            'name' => 'NOMUTILISATEUR',
+                            'password' => 'MOTDEPASSE',
+                            'domain' => [
+                                'name' => 'Default',
+                            ]
+                        ],
+                        'scope' => [
+                            'project' => [
+                                'name' => '608113XXXXXXXX',
+                                'domain' => [
+                                    'name' => 'Default',
+                                ]
+                            ]
+                        ],
+                        'serviceName' => 'swift',
+                        'region' => 'GRA',
+                        'url' => 'https://auth.cloud.ovh.net/v3/',
+                        'bucket' => 'securecloud',
+                    ]
+                ]
+            ];
+
           custom.config.php: |-
             <?php
-            $CONFIG = array (
+            $CONFIG = [
               'overwriteprotocol' => 'https',
               'overwrite.cli.url' => 'https://app.jeancloude.club',
               'filelocking.enabled' => 'true',
               'enable_previews' => true,
-              'trusted_domains' =>
-                [
-                  'nextcloud',
-                  'app.jeancloude.club'
-                ]
-            );
+              'trusted_domains' => [
+                'nextcloud',
+                'app.jeancloude.club'
+              ]
+            ];
         ingress:
           enabled: true
     repoURL: https://nextcloud.github.io/helm
