@@ -21,6 +21,8 @@ spec:
         additionalArguments:
           - "--entryPoints.web.proxyProtocol.insecure"
           - "--entryPoints.web.forwardedHeaders.insecure"
+          - "--entryPoints.websecure.proxyProtocol.insecure"
+          - "--entryPoints.websecure.forwardedHeaders.insecure"
     repoURL: https://helm.traefik.io/traefik
     targetRevision: 10.6.2
   syncPolicy:
