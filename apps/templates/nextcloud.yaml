@@ -15,12 +15,14 @@ spec:
     helm:
       values: |
         image:
-          tag: 23.0.0-apache
+          tag: 23.0.0-fpm
         cronjob:
           enabled: true
         internalDatabase:
           enabled: false
         mariadb:
+          enabled: true
+        nginx:
           enabled: true
     repoURL: https://nextcloud.github.io/helm/
     targetRevision: 2.10.2
