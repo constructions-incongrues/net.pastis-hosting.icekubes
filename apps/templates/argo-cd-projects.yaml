@@ -24,3 +24,7 @@ spec:
   # Enables namespace orphaned resource monitoring.
   orphanedResources:
     warn: true
+    
+  clusterResourceWhitelist:
+  - group: ''
+    kind: Namespace
