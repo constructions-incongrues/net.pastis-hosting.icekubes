@@ -18,7 +18,11 @@ spec:
           enabled: true
         rbac:
           enabled: true
-        additionalArguments: "{--api.dashboard=true,--log.level=INFO,--providers.kubernetesingress.ingressclass=traefik-internal,--serversTransport.insecureSkipVerify=true}"
+        additionalArguments:
+          - "--api.dashboard=true"
+          - "--log.level=INFO"
+          - "--providers.kubernetesingress.ingressclass=traefik-internal"
+          - "--serversTransport.insecureSkipVerify=true"
     repoURL: https://containous.github.io/traefik-helm-chart
     targetRevision: 9.1.1
   syncPolicy:
