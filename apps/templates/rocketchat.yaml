@@ -12,8 +12,13 @@ spec:
   project: jeancloude.club
   source:
     chart: rocketchat
-    # helm:
-    #   values: |
+    helm:
+      values: |
+        mongodb:
+          auth:
+            rootPassword: root
+            username: mongo
+            password: mongo
     repoURL: https://rocketchat.github.io/helm-charts
     targetRevision: 3.1.0
   syncPolicy:
