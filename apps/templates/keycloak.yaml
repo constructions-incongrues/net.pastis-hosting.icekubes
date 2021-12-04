@@ -19,7 +19,7 @@ spec:
         clusterDomain: kubernetes.default.svc
         extraEnv: |
           - name: KEYCLOAK_PROXY_ADDRESS_FORWARDING
-            value: true
+            value: 'true'
         ingress:
           enabled: true
           rules:
