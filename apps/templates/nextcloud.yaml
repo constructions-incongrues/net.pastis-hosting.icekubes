@@ -26,35 +26,34 @@ spec:
           enabled: true
         nextcloud:
           host: app.jeancloude.club
-        configs:
-          custom.config.php: |-
-            <?php
-            $CONFIG = [
-              'overwriteprotocol' => 'https',
-              'overwrite.cli.url' => 'https://app.jeancloude.club',
-              'filelocking.enabled' => 'true',
-              'enable_previews' => true,
-              'trusted_domains' => [
-                'nextcloud',
-                'app.jeancloude.club'
-              ]
-            ];
+          configs:
+            misc.config.php: |-
+              <?php
+              $CONFIG = [
+                'overwriteprotocol' => 'https',
+                'overwrite.cli.url' => 'https://app.jeancloude.club',
+                'filelocking.enabled' => 'true',
+                'enable_previews' => true,
+                'trusted_domains' => [
+                  'nextcloud',
+                  'app.jeancloude.club'
+                ]
+              ];
         ingress:
           enabled: true
-          extraEnv:
-            - name: OBJECTSTORE_SWIFT_URL
-              value: "https://auth.cloud.ovh.net/v3/"
-            - name: OBJECTSTORE_SWIFT_AUTOCREATE
-              value: "true"
-            - name: OBJECTSTORE_SWIFT_USER_NAME
-              value: "user-KPNf2CXgFmYY"
-            - name: OBJECTSTORE_SWIFT_USER_PASSWORD
-              value: "ChaDQNt8R6CpWeaHfDNeWmzd6edhDmwW"
-            - name: OBJECTSTORE_SWIFT_REGION
-              value: "GRA"
-            - name: OBJECTSTORE_SWIFT_CONTAINER_NAME
-              value: "club-jeancloude-nextcloud-1"
-
+        extraEnv:
+          - name: OBJECTSTORE_SWIFT_URL
+            value: "https://auth.cloud.ovh.net/v3/"
+          - name: OBJECTSTORE_SWIFT_AUTOCREATE
+            value: "true"
+          - name: OBJECTSTORE_SWIFT_USER_NAME
+            value: "user-KPNf2CXgFmYY"
+          - name: OBJECTSTORE_SWIFT_USER_PASSWORD
+            value: "ChaDQNt8R6CpWeaHfDNeWmzd6edhDmwW"
+          - name: OBJECTSTORE_SWIFT_REGION
+            value: "GRA"
+          - name: OBJECTSTORE_SWIFT_CONTAINER_NAME
+            value: "club-jeancloude-nextcloud-1"
     repoURL: https://nextcloud.github.io/helm
     targetRevision: 2.10.2
   syncPolicy:
