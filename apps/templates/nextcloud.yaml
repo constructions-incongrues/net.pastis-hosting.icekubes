@@ -9,7 +9,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: jeancloude-club-nextcloud
-  project: default
+  project: jeancloude.club
   source:
     chart: nextcloud
     helm:
@@ -24,7 +24,7 @@ spec:
           enabled: true
         nginx:
           enabled: true
-    repoURL: https://nextcloud.github.io/helm/
+    repoURL: https://nextcloud.github.io/helm
     targetRevision: 2.10.2
   syncPolicy:
     automated:
