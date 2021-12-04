@@ -24,6 +24,10 @@ spec:
           enabled: true
         nginx:
           enabled: true
+        nextcloud:
+          host: app.jeancloude.club
+        ingress:
+          enabled: true
     repoURL: https://nextcloud.github.io/helm
     targetRevision: 2.10.2
   syncPolicy:
