@@ -2,7 +2,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: traefik-exposed-dashboard
-  namespace: kube-platform
+  namespace: traefik
 spec:
   entryPoints:
   - web

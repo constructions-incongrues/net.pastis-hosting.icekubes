@@ -8,7 +8,7 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: kube-platform
+    namespace: traefik
   project: default
   source:
     chart: traefik
