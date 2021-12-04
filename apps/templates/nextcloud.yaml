@@ -26,6 +26,20 @@ spec:
           enabled: true
         nextcloud:
           host: app.jeancloude.club
+        configs:
+          custom.config.php: |-
+            <?php
+            $CONFIG = array (
+              'overwriteprotocol' => 'https',
+              'overwrite.cli.url' => 'https://app.jeancloude.club',
+              'filelocking.enabled' => 'true',
+              'enable_previews' => true,
+              'trusted_domains' =>
+                [
+                  'nextcloud',
+                  'app.jeancloude.club'
+                ]
+            );
         ingress:
           enabled: true
     repoURL: https://nextcloud.github.io/helm
