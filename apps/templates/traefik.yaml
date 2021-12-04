@@ -12,21 +12,10 @@ spec:
   project: default
   source:
     chart: traefik
-    helm:
-      values: |
-        dashboard:
-          enabled: true
-          ingressRoute: true
-          domain: traefik.jeancloude.club
-        rbac:
-          enabled: true
-        additionalArguments:
-          - "--api.dashboard=true"
-          - "--log.level=INFO"
-          - "--providers.kubernetesingress.ingressclass=traefik-internal"
-          - "--serversTransport.insecureSkipVerify=true"
-    repoURL: https://containous.github.io/traefik-helm-chart
-    targetRevision: 9.1.1
+    # helm:
+    #   values: |
+    repoURL: https://helm.traefik.io/traefik
+    targetRevision: 10.6.2
   syncPolicy:
     automated:
       prune: true
