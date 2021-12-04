@@ -46,31 +46,32 @@ spec:
                 'objectstore' => [
                   'class' => 'OC\\Files\\ObjectStore\\Swift',
                   'arguments' => [
-                    'username' => 'user-KPNf2CXgFmYY',
-                    'password' => 'ChaDQNt8R6CpWeaHfDNeWmzd6edhDmwW',
-                    'container' => 'club-jeancloude-nextcloud-1',
                     'autocreate' => true,
-                    'region' => 'GRA',
-                    'url' => 'https://auth.cloud.ovh.net/v3/',
-                    'tenantName' => '8966606530353673',
+                    'user' => [
+                      'name' => 'user-KPNf2CXgFmYY',
+                      'password' => 'ChaDQNt8R6CpWeaHfDNeWmzd6edhDmwW',
+                      'domain' => [
+                        'name' => 'Default',
+                      ],
+                  ],
+                  'scope' => [
+                    'project' => [
+                      'name' => 'de9eaa1e9cc94734bf787165a68f4d01',
+                      'domain' => [
+                        'name' => 'Default',
+                      ],
+                    ],
+                  ],
+                  'tenantName' => '8966606530353673',
+                  'serviceName' => 'swift',
+                  'region' => 'GRA',
+                  'url' => 'https://auth.cloud.ovh.net/v3/',
+                  'bucket' => 'club-jeancloude-nextcloud-1',
                   ],
                 ],
               ];
         ingress:
           enabled: true
-        extraEnv:
-          - name: OBJECTSTORE_SWIFT_URL
-            value: "https://auth.cloud.ovh.net/v3/"
-          - name: OBJECTSTORE_SWIFT_AUTOCREATE
-            value: "true"
-          - name: OBJECTSTORE_SWIFT_USER_NAME
-            value: "user-KPNf2CXgFmYY"
-          - name: OBJECTSTORE_SWIFT_USER_PASSWORD
-            value: "ChaDQNt8R6CpWeaHfDNeWmzd6edhDmwW"
-          - name: OBJECTSTORE_SWIFT_REGION
-            value: "GRA"
-          - name: OBJECTSTORE_SWIFT_CONTAINER_NAME
-            value: "club-jeancloude-nextcloud-1"
     repoURL: https://nextcloud.github.io/helm
     targetRevision: 2.10.2
   syncPolicy:
