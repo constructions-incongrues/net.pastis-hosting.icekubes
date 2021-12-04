@@ -2,13 +2,13 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: jeancloude.club
-  namespace: default
+  namespace: argo-cd
   # Finalizer that ensures that project is not deleted until it is not referenced by any application
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   # Project description
-  description: jeancloude.club
+  description: Le Cloude est dans l'hébergerie
 
   # Allow manifests to deploy from any Git repos
   sourceRepos:
@@ -24,7 +24,7 @@ spec:
   # Enables namespace orphaned resource monitoring.
   orphanedResources:
     warn: true
-    
+
   clusterResourceWhitelist:
   - group: ''
     kind: Namespace

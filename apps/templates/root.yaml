@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root
+  name: jeancloude.club
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
-  project: default
+    namespace: argo-cd
+  project: jeancloude.club
   source:
     path: apps/
     repoURL: https://github.com/constructions-incongrues/club.jeancloude.k8s.git
