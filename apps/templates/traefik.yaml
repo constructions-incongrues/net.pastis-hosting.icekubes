@@ -17,6 +17,7 @@ spec:
         dashboard:
           enabled: true
           ingressRoute: true
+          domain: traefik.jeancloude.club
         rbac:
           enabled: true
         additionalArguments:
