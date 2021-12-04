@@ -12,10 +12,12 @@ spec:
   project: default
   source:
     chart: nextcloud
-    # helm:
-    #   values: |
-    #     pushgateway:
-    #       enabled: false
+    helm:
+      values: |
+        image:
+          tag: 23.0.0-apache
+        cronjob:
+          enabled: true
     repoURL: https://nextcloud.github.io/helm/
     targetRevision: 2.10.2
   syncPolicy:
