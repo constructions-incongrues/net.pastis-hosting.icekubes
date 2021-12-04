@@ -18,6 +18,10 @@ spec:
           tag: 23.0.0-apache
         cronjob:
           enabled: true
+        internalDatabase:
+          enabled: false
+        mariadb:
+          enabled: true
     repoURL: https://nextcloud.github.io/helm/
     targetRevision: 2.10.2
   syncPolicy:
