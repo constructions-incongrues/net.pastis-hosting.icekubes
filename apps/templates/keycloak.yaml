@@ -14,6 +14,12 @@ spec:
     chart: keycloak
     helm:
       values: |
+        image:
+          tag: 15.0.2
+        clusterDomain: kubernetes.default.svc
+        extraEnv:
+          - name: KEYCLOAK_PROXY_ADDRESS_FORWARDING
+            value: true
         ingress:
           enabled: true
           rules:
