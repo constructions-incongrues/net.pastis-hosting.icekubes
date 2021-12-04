@@ -18,7 +18,9 @@ spec:
   destinations:
   - namespace: jeancloude-club-nextcloud
     server: https://kubernetes.default.svc
+  - namespace: jeancloude-club-rocketchat
+    server: https://kubernetes.default.svc
 
   # Enables namespace orphaned resource monitoring.
   orphanedResources:
-    warn: false
+    warn: true
