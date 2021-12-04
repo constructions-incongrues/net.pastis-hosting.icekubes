@@ -27,6 +27,42 @@ spec:
         nextcloud:
           host: app.jeancloude.club
         configs:
+          objectstore.config.php: |-
+            <?php
+            $CONFIG = [
+              'objectstore' =>
+              array (
+                'class' => 'OC\\Files\\ObjectStore\\Swift',
+                'arguments' =>
+                array (
+                  'autocreate' => true,
+                  'user' =>
+                  array (
+                    'name' => 'NOMUTILISATEUR',
+                    'password' => 'MOTDEPASSE',
+                    'domain' =>
+                    array (
+                      'name' => 'Default',
+                    ),
+                  ),
+                  'scope' =>
+                  array (
+                    'project' =>
+                    array (
+                      'name' => '608113XXXXXXXX',
+                      'domain' =>
+                      array (
+                        'name' => 'Default',
+                      ),
+                    ),
+                  ),
+                  'serviceName' => 'swift',
+                  'region' => 'GRA',
+                  'url' => 'https://auth.cloud.ovh.net/v3/',
+                  'bucket' => 'securecloud',
+                ),
+              ),
+              ];
           custom.config.php: |-
             <?php
             $CONFIG = array (
