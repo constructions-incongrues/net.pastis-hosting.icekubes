@@ -12,8 +12,12 @@ spec:
   project: default
   source:
     chart: traefik
-    # helm:
-    #   values: |
+    helm:
+      values: |
+        providers:
+          kubernetesIngress:
+            publishedService:
+              enabled: true
     repoURL: https://helm.traefik.io/traefik
     targetRevision: 10.6.2
   syncPolicy:
