@@ -39,8 +39,23 @@ spec:
                   'app.jeancloude.club'
                 ]
               ];
-          defaultConfigs:
-            swift.config.php: true
+
+            objectstore.config.php: |-
+              <?php
+              $CONFIG = [
+                'objectstore' => [
+                  'class' => 'OC\\Files\\ObjectStore\\Swift',
+                  'arguments' => [
+                    'username' => 'user-KPNf2CXgFmYY',
+                    'password' => 'ChaDQNt8R6CpWeaHfDNeWmzd6edhDmwW',
+                    'container' => 'club-jeancloude-nextcloud-1',
+                    'autocreate' => true,
+                    'region' => 'GRA',
+                    'url' => 'https://auth.cloud.ovh.net/v3/',
+                    'tenantName' => '8966606530353673',
+                  ],
+                ],
+              ];
         ingress:
           enabled: true
         extraEnv:
