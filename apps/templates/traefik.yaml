@@ -19,10 +19,10 @@ spec:
             publishedService:
               enabled: true
         additionalArguments:
-          - "--entryPoints.web.proxyProtocol.insecure"
-          - "--entryPoints.web.forwardedHeaders.insecure"
-          - "--entryPoints.websecure.proxyProtocol.insecure"
-          - "--entryPoints.websecure.forwardedHeaders.insecure"
+          - "--entryPoints.web.proxyProtocol.insecure=true"
+          - "--entryPoints.web.forwardedHeaders.insecure=true"
+          - "--entryPoints.websecure.proxyProtocol.insecure=true"
+          - "--entryPoints.websecure.forwardedHeaders.insecure=true"
     repoURL: https://helm.traefik.io/traefik
     targetRevision: 10.6.2
   syncPolicy:
