@@ -67,8 +67,8 @@ spec:
             preview.config.php: |-
               <?php
               $CONFIG = [
-                'filelocking.enabled' => 'true',
-                'enable_previews' => '(true,
+                'filelocking.enabled' => true,
+                'enable_previews' => true,
               ];
 
             proxy.config.php: |-
