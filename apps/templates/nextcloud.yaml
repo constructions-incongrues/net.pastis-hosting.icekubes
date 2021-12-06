@@ -58,6 +58,11 @@ spec:
                       'domain' => [
                         'name' => 'Default',
                       ],
+                      'tenantName' => '8966606530353673',
+                      'serviceName' => 'swift',
+                      'region' => 'GRA',
+                      'url' => 'https://auth.cloud.ovh.net/v3/',
+                      'bucket' => 'club-jeancloude-nextcloud-1',
                   ],
                   'scope' => [
                     'project' => [
@@ -67,11 +72,6 @@ spec:
                       ],
                     ],
                   ],
-                  'tenantName' => '8966606530353673',
-                  'serviceName' => 'swift',
-                  'region' => 'GRA',
-                  'url' => 'https://auth.cloud.ovh.net/v3/',
-                  'bucket' => 'club-jeancloude-nextcloud-1',
                   ],
                 ],
               ];
