@@ -30,20 +30,7 @@ spec:
             logging.config.php: |-
               <?php
               $CONFIG = [
-                'log_level' => 2,
-              ];
-
-            misc.config.php: |-
-              <?php
-              $CONFIG = [
-                'overwriteprotocol' => 'https',
-                'overwrite.cli.url' => 'https://app.jeancloude.club',
-                'filelocking.enabled' => 'true',
-                'enable_previews' => true,
-                'trusted_domains' => [
-                  'nextcloud',
-                  'app.jeancloude.club'
-                ]
+                'log_level' => 0,
               ];
 
             objectstore.config.php: |-
@@ -73,9 +60,28 @@ spec:
                       ],
                     ],
                   ],
-                  ],
                 ],
               ];
+
+            preview.config.php: |-
+              <?php
+              $CONFIG = [
+                'filelocking.enabled' => 'true',
+                'enable_previews' => true,
+              ];
+
+            proxy.config.php: |-
+              <?php
+              $CONFIG = [
+                'overwriteprotocol' => 'https',
+                'overwrite.cli.url' => 'https://app.jeancloude.club',
+                'trusted_domains' => [
+                  'nextcloud',
+                  'app.jeancloude.club'
+                ]
+              ];
+
+
         ingress:
           enabled: true
     repoURL: https://nextcloud.github.io/helm
