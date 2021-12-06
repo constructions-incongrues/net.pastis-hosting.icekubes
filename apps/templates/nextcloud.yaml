@@ -27,6 +27,11 @@ spec:
         nextcloud:
           host: app.jeancloude.club
           configs:
+            logging.config.php: |-
+              <?php
+              $CONFIG = [
+                'log_level' => 2,
+              ];
             misc.config.php: |-
               <?php
               $CONFIG = [
