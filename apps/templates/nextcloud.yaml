@@ -52,7 +52,7 @@ spec:
                     'serviceName' => 'swift',
                     'region' => 'GRA',
                     'url' => 'https://auth.cloud.ovh.net/v3/',
-                    'bucket' => 'club-jeancloude-nextcloud-1',
+                    'bucket' => 'club-jeancloude-nextcloud_01',
                     'scope' => [
                       'project' => [
                         'name' => 'de9eaa1e9cc94734bf787165a68f4d01',
@@ -82,7 +82,6 @@ spec:
                   'app.jeancloude.club'
                 ]
               ];
-
 
         ingress:
           enabled: true
