@@ -62,7 +62,7 @@ spec:
                       ],
                     ],
                   ],
-                  'tenantName' => '8966606530353673',
+                  'tenantName' => 'de9eaa1e9cc94734bf787165a68f4d01',
                   'serviceName' => 'swift',
                   'region' => 'GRA',
                   'url' => 'https://auth.cloud.ovh.net/v3/',
