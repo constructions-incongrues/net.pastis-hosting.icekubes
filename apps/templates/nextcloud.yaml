@@ -39,7 +39,7 @@ spec:
                 'objectstore' => [
                   'class' => 'OC\\Files\\ObjectStore\\Swift',
                   'arguments' => [
-                    'autocreate' => true,
+                    'autocreate' => 'true',
                     'user' => [
                       'name' => 'user-KPNf2CXgFmYY',
                       'password' => 'ChaDQNt8R6CpWeaHfDNeWmzd6edhDmwW',
