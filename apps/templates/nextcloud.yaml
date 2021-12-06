@@ -32,6 +32,7 @@ spec:
               $CONFIG = [
                 'log_level' => 2,
               ];
+
             misc.config.php: |-
               <?php
               $CONFIG = [
