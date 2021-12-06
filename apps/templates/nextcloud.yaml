@@ -58,12 +58,12 @@ spec:
                       'name' => 'de9eaa1e9cc94734bf787165a68f4d01',
                       'domain' => [
                         'name' => 'Default',
+                      ],
                     ],
                   ],
                 ],
-              ],
-            ];
-            
+              ];
+
             preview.config.php: |-
               <?php
               $CONFIG = [
