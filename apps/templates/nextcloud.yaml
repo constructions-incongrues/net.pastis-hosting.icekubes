@@ -61,7 +61,8 @@ spec:
                     ],
                   ],
                 ],
-              ];
+              ],
+            ];
 
             preview.config.php: |-
               <?php
