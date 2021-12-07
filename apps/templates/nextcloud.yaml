@@ -24,6 +24,8 @@ spec:
           enabled: true
         nginx:
           enabled: true
+        persistence:
+          enabled: true
         nextcloud:
           host: app.jeancloude.club
           configs:
