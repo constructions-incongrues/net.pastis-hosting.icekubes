@@ -24,7 +24,8 @@ spec:
           enabled: true
           architecture: replication
           primary:
-            persistence: enabled
+            persistence:
+              enabled: true
         nginx:
           enabled: true
         persistence:
