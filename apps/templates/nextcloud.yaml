@@ -106,8 +106,8 @@ spec:
     repoURL: https://nextcloud.github.io/helm
     targetRevision: 2.10.2
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+    # automated:
+    #   prune: true
+    #   selfHeal: true
     syncOptions:
       - CreateNamespace=true
