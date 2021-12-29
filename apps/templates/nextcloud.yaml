@@ -32,6 +32,8 @@ spec:
           enabled: true
         persistence:
           enabled: false
+        redis:
+          enabled: true
         nextcloud:
           host: app.jeancloude.club
           configs:
