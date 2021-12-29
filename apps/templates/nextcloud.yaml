@@ -26,6 +26,8 @@ spec:
           primary:
             persistence:
               enabled: true
+              hostAliases:
+                - nextcloud-mariadb
           secondary:
             persistence:
               enabled: true
