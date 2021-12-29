@@ -17,12 +17,12 @@ spec:
         image:
           tag: 23.0.0-fpm
         cronjob:
-          enabled: false
+          enabled: true
         internalDatabase:
           enabled: false
         mariadb:
           enabled: true
-          architecture: standalone
+          architecture: replication
           primary:
             persistence:
               enabled: true
