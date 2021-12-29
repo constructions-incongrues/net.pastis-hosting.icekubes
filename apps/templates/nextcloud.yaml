@@ -22,7 +22,7 @@ spec:
           enabled: false
         mariadb:
           enabled: true
-          architecture: replication
+          architecture: standalone
           primary:
             persistence:
               enabled: true
