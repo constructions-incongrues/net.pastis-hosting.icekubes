@@ -26,6 +26,8 @@ spec:
           primary:
             persistence:
               enabled: true
+              accessMode: ReadWriteOnce
+              size: 8Gi
         nginx:
           enabled: true
         persistence:
