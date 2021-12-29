@@ -17,7 +17,7 @@ spec:
         image:
           tag: 23.0.0-fpm
         cronjob:
-          enabled: true
+          enabled: false
         internalDatabase:
           enabled: false
         mariadb:
