@@ -26,6 +26,9 @@ spec:
           primary:
             persistence:
               enabled: true
+          secondary:
+            persistence:
+              enabled: true
         nginx:
           enabled: true
         persistence:
