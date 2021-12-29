@@ -50,14 +50,12 @@ spec:
                         'name' => 'Default',
                       ]
                     ],
-                    'tenantName' => '8966606530353673',
-                    'serviceName' => 'swift',
-                    'region' => 'GRA',
                     'url' => 'https://auth.cloud.ovh.net/v3/',
                     'bucket' => 'club-jeancloude-nextcloud_01',
+                    'region' => 'GRA',
                     'scope' => [
                       'project' => [
-                        'name' => 'de9eaa1e9cc94734bf787165a68f4d01',
+                        'name' => '8966606530353673',
                         'domain' => [
                           'name' => 'Default',
                         ],
