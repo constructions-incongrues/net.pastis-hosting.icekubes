@@ -21,7 +21,7 @@ spec:
         internalDatabase:
           enabled: false
         mariadb:
-          enabled: true
+          enabled: false
           architecture: replication
           primary:
             persistence:
@@ -31,6 +31,10 @@ spec:
           secondary:
             persistence:
               enabled: true
+        postgresql:
+          enabled: true
+          replication:
+            enabled: true
         nginx:
           enabled: true
         persistence:
