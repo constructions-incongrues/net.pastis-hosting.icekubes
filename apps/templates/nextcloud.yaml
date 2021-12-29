@@ -21,20 +21,11 @@ spec:
         internalDatabase:
           enabled: false
         mariadb:
-          enabled: false
-          architecture: replication
+          enabled: true
+          architecture: standalone
           primary:
             persistence:
               enabled: true
-          secondary:
-            persistence:
-              enabled: true
-        postgresql:
-          enabled: true
-          replication:
-            enabled: true
-          persistence:
-            enabled: true
         nginx:
           enabled: true
         persistence:
