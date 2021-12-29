@@ -16,7 +16,7 @@ spec:
       values: |
         kubecostToken: dHJpc3RhbkByaXZvYWxsYW4ubmV0xm343yadf98
         ingress:
-          className: traefik
+          className: traefik-lb
           enabled: true
           hosts:
             - kubecost.jeancloude.club
