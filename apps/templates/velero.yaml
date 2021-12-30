@@ -38,8 +38,8 @@ spec:
         snapshotsEnabled: false
         schedules:
           traefik:
-            disabled: false
-            # schedule: "0 0 * * *"
+            disabled: true
+            schedule: "0 0 * * *"
             useOwnerReferencesInBackup: false
             template:
               ttl: "24h"
