@@ -20,6 +20,9 @@ spec:
           enabled: true
         internalDatabase:
           enabled: false
+        extraEnv:
+        - name: DB_HOST
+          value: nextcloud-mariadb-primary
         mariadb:
           enabled: true
           architecture: replication
