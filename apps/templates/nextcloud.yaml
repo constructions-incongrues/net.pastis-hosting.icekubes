@@ -88,7 +88,7 @@ spec:
               <?php
               $CONFIG = [
                 'default_language' => 'fr',
-                'default_locale' => fr_FR,
+                'default_locale' => 'fr_FR',
                 'default_phone_region' => 'FR'
               ];
 
