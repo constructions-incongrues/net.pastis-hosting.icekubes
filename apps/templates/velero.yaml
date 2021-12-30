@@ -22,7 +22,7 @@ spec:
               [default]
               aws_access_key_id=951d972e2b8d478daa89970e7cb13ec9
               aws_secret_access_key=dd0438eab0da4eb7b8ffb0dbfb310ab6
-      repoURL: https://vmware-tanzu.github.io/helm-charts
+    repoURL: https://vmware-tanzu.github.io/helm-charts
     targetRevision: 2.27.1
   syncPolicy:
     # automated:
