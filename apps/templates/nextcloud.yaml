@@ -25,7 +25,7 @@ spec:
           value: nextcloud-mariadb-primary
         mariadb:
           enabled: true
-          architecture: standalone
+          architecture: replication
           primary:
             persistence:
               enabled: true
@@ -38,11 +38,14 @@ spec:
         nextcloud:
           host: app.jeancloude.club
           configs:
-            mariadb_replication_fix.php: |-
+            autoconfig.php: |-
               <?php
+              $autoconfig_enabled = true;
               $AUTOCONFIG = [
-                'dbhost' => 'nextcloud-mariadb-primary'
+                'dbhost' => 'nextcloud-mariadb-primary',
+                'directory' => getenv('NEXTCLOUD_DATA_DIR') ?: "/var/www/html/data"
               ];
+            
             caching.config.php: |-
               <?php
               $CONFIG = [
