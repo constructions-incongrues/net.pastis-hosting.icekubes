@@ -38,13 +38,14 @@ spec:
         snapshotsEnabled: false
         schedules:
           traefik:
-            disabled: true
+            disabled: false
             schedule: "0 0 * * *"
             useOwnerReferencesInBackup: false
             template:
               ttl: "24h"
               includedNamespaces:
               - club-jeancloude-traefik
+        upgradeCRDs: false
         
     repoURL: https://vmware-tanzu.github.io/helm-charts
     targetRevision: 2.27.1
