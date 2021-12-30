@@ -34,6 +34,18 @@ spec:
           volumeMounts:
             - mountPath: /target
               name: plugins
+          backupsEnabled: true
+          snapshotsEnabled: false
+        schedules:
+          traefik:
+            disabled: false
+            # schedule: "0 0 * * *"
+            useOwnerReferencesInBackup: false
+            template:
+              ttl: "24h"
+              includedNamespaces:
+              - club-jeancloude-traefik
+        
     repoURL: https://vmware-tanzu.github.io/helm-charts
     targetRevision: 2.27.1
   syncPolicy:
