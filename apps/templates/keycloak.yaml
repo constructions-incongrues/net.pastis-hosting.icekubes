@@ -14,6 +14,9 @@ spec:
     chart: keycloak
     helm:
       values: |
+        auth:
+          adminUser: admin
+          adminPassword: admin
         proxyAddressForwarding: true
         postgresql:
           postgresqlPassword: keycloak
