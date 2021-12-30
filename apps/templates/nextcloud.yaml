@@ -118,7 +118,6 @@ spec:
                 'mail_from_address' => 'app',
                 'mail_smtphost' => 'in-v3.mailjet.com',
                 'mail_smtpauth' => true,
-                'mail_smtpdebug' => true,
                 'mail_smtpname' => '7612061780ca8cd5cf12b113cecc7dd0',
                 'mail_smtppassword' => '4592d91c836ed5e292ca887052c33c15',
               ];
