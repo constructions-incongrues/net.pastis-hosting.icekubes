@@ -40,7 +40,7 @@ spec:
           configs:
             mariadb_replication_fix.php: |-
               <?php
-              $CONFIG = [
+              $AUTOCONFIG = [
                 'dbhost' => 'nextcloud-mariadb-primary'
               ];
             caching.config.php: |-
