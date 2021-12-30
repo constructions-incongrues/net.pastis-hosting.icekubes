@@ -84,30 +84,25 @@ spec:
                 ],
               ];
 
+            locale.config.php: |-
+              <?php
+              $CONFIG = [
+                'default_language' => 'fr',
+                'default_locale' => fr_FR,
+                'default_phone_region' => 'FR'
+              ];
+
+            cartemembre.config.php: |-
+              <?php
+              $CONFIG = [
+                'hide_login_form' => true,
+              ];
+
             preview.config.php: |-
               <?php
               $CONFIG = [
                 'filelocking.enabled' => true,
                 'enable_previews' => true,
-              ];
-
-            oidc_login.config.php: |-
-              <?php
-              $CONFIG = [
-                'lost_password_link' => 'disabled',
-                'oidc_login_provider_url' => 'https://cartemembre.jeancloude.club/auth/realms/jeancloude.club',
-                'oidc_login_logout_url' => 'https://cartemembre.jeancloude.club/auth/realms/jeancloude.club/protocol/openid-connect/logout?redirect_uri=https%3A%2F%2Fapp.jeancloude.club%2F',
-                'oidc_login_client_id' => 'nextcloud',
-                'oidc_login_client_secret' => 'LUQ548TPo2EKON34dCqfcH0TAdQFkTjr',
-                'oidc_login_auto_redirect' => false,
-                'oidc_login_hide_password_form' => true,
-                'oidc_login_redir_fallback' => true,
-                'oidc_login_scope' => 'openid profile',
-                'oidc_login_attributes' => [
-                  'id' => 'preferred_username',
-                  'name' => 'name',
-                  'mail' => 'email',
-                ],
               ];
 
             proxy.config.php: |-
