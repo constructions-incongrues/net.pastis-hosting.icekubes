@@ -14,7 +14,10 @@ spec:
     chart: velero
     helm:
       values: |
-        provider: aws
+        configuration:
+          provider: community.openstack.org/openstack
+          backupStorageLocation:
+            bucket: club-jeancloude-velero
         credentials:
           name: velero-ovh-de-secret
           secretContents: 
@@ -22,6 +25,13 @@ spec:
               [default]
               aws_access_key_id=951d972e2b8d478daa89970e7cb13ec9
               aws_secret_access_key=dd0438eab0da4eb7b8ffb0dbfb310ab6
+        initContainers:
+        - name: velero-plugin-openstack
+          image: lirt/velero-plugin-for-openstack:v0.3.1
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - mountPath: /target
+              name: plugins
     repoURL: https://vmware-tanzu.github.io/helm-charts
     targetRevision: 2.27.1
   syncPolicy:
