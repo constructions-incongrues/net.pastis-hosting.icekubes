@@ -104,7 +104,7 @@ spec:
         ingress:
           enabled: true
     repoURL: https://nextcloud.github.io/helm
-    targetRevision: 2.11.3
+    targetRevision: 2.11.2
   syncPolicy:
     # automated:
     #   prune: true
