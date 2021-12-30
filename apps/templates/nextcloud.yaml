@@ -29,7 +29,7 @@ spec:
         nginx:
           enabled: true
         persistence:
-          enabled: false
+          enabled: true
         redis:
           enabled: true
         nextcloud:
