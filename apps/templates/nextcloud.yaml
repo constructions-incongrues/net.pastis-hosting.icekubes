@@ -16,6 +16,7 @@ spec:
       values: |
         image:
           tag: 23.0.0-apache
+        replicaCount: 2
         cronjob:
           enabled: true
         internalDatabase:
@@ -33,7 +34,6 @@ spec:
         redis:
           enabled: true
         nextcloud:
-          replicaCount: 2
           host: app.jeancloude.club
           configs:
             caching.config.php: |-
