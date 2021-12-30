@@ -35,6 +35,11 @@ spec:
         nextcloud:
           host: app.jeancloude.club
           configs:
+            mariadb_replication_fix.php: |-
+              <?php
+              $CONFIG = [
+                'dbhost' => 'nextcloud-mariadb-primary'
+              ];
             caching.config.php: |-
               <?php
               $CONFIG = [
