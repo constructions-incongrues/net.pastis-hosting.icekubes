@@ -34,8 +34,8 @@ spec:
           volumeMounts:
             - mountPath: /target
               name: plugins
-          backupsEnabled: true
-          snapshotsEnabled: false
+        backupsEnabled: true
+        snapshotsEnabled: false
         schedules:
           traefik:
             disabled: false
