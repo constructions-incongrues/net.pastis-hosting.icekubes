@@ -8,8 +8,8 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: jeancloude-club-velero
-  project: jeancloude.club
+    namespace: velero
+  project: default
   source:
     chart: velero
     helm:
@@ -17,7 +17,7 @@ spec:
         configuration:
           provider: community.openstack.org/openstack
           backupStorageLocation:
-            bucket: jeancloude-club-velero
+            bucket: jeancloude-club
         credentials:
           name: velero-ovh-de-secret
           extraSecretRef: velero-ovh-de-secret
