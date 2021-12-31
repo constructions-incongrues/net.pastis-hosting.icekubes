@@ -48,13 +48,20 @@ spec:
               ttl: "48h"
               includedNamespaces:
               - traefik
+          keycloak:
+            disabled: false
+            schedule: "0 0 * * *"
+            template:
+              ttl: "1w"
+              includedNamespaces:
+              -  jeancloude-club-keycloak
         upgradeCRDs: false
         
     repoURL: https://vmware-tanzu.github.io/helm-charts
     targetRevision: 2.27.1
   syncPolicy:
-    # automated:
-    #   prune: true
+    automated:
+      prune: true
     #   selfHeal: true
     syncOptions:
       - CreateNamespace=true
