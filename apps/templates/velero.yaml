@@ -8,7 +8,7 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: velero
+    namespace: jeancloude-club-velero
   project: jeancloude.club
   source:
     chart: velero
@@ -17,7 +17,7 @@ spec:
         configuration:
           provider: community.openstack.org/openstack
           backupStorageLocation:
-            bucket: club-jeancloude-velero
+            bucket: jeancloude-club-velero
         credentials:
           name: velero-ovh-de-secret
           extraSecretRef: velero-ovh-de-secret
@@ -41,11 +41,10 @@ spec:
           traefik:
             disabled: false
             schedule: "0 0 * * *"
-            useOwnerReferencesInBackup: false
             template:
               ttl: "24h"
               includedNamespaces:
-              - club-jeancloude-traefik
+              - traefik
         upgradeCRDs: false
         
     repoURL: https://vmware-tanzu.github.io/helm-charts
