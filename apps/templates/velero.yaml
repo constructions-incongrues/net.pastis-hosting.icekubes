@@ -55,6 +55,13 @@ spec:
               ttl: 168h # 1 week
               includedNamespaces:
               -  jeancloude-club-keycloak
+          nextcloud:
+            disabled: false
+            schedule: "0 2 * * *"
+            template:
+              ttl: 168h # 1 week
+              includedNamespaces:
+              -  jeancloude-club-nextcloud
         upgradeCRDs: false
         
     repoURL: https://vmware-tanzu.github.io/helm-charts
@@ -62,6 +69,6 @@ spec:
   syncPolicy:
     automated:
       prune: true
-    #   selfHeal: true
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true
