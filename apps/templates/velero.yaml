@@ -21,6 +21,7 @@ spec:
             prefix: jeancloude.club
           volumeSnapshotLocation:
             name: volume-snapshots
+        features: EnableCSI
         credentials:
           name: velero-ovh-de-secret
           extraSecretRef: velero-ovh-de-secret
