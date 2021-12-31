@@ -52,7 +52,7 @@ spec:
             disabled: false
             schedule: "0 0 * * *"
             template:
-              ttl: "1w"
+              ttl: 168h # 1 week
               includedNamespaces:
               -  jeancloude-club-keycloak
         upgradeCRDs: false
