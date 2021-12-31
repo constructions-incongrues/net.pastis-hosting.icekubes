@@ -18,6 +18,7 @@ spec:
           provider: community.openstack.org/openstack
           backupStorageLocation:
             bucket: velero
+            prefix: jeancloude.club
         credentials:
           name: velero-ovh-de-secret
           extraSecretRef: velero-ovh-de-secret
