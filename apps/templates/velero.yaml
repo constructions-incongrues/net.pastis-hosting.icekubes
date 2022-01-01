@@ -24,21 +24,12 @@ spec:
         features: EnableCSI
         credentials:
           name: velero-ovh-de-secret
-          extraSecretRef: velero-ovh-de-secret
-          extraEnvVars:
-            OS_AUTH_URL: https://auth.cloud.ovh.net/v3/
-            OS_PASSWORD: ChaDQNt8R6CpWeaHfDNeWmzd6edhDmwW
-            OS_USERNAME: user-KPNf2CXgFmYY
-            OS_PROJECT_ID: de9eaa1e9cc94734bf787165a68f4d01
-            OS_REGION_NAME: DE
-            OS_DOMAIN_NAME: Default
+          secretContents: 
+            cloud: |
+              [default]
+              aws_access_key_id=de9eaa1e9cc94734bf787165a68f4d01
+              aws_secret_access_key=9d018083e4f349bf9fa75b174fe808c7
         initContainers:
-        - name: velero-plugin-for-csi
-          image: velero/velero-plugin-for-csi:v0.2.0
-          imagePullPolicy: IfNotPresent
-          volumeMounts:
-            - mountPath: /target
-              name: plugins
         - name: velero-plugin-openstack
           image: lirt/velero-plugin-for-openstack:v0.3.1
           imagePullPolicy: IfNotPresent
@@ -47,6 +38,8 @@ spec:
               name: plugins
         backupsEnabled: true
         snapshotsEnabled: true
+        deployRestic: true
+        defaultVolumesToRestic: true
         schedules:
           traefik:
             disabled: false
