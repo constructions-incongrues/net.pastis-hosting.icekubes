@@ -33,15 +33,15 @@ spec:
             OS_DOMAIN_NAME: Default
         initContainers:
         - name: velero-plugin-openstack
-          image: constructions-incongrues.net/velero-plugin-for-openstack:master
+          image: constructions-incongrues.net/velero-plugin-for-openstack:cinder-fix
           imagePullPolicy: IfNotPresent
           volumeMounts:
             - mountPath: /target
               name: plugins
         backupsEnabled: true
         snapshotsEnabled: true
-        deployRestic: true
-        defaultVolumesToRestic: true
+        deployRestic: false
+        defaultVolumesToRestic: false
         schedules:
           traefik:
             disabled: false
