@@ -16,6 +16,7 @@ spec:
       values: |
         auth:
           basicAuth:
+            enabled: true
             htpasswd: "tristan:{SHA}K+iK4HpzuMKnVlbTaxQSkD9/eLg="
         ingress:
           create: true
