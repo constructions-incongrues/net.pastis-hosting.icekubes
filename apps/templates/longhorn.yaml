@@ -22,6 +22,8 @@ spec:
           provisionerReplicaCount: 1
           resizerReplicaCount: 1
           snapshotterReplicaCount: 1
+        defaultSettings:
+          defaultReplicaCount: 1
     repoURL: https://charts.longhorn.io
     targetRevision: 1.2.3
   syncPolicy:
