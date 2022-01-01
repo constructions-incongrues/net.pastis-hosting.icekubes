@@ -26,6 +26,7 @@ spec:
           extraSecretRef: velero-credentials
           extraEnvVars:
             OS_REGION_NAME: DE1
+            OS_CLOUD: true
         clouds:
           default:
             region_name: DE
