@@ -24,6 +24,14 @@ spec:
         features: EnableCSI
         credentials:
           name: velero-ovh-de-secret
+          extraSecretRef: velero-ovh-de-secret
+          extraEnvVars:
+            OS_AUTH_URL: https://auth.cloud.ovh.net/v3/
+            OS_PASSWORD: ChaDQNt8R6CpWeaHfDNeWmzd6edhDmwW
+            OS_USERNAME: user-KPNf2CXgFmYY
+            OS_PROJECT_ID: de9eaa1e9cc94734bf787165a68f4d01
+            OS_REGION_NAME: DE
+            OS_DOMAIN_NAME: Default
           secretContents: 
             cloud: |
               [default]
