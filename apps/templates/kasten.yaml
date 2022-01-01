@@ -11,7 +11,7 @@ spec:
     namespace: jeancloude-club-kasten
   project: jeancloude.club
   source:
-    chart: kasten
+    chart: k10
     helm:
       values: |
         mongodb:
@@ -24,7 +24,7 @@ spec:
         ingress:
           enabled: true
     repoURL: https://charts.kasten.io/
-    targetRevision: k10-4.5.6
+    targetRevision: 4.5.6
   syncPolicy:
     automated:
       prune: true
