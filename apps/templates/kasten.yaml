@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kasten
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: jeancloude-club-kasten
+  project: jeancloude.club
+  source:
+    chart: kasten
+    helm:
+      values: |
+        mongodb:
+          auth:
+            rootPassword: root
+            username: mongo
+            password: mongo
+            database: rocketchat
+        host: allo.jeancloude.club
+        ingress:
+          enabled: true
+    repoURL: https://charts.kasten.io/
+    targetRevision: 3.1.0
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
