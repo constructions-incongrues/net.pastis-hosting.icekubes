@@ -41,7 +41,7 @@ spec:
             - mountPath: /target
               name: plugins
         - name: velero-plugin-csi
-          image: vmware-tanzu/velero-plugin-for-csi:v0.2.0
+          image: velero/velero-plugin-for-csi:v0.2.0
           imagePullPolicy: IfNotPresent
           volumeMounts:
             - mountPath: /target
