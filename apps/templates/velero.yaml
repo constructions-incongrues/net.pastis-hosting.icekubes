@@ -39,7 +39,7 @@ spec:
             - mountPath: /target
               name: plugins
         backupsEnabled: true
-        snapshotsEnabled: false
+        snapshotsEnabled: true
         deployRestic: true
         defaultVolumesToRestic: true
         schedules:
