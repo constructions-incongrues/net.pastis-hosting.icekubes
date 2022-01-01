@@ -25,18 +25,13 @@ spec:
           name: velero-credentials
           extraSecretRef: velero-credentials
           extraEnvVars:
+            OS_AUTH_URL: https://auth.cloud.ovh.net/v3/
+            OS_PASSWORD: ChaDQNt8R6CpWeaHfDNeWmzd6edhDmwW
+            OS_USERNAME: user-KPNf2CXgFmYY
+            OS_PROJECT_ID: de9eaa1e9cc94734bf787165a68f4d01
             OS_REGION_NAME: DE1
-            OS_CLOUD: "true"
-        clouds:
-          default:
-            region_name: DE
-            auth:
-              auth_url: https://auth.cloud.ovh.net/v3/
-              username: user-KPNf2CXgFmYY
-              password: ChaDQNt8R6CpWeaHfDNeWmzd6edhDmwW
-              project_name: de9eaa1e9cc94734bf787165a68f4d01
-              project_domain_name: Default
-              user_domain_name: Default
+            OS_DOMAIN_NAME: Default
+            OS_SWIFT_REGION_NAME=DE
         initContainers:
         - name: velero-plugin-openstack
           image: lirt/velero-plugin-for-openstack:v0.3.1
