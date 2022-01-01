@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: longhorn
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: jeancloude-club-longhorn
+  project: jeancloude.club
+  source:
+    chart: longhorn
+    helm:
+      values: |
+        # auth:
+        #   basicAuth:
+        #     enabled: true
+        #     htpasswd: "tristan:{SHA}K+iK4HpzuMKnVlbTaxQSkD9/eLg="
+        # ingress:
+        #   create: true
+    repoURL: https://charts.longhorn.io
+    targetRevision: 1.2.3
+  syncPolicy:
+    # automated:
+    #   prune: true
+    #   selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
