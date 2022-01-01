@@ -31,7 +31,7 @@ spec:
             OS_PROJECT_ID: de9eaa1e9cc94734bf787165a68f4d01
             OS_REGION_NAME: DE1
             OS_DOMAIN_NAME: Default
-            OS_SWIFT_REGION_NAME=DE
+            OS_SWIFT_REGION_NAME: DE
         initContainers:
         - name: velero-plugin-openstack
           image: lirt/velero-plugin-for-openstack:v0.3.1
