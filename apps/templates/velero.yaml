@@ -21,6 +21,7 @@ spec:
             prefix: jeancloude.club
           volumeSnapshotLocation:
             name: default
+        features: EnableCSI
         credentials:
           name: velero-credentials
           extraSecretRef: velero-credentials
@@ -31,9 +32,16 @@ spec:
             OS_PROJECT_ID: de9eaa1e9cc94734bf787165a68f4d01
             OS_REGION_NAME: DE
             OS_DOMAIN_NAME: Default
+            OS_REGION_NAME_CINDER: DE1
         initContainers:
         - name: velero-plugin-openstack
           image: constructionsincongrues/velero-plugin-for-openstack:cinder-fix
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - mountPath: /target
+              name: plugins
+        - name: velero-plugin-csi
+          image: constructionsincongrues/velero-plugin-for-csi:v0.2.0
           imagePullPolicy: IfNotPresent
           volumeMounts:
             - mountPath: /target
