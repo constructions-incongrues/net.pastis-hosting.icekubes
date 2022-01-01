@@ -14,12 +14,9 @@ spec:
     chart: longhorn
     helm:
       values: |
-        # auth:
-        #   basicAuth:
-        #     enabled: true
-        #     htpasswd: "tristan:{SHA}K+iK4HpzuMKnVlbTaxQSkD9/eLg="
-        # ingress:
-        #   create: true
+        ingress:
+          enabled: true
+          host: longhorn.jeancloude.club
     repoURL: https://charts.longhorn.io
     targetRevision: 1.2.3
   syncPolicy:
