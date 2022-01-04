@@ -15,8 +15,6 @@ spec:
     helm:
       values: |
         provider: cloudflare
-        sources:
-          - ingress
         cloudflare:
           apiToken: C6l3Ek8k13OzXHmvJp413hrFXQNUHBGIb20X476x
     repoURL: https://charts.bitnami.com/bitnami
