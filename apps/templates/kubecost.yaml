@@ -26,7 +26,7 @@ spec:
         clusterName: Icekubes
         currencyCode: EUR
     repoURL: https://kubecost.github.io/cost-analyzer/
-    targetRevision: 1.89.0-rc.2
+    targetRevision: 1.88.1
   syncPolicy:
     # automated:
     #   prune: false
