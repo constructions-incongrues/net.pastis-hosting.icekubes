@@ -62,7 +62,8 @@ spec:
               ttl: 168h # 1 week
               includedNamespaces:
               -  jeancloude-club-nextcloud
-        upgradeCRDs: true
+        upgradeCRDs: false
+        useOwnerReferencesInBackup: true
         
     repoURL: https://vmware-tanzu.github.io/helm-charts
     targetRevision: 2.27.1
