@@ -20,8 +20,8 @@ spec:
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 6.0.2
   syncPolicy:
-    # automated:
-    #   prune: true
-    #   selfHeal: false
+    automated:
+      prune: true
+      selfHeal: false
     syncOptions:
       - CreateNamespace=true

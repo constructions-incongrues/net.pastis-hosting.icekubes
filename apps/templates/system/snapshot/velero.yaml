@@ -9,7 +9,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: velero
-  project: default
+  project: snapshot
   source:
     chart: velero
     helm:
@@ -47,8 +47,6 @@ spec:
               name: plugins
         backupsEnabled: true
         snapshotsEnabled: true
-        deployRestic: false
-        defaultVolumesToRestic: false
         schedules:
           traefik:
             disabled: true
@@ -76,8 +74,8 @@ spec:
     repoURL: https://vmware-tanzu.github.io/helm-charts
     targetRevision: 2.27.1
   syncPolicy:
-    # automated:
-    #   prune: true
-    #   selfHeal: false
+    automated:
+      prune: true
+      selfHeal: false
     syncOptions:
       - CreateNamespace=true
