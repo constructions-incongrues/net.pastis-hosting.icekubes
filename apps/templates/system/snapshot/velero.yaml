@@ -1,3 +1,4 @@
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -47,23 +48,7 @@ spec:
               name: plugins
         backupsEnabled: true
         snapshotsEnabled: true
-        schedules:
-          keycloak:
-            disabled: false
-            schedule: "0 0 * * *"
-            template:
-              ttl: 168h # 1 week
-              includedNamespaces:
-              -  jeancloude-club-keycloak
-          nextcloud:
-            disabled: true
-            schedule: "0 2 * * *"
-            template:
-              ttl: 168h # 1 week
-              includedNamespaces:
-              -  jeancloude-club-nextcloud
         upgradeCRDs: false
-        useOwnerReferencesInBackup: true
         
     repoURL: https://vmware-tanzu.github.io/helm-charts
     targetRevision: 2.27.1
@@ -73,3 +58,20 @@ spec:
       selfHeal: false
     syncOptions:
       - CreateNamespace=true
+
+---
+apiVersion: velero.io/v1
+kind: Schedule
+metadata:
+  name: keycloak
+  namespace: velero
+spec:
+  schedule: 0 0 * * *
+  template:
+    includedNamespaces:
+      - jeancloude-club-keycloak
+    includedResources:
+      - '*'
+    ttl: 168h
+    useOwnerReferencesInBackup: true
+
