@@ -7,7 +7,7 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: 'csi'
+    namespace: kube-system
     server: 'https://kubernetes.default.svc'
   source:
     path: deploy/kubernetes/csi-snapshotter
