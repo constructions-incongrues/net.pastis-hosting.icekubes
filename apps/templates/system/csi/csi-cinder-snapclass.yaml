@@ -3,8 +3,8 @@ kind: VolumeSnapshotClass
 metadata:
   name: csi-cinder-snapclass
   labels:
-    velero.io/csi-volumesnapshot-class: "true"
+    velero.io/csi-volumesnapshot-class: true
 driver: cinder.csi.openstack.org
 deletionPolicy: Delete
 parameters:
-  force-create: "true"
+  force-create: true
