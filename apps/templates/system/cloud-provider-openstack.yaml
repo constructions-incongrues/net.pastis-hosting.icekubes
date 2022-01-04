@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cloud-provider-openstack
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-system
+  project: default
+  source:
+    chart: cpo
+    helm:
+      values: |
+        csi:
+          snapshotController:
+            enabled: true
+    repoURL: https://kubernetes.github.io/cloud-provider-openstack
+    targetRevision: 1.22.1
+  syncPolicy:
+    # automated:
+    #   prune: false
+    #   selfHeal: false
+    syncOptions:
+      - CreateNamespace=true
