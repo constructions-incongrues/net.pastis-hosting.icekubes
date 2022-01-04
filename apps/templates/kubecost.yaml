@@ -28,6 +28,8 @@ spec:
     repoURL: https://kubecost.github.io/cost-analyzer/
     targetRevision: 1.88.1
   syncPolicy:
-    automated: {}
+    # automated:
+    #   prune: false
+    #   selfHeal: false
     syncOptions:
       - CreateNamespace=true
