@@ -124,6 +124,8 @@ spec:
 
         ingress:
           enabled: true
+          annotations:
+            external-dns.alpha.kubernetes.io/hostname: club.jeancloude.club
     repoURL: https://nextcloud.github.io/helm
     targetRevision: 2.11.2
   syncPolicy:
