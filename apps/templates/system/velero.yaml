@@ -29,7 +29,7 @@ spec:
             OS_AUTH_URL: https://auth.cloud.ovh.net/v3/
             OS_PASSWORD: ChaDQNt8R6CpWeaHfDNeWmzd6edhDmwW
             OS_USERNAME: user-xUukp5UXvZyp
-            OS_TENANT_NAME: 8966606530353673
+            OS_TENANT_NAME: '8966606530353673'
             OS_REGION_NAME: DE1
             OS_DOMAIN_NAME: Default
         initContainers:
