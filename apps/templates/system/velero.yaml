@@ -31,7 +31,7 @@ spec:
             OS_USERNAME: user-xUukp5UXvZyp
             OS_TENANT_NAME: '8966606530353673'
             OS_REGION_NAME: DE
-            OS_DOMAIN_NAME: Default
+            OS_PROJECT_DOMAIN_NAME: Default
         initContainers:
         - name: velero-plugin-openstack
           image: lirt/velero-plugin-for-openstack:v0.3.0
