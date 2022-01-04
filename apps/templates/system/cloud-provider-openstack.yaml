@@ -14,9 +14,6 @@ spec:
     chart: openstack-cinder-csi
     helm:
       values: |
-        csi:
-          snapshotController:
-            enabled: true
         secret:
           enabled: true
           create: true
@@ -41,7 +38,7 @@ spec:
             driver: cinder.csi.openstack.org
             deletionPolicy: Delete
     repoURL: https://kubernetes.github.io/cloud-provider-openstack
-    targetRevision: v1.22.1
+    targetRevision: 1.4.9
   syncPolicy:
     # automated:
     #   prune: false
