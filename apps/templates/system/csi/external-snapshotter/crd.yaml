@@ -13,7 +13,7 @@ spec:
     path: client/config/crd
     repoURL: 'https://github.com/kubernetes-csi/external-snapshotter'
     targetRevision: v5.0.0
-  project: system
+  project: snapshots
   syncPolicy:
     automated:
       prune: true

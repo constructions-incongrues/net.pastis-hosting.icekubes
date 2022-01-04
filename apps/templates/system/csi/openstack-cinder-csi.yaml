@@ -9,7 +9,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system
-  project: system
+  project: snapshots
   source:
     chart: openstack-cinder-csi
     helm:
