@@ -30,6 +30,16 @@ spec:
               tenant-name=8966606530353673
               domain-name=Default
               region=GRA5
+        storageClass:
+          enabled: true
+          custom: |-
+            ---
+            apiVersion: snapshot.storage.k8s.io/v1beta1
+            kind: VolumeSnapshotClass
+            metadata:
+              name: csi-cinder-snapclass
+            driver: cinder.csi.openstack.org
+            deletionPolicy: Delete
     repoURL: https://kubernetes.github.io/cloud-provider-openstack
     targetRevision: 1.4.9
   syncPolicy:
