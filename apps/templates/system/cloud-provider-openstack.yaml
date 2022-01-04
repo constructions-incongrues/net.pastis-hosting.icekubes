@@ -11,14 +11,14 @@ spec:
     namespace: kube-system
   project: default
   source:
-    chart: cinder-csi
+    chart: openstack-cinder-csi
     helm:
       values: |
         csi:
           snapshotController:
             enabled: true
     repoURL: https://kubernetes.github.io/cloud-provider-openstack
-    targetRevision: 1.22.1
+    targetRevision: 1.4.9
   syncPolicy:
     # automated:
     #   prune: false
