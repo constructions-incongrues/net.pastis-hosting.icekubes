@@ -16,15 +16,16 @@ spec:
       values: |
         kubecostToken: dHJpc3RhbkByaXZvYWxsYW4ubmV0xm343yadf98
         ingress:
-          enabled: true
+          enabled: false
           hosts:
              - kubecost.jeancloude.club
           annotations:
             external-dns.alpha.kubernetes.io/hostname: kubecost.jeancloude.club
         networkCosts:
           enabled: true
-        clusterName: Icekubes
-        currencyCode: EUR
+        kubecostProductConfigs;
+          clusterName: Icekubes
+          currencyCode: EUR
     repoURL: https://kubecost.github.io/cost-analyzer/
     targetRevision: 1.88.1
   syncPolicy:
