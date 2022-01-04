@@ -18,18 +18,18 @@ spec:
           snapshotController:
             enabled: true
         secret:
-          enabled: false
-          create: false
-         name: cinder-csi-cloud-config
-         data:
-           cloud-config: |-
-             [Global]
-             auth-url=https://auth.cloud.ovh.net/v3
-             user-user-KPNf2CXgFmYY
-             password=ChaDQNt8R6CpWeaHfDNeWmzd6edhDmwW
-             trust-id=trust-id
-             region=GRA
-             ca-file=/etc/cacert/ca-bundle.crt
+          enabled: true
+          create: true
+          name: cinder-csi-cloud-config
+          data:
+            cloud-config: |-
+              [Global]
+              auth-url=https://auth.cloud.ovh.net/v3
+              user-user-KPNf2CXgFmYY
+              password=ChaDQNt8R6CpWeaHfDNeWmzd6edhDmwW
+              trust-id=trust-id
+              region=GRA
+              ca-file=/etc/cacert/ca-bundle.crt
     repoURL: https://kubernetes.github.io/cloud-provider-openstack
     targetRevision: 1.4.9
   syncPolicy:
