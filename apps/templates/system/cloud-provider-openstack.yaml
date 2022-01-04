@@ -25,7 +25,7 @@ spec:
             cloud-config: |-
               [Global]
               auth-url=https://auth.cloud.ovh.net/v3
-              user-user-KPNf2CXgFmYY
+              user-id=user-KPNf2CXgFmYY
               password=ChaDQNt8R6CpWeaHfDNeWmzd6edhDmwW
               tenant-id=de9eaa1e9cc94734bf787165a68f4d01
               domain-id=default
