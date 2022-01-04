@@ -34,7 +34,7 @@ spec:
         redis:
           enabled: true
         nextcloud:
-          host: app.jeancloude.club
+          host: club.jeancloude.club
           configs:
             caching.config.php: |-
               <?php
@@ -103,10 +103,10 @@ spec:
               <?php
               $CONFIG = [
                 'overwriteprotocol' => 'https',
-                'overwrite.cli.url' => 'https://app.jeancloude.club',
+                'overwrite.cli.url' => 'https://club.jeancloude.club',
                 'trusted_domains' => [
                   'nextcloud',
-                  'app.jeancloude.club'
+                  'club.jeancloude.club'
                 ]
               ];
 
