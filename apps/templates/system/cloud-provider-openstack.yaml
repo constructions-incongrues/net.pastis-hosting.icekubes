@@ -25,11 +25,11 @@ spec:
             cloud-config: |-
               [Global]
               auth-url=https://auth.cloud.ovh.net/v3
-              user-id=user-KPNf2CXgFmYY
+              user-name=user-KPNf2CXgFmYY
               password=ChaDQNt8R6CpWeaHfDNeWmzd6edhDmwW
               tenant-id=de9eaa1e9cc94734bf787165a68f4d01
               domain-id=default
-              domain-name=default
+              domain-name = Default
               region=GRA5
               regions=GRA3,GRA5,GRA7
     repoURL: https://kubernetes.github.io/cloud-provider-openstack
