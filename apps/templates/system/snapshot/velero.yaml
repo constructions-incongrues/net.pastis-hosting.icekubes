@@ -73,5 +73,5 @@ spec:
     includedResources:
       - '*'
     ttl: 168h
-    useOwnerReferencesInBackup: true
+  useOwnerReferencesInBackup: true
 
