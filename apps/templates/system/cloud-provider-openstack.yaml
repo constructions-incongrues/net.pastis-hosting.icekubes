@@ -27,9 +27,10 @@ spec:
               auth-url=https://auth.cloud.ovh.net/v3
               user-user-KPNf2CXgFmYY
               password=ChaDQNt8R6CpWeaHfDNeWmzd6edhDmwW
-              trust-id=trust-id
-              region=GRA
-              ca-file=/etc/cacert/ca-bundle.crt
+              tenant-id=de9eaa1e9cc94734bf787165a68f4d01
+              domain-id=default
+              region=GRA5
+              regions=GRA3,GRA5,GRA7
     repoURL: https://kubernetes.github.io/cloud-provider-openstack
     targetRevision: 1.4.9
   syncPolicy:
