@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: snapshot-controller
+spec:
+  destination:
+    namespace: 'csi'
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: deploy/kubernetes/snapshot-controller
+    repoURL: 'https://github.com/kubernetes-csi/external-snapshotter'
+    targetRevision: v5.0.0
+  project: system
