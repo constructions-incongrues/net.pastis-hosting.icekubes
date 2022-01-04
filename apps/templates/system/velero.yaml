@@ -51,21 +51,21 @@ spec:
         defaultVolumesToRestic: false
         schedules:
           traefik:
-            disabled: false
+            disabled: true
             schedule: "0 0 * * *"
             template:
               ttl: "48h"
               includedNamespaces:
               - traefik
           keycloak:
-            disabled: false
+            disabled: true
             schedule: "0 0 * * *"
             template:
               ttl: 168h # 1 week
               includedNamespaces:
               -  jeancloude-club-keycloak
           nextcloud:
-            disabled: false
+            disabled: true
             schedule: "0 2 * * *"
             template:
               ttl: 168h # 1 week
@@ -76,8 +76,8 @@ spec:
     repoURL: https://vmware-tanzu.github.io/helm-charts
     targetRevision: 2.27.1
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+    # automated:
+    #   prune: true
+    #   selfHeal: true
     syncOptions:
       - CreateNamespace=true
