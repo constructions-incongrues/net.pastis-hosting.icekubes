@@ -11,7 +11,7 @@ spec:
     namespace: kube-system
   project: default
   source:
-    chart: cpo
+    chart: cinder-csi
     helm:
       values: |
         csi:
