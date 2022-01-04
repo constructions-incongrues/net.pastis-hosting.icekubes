@@ -11,3 +11,9 @@ spec:
     repoURL: 'https://github.com/kubernetes-csi/external-snapshotter'
     targetRevision: v5.0.0
   project: system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
