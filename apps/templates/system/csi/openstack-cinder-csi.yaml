@@ -38,7 +38,7 @@ spec:
             driver: cinder.csi.openstack.org
             deletionPolicy: Delete
             parameters:
-              force-create: true
+              force-create: 'true'
     repoURL: https://kubernetes.github.io/cloud-provider-openstack
     targetRevision: 1.4.9
   syncPolicy:
