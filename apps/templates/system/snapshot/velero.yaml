@@ -48,13 +48,6 @@ spec:
         backupsEnabled: true
         snapshotsEnabled: true
         schedules:
-          traefik:
-            disabled: false
-            schedule: "0 0 * * *"
-            template:
-              ttl: "48h"
-              includedNamespaces:
-              - traefik
           keycloak:
             disabled: false
             schedule: "0 0 * * *"
