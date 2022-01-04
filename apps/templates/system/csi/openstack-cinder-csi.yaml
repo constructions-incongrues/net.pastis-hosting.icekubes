@@ -14,6 +14,11 @@ spec:
     chart: openstack-cinder-csi
     helm:
       values: |
+        csi:
+          snapshotter:
+            image:
+              repository: k8s.gcr.io/sig-storage/csi-snapshotter
+              tag: v5.0.0
         secret:
           enabled: true
           create: true
@@ -36,6 +41,8 @@ spec:
               name: csi-cinder-snapclass
               labels:
                 velero.io/csi-volumesnapshot-class: 'true'
+              annotations:
+                snapshot.storage.kubernetes.io/is-default-class: "true"
             driver: cinder.csi.openstack.org
             deletionPolicy: Delete
             parameters:
