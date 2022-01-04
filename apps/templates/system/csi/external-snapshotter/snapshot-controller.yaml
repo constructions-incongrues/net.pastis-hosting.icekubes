@@ -12,7 +12,7 @@ spec:
   source:
     path: deploy/kubernetes/snapshot-controller
     repoURL: 'https://github.com/constructions-incongrues/external-snapshotter'
-    targetRevision: release-5.0
+    targetRevision: release-4.2
   project: snapshots
   syncPolicy:
     automated:
