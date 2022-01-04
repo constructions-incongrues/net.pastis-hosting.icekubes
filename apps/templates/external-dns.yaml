@@ -9,7 +9,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system
-  project: jeancloude.club
+  project: default
   source:
     chart: external-dns
     helm:
