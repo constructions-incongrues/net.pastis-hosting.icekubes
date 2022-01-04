@@ -17,7 +17,7 @@ spec:
         configuration:
           provider: community.openstack.org/openstack
           backupStorageLocation:
-            bucket: velero
+            bucket: velero_01
             prefix: jeancloude.club
           volumeSnapshotLocation:
             name: default
@@ -30,7 +30,7 @@ spec:
             OS_PASSWORD: ChaDQNt8R6CpWeaHfDNeWmzd6edhDmwW
             OS_USERNAME: user-KPNf2CXgFmYY
             OS_TENANT_NAME: '8966606530353673'
-            OS_REGION_NAME: DE1
+            OS_REGION_NAME: DE
             OS_DOMAIN_NAME: Default
         initContainers:
         - name: velero-plugin-openstack
