@@ -11,8 +11,8 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: deploy/kubernetes/csi-snapshotter
-    repoURL: 'https://github.com/kubernetes-csi/external-snapshotter'
-    targetRevision: v5.0.0
+    repoURL: 'https://github.com/constructions-incongrues/external-snapshotter'
+    targetRevision: release-5.0
   project: snapshots
   syncPolicy:
     automated:
