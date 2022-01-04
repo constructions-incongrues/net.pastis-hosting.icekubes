@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cloud-provider-openstack
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-system
+  project: default
+  source:
+    chart: openstack-cinder-csi
+    helm:
+      values: |
+        csi:
+          snapshotController:
+            enabled: true
+        secret:
+          enabled: false
+          create: false
+         name: cinder-csi-cloud-config
+         data:
+           cloud-config: |-
+             [Global]
+             auth-url=https://auth.cloud.ovh.net/v3
+             user-user-KPNf2CXgFmYY
+             password=ChaDQNt8R6CpWeaHfDNeWmzd6edhDmwW
+             trust-id=trust-id
+             region=GRA
+             ca-file=/etc/cacert/ca-bundle.crt
+    repoURL: https://kubernetes.github.io/cloud-provider-openstack
+    targetRevision: 1.4.9
+  syncPolicy:
+    # automated:
+    #   prune: false
+    #   selfHeal: false
+    syncOptions:
+      - CreateNamespace=true
