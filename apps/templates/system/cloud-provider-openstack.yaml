@@ -28,7 +28,7 @@ spec:
               user-id=user-xUukp5UXvZyp
               password=vGdHXCW49Rt8BrfaDWVSWkVaSKgCMAnz
               tenant-id=8966606530353673
-              region=GRA
+              region=GRA5
     repoURL: https://kubernetes.github.io/cloud-provider-openstack
     targetRevision: 1.4.9
   syncPolicy:
