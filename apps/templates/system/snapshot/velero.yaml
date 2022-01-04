@@ -49,14 +49,14 @@ spec:
         snapshotsEnabled: true
         schedules:
           traefik:
-            disabled: true
+            disabled: false
             schedule: "0 0 * * *"
             template:
               ttl: "48h"
               includedNamespaces:
               - traefik
           keycloak:
-            disabled: true
+            disabled: false
             schedule: "0 0 * * *"
             template:
               ttl: 168h # 1 week
