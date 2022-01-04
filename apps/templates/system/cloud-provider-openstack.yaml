@@ -26,7 +26,7 @@ spec:
               [Global]
               auth-url=https://auth.cloud.ovh.net/v3
               user-id=user-xUukp5UXvZyp
-              # password=vGdHXCW49Rt8BrfaDWVSWkVaSKgCMAnz
+              password=vGdHXCW49Rt8BrfaDWVSWkVaSKgCMAnz
               # tenant-id=de9eaa1e9cc94734bf787165a68f4d01
               region=GRA5
               ca-cert=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDpfY5Nahlgq8WC5XOl6pkhkXljgHCSnFA+7rTBhKX8X6jpzPBIqRt71f9YyLrXxGtYq9g/SA99Dk2+OoohNSgu90tGNI5rVIlmqiQuoYWjj6gPaDrZXhGbSLvo4XLxF+jOTj5Y9USAf7GMIeFmDoepatnNf2wLsLdcIWDskZeoOlLxjjvnnlghpFfqRckqYDAOCaSF5Teccs/QvF39caeJ9FmKbjYcDUgPKVIHY2Jz9KFhaPszJG7y/+xXMPskRSCv5iAsD6fRTjjlC0SIgpVtjdO1T92OJQhEm7MfIdZyS2OFMusJiTxyOpz9PoXpmO7+fIJQH/IFcnZXOZFUGRBj Generated-by-Nova
