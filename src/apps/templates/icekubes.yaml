@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root
+  name: icekubes
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -9,9 +9,9 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
-  project: services
+  project: system.deliver
   source:
-    path: apps/
+    path: src/apps/
     repoURL: https://github.com/constructions-incongrues/club.jeancloude.k8s.git
     targetRevision: HEAD
   syncPolicy:
