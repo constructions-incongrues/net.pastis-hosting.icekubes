@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: external-dns
-  namespace: argocd
+  namespace: argo-cd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
@@ -14,9 +14,10 @@ spec:
     chart: external-dns
     helm:
       values: |
+        policy: sync
         provider: cloudflare
         cloudflare:
-          apiToken: C6l3Ek8k13OzXHmvJp413hrFXQNUHBGIb20X476x
+          apiToken: 3nvKsWWxkuc2Wc1oh73rEi6t0XH4QfuMaQQ2lN4g
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 6.0.2
   syncPolicy:

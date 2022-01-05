@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: nextcloud
-  namespace: argocd
+  namespace: argo-cd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
@@ -129,8 +129,8 @@ spec:
     repoURL: https://nextcloud.github.io/helm
     targetRevision: 2.11.2
   syncPolicy:
-    # automated:
-    #   prune: true
-    #   selfHeal: false
+    automated:
+      prune: true
+      selfHeal: false
     syncOptions:
       - CreateNamespace=true
