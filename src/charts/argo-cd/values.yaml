@@ -13,6 +13,8 @@ argo-cd:
         - type: helm
           name: argo-cd
           url: https://argoproj.github.io/argo-helm
+      url: https://jeancloude.club
+      resourceTrackingMethod: annotation+label
     ingress:
       enabled: true
       annotations:
