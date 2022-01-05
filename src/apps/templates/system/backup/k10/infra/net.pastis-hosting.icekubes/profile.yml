@@ -1,7 +1,7 @@
 kind: Profile
 apiVersion: config.kio.kasten.io/v1alpha1
 metadata:
-  name: net.pastis-hosting.icekubes
+  name: net-pastis-hosting-icekubes
   namespace: kasten-io
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -12,7 +12,7 @@ spec:
       secret:
         apiVersion: v1
         kind: secret
-        name: net.pastis-hosting.icekubes
+        name: net-pastis-hosting-icekubes
         namespace: kasten-io
     openStack:
       keystoneEndpoint: https://auth.cloud.ovh.net/v3/
