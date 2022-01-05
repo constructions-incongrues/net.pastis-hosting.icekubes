@@ -28,6 +28,7 @@ spec:
           snapshotter:
             image:
               tag: v4.2.1
+        plugin:
           snapshotController:
             enabled: true
             image:
