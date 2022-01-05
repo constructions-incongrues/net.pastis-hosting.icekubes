@@ -11,8 +11,7 @@ spec:
     namespace: kube-system
   project: system.snapshots
   source:
-  source:
-    path: charts/cinder-csi-plugin
+    chart: openstack-cinder-csi
     helm:
       values: |
         csi:
@@ -26,10 +25,6 @@ spec:
             image:
               tag: v1.3.0
           snapshotter:
-            image:
-              tag: v4.2.1
-          snapshotController:
-            enabled: true
             image:
               tag: v4.2.1
         secret:
@@ -60,8 +55,8 @@ spec:
             deletionPolicy: Delete
             parameters:
               force-create: '1'
-    repoURL: 'https://github.com/kubernetes/cloud-provider-openstack'
-    targetRevision: HEAD
+    repoURL: https://kubernetes.github.io/cloud-provider-openstack
+    targetRevision: 1.4.9
   syncPolicy:
     automated:
       prune: true
