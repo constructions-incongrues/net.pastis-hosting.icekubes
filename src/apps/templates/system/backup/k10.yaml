@@ -8,7 +8,7 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: k10
+    namespace: kasten-io
   project: system.backup
   source:
     chart: k10
