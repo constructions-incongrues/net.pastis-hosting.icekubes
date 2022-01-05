@@ -60,7 +60,7 @@ spec:
             parameters:
               force-create: '1'
     repoURL: https://kubernetes.github.io/cloud-provider-openstack
-    targetRevision: 1.4.9
+    targetRevision: 2.0.0
   syncPolicy:
     automated:
       prune: true
