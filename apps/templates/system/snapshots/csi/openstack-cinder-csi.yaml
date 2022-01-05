@@ -15,7 +15,7 @@ spec:
     helm:
       values: |
         csi:
-          snapshotter: ~
+          snapshotter: {}
         secret:
           enabled: true
           create: true
