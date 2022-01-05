@@ -9,7 +9,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: jeancloude-club-rocketchat
-  project: services
+  project: services.allo
   source:
     chart: rocketchat
     helm:
