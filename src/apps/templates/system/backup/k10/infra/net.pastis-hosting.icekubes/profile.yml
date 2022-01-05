@@ -3,8 +3,6 @@ apiVersion: config.kio.kasten.io/v1alpha1
 metadata:
   name: net-pastis-hosting-icekubes
   namespace: kasten-io
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
 spec:
   infra:
     credential:
