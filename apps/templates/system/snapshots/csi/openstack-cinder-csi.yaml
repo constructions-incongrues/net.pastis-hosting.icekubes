@@ -15,7 +15,18 @@ spec:
     helm:
       values: |
         csi:
-          snapshotter: {}
+          attacher:
+            image:
+              tag: v3.3.0
+          provisioner:
+            image:
+              tag: v3.0.0
+          resizer:
+            image:
+              tag: v1.3.0
+          snapshotter:
+            image:
+              tag: v4.2.1
         secret:
           enabled: true
           create: true
