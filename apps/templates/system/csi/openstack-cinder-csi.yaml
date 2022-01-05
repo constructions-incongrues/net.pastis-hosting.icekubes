@@ -27,11 +27,11 @@ spec:
             cloud-config: |-
               [Global]
               auth-url=https://auth.cloud.ovh.net/v3/
-              username=user-KPNf2CXgFmYY
-              password=ChaDQNt8R6CpWeaHfDNeWmzd6edhDmwW
+              username=user-xUukp5UXvZyp
+              password=vGdHXCW49Rt8BrfaDWVSWkVaSKgCMAnz
               tenant-name=8966606530353673
               domain-name=Default
-              region-name=DE1
+              region-name=GRA5
         storageClass:
           enabled: true
           custom: |-
