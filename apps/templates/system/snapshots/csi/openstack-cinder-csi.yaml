@@ -55,6 +55,10 @@ spec:
             deletionPolicy: Delete
             parameters:
               force-create: '1'
+        snapshotController:
+          enabled: true
+          image:
+            tag: v4.2.1
     repoURL: https://kubernetes.github.io/cloud-provider-openstack
     targetRevision: 1.4.9
   syncPolicy:
