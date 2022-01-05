@@ -9,7 +9,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: k10
-  project: system.snapshots
+  project: system.backup
   source:
     chart: k10
     helm:
