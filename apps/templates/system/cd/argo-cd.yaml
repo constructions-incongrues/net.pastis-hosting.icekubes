@@ -9,7 +9,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
-  project: default
+  project: system.cd
   source:
     path: charts/argo-cd
     repoURL: https://github.com/constructions-incongrues/club.jeancloude.k8s.git

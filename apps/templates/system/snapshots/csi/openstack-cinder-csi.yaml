@@ -9,7 +9,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system
-  project: snapshots
+  project: system.snapshots
   source:
     chart: openstack-cinder-csi
     helm:
@@ -18,7 +18,7 @@ spec:
           snapshotter:
             image:
               repository: k8s.gcr.io/sig-storage/csi-snapshotter
-              tag: v4.2.0
+              tag: v5.0.0
         secret:
           enabled: true
           create: true

@@ -9,7 +9,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
-  project: jeancloude.club
+  project: services
   source:
     path: apps/
     repoURL: https://github.com/constructions-incongrues/club.jeancloude.k8s.git

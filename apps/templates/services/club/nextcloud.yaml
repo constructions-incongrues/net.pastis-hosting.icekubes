@@ -9,7 +9,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: jeancloude-club-nextcloud
-  project: jeancloude.club
+  project: services
   source:
     chart: nextcloud
     helm:
