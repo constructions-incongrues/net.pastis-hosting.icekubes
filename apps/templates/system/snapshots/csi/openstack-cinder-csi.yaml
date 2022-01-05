@@ -28,6 +28,10 @@ spec:
           snapshotter:
             image:
               tag: v4.2.1
+          snapshotController:
+            enabled: true
+            image:
+              tag: v4.2.1
         secret:
           enabled: true
           create: true
@@ -41,10 +45,6 @@ spec:
               tenant-name=8966606530353673
               domain-name=Default
               region-name=GRA5
-        snapshotController:
-          enabled: true
-          image:
-            tag: v4.2.1
         storageClass:
           enabled: true
           custom: |-
