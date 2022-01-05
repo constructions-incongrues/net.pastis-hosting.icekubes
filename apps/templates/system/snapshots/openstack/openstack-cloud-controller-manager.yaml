@@ -17,9 +17,9 @@ spec:
       values: |
         controllerExtraArgs: |-
           - --cluster-name=Icekubes
-        cloudconfig:
+        cloudConfig:
           global:
-            auth_url: https://auth.cloud.ovh.net/v3/
+            auth-url: https://auth.cloud.ovh.net/v3/
             username: user-xUukp5UXvZyp
             password: vGdHXCW49Rt8BrfaDWVSWkVaSKgCMAnz
           loadbalancer:
