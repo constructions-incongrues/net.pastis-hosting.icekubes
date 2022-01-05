@@ -19,3 +19,19 @@ spec:
   destinations:
   - namespace: '*'
     server: https://kubernetes.default.svc
+
+  # Enables namespace orphaned resource monitoring.
+  orphanedResources:
+    warn: true
+
+  clusterResourceWhitelist:
+  - kind: '*'
+    group: '*'
+
+  # Enables namespace orphaned resource monitoring.
+  orphanedResources:
+    warn: true
+
+  clusterResourceWhitelist:
+  - kind: '*'
+    group: '*'
