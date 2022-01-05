@@ -3,8 +3,8 @@ apiVersion: config.kio.kasten.io/v1alpha1
 metadata:
   name: net-pastis-hosting-icekubes
   namespace: kasten-io
-  annotations:
-    argocd.argoproj.io/tracking-id: k10:config.kio.kasten.io/Profile:kasten-io/net-pastis-hosting-icekubes
+  labels:
+    app.kubernetes.io/instance: k10
 spec:
   infra:
     credential:
