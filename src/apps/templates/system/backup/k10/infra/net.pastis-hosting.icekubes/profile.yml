@@ -3,6 +3,8 @@ apiVersion: config.kio.kasten.io/v1alpha1
 metadata:
   name: net-pastis-hosting-icekubes
   namespace: kasten-io
+  labels:
+    argocd.argoproj.io/instance: k10
 spec:
   infra:
     credential:
