@@ -55,8 +55,6 @@ spec:
               name: csi-cinder-snapclass
               labels:
                 velero.io/csi-volumesnapshot-class: 'true'
-              annotations:
-                snapshot.storage.kubernetes.io/is-default-class: "true"
             driver: cinder.csi.openstack.org
             deletionPolicy: Delete
             parameters:
