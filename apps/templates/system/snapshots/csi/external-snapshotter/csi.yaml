@@ -10,9 +10,9 @@ spec:
     namespace: kube-system
     server: 'https://kubernetes.default.svc'
   source:
-    path: deploy/kubernetes/snapshot-controller
+    path: deploy/kubernetes/csi-snapshotter
     repoURL: 'https://github.com/constructions-incongrues/external-snapshotter'
-    targetRevision: release-5.0
+    targetRevision: release-4.2
   project: system.snapshots
   syncPolicy:
     automated:
