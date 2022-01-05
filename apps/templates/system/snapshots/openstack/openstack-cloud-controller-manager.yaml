@@ -22,9 +22,9 @@ spec:
             auth-url: https://auth.cloud.ovh.net/v3/
             username: user-xUukp5UXvZyp
             password: vGdHXCW49Rt8BrfaDWVSWkVaSKgCMAnz
-            tenant-name: 8966606530353673
-            domain-name: Default
-            region-name: GRA5
+            tenant: 8966606530353673
+            domain: Default
+            region: GRA5
           loadbalancer:
             create-monitor: true
         secret:
