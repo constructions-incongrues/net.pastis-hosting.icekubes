@@ -18,7 +18,7 @@ spec:
         csi:
           attacher:
             image:
-              tag: v3.3.0
+              tag: v3.2.1
           provisioner:
             topology: "false"
             image:
