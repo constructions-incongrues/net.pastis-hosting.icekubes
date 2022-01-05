@@ -18,6 +18,8 @@ spec:
           enabled: true
           ingress:
             enabled: true
+            hosts:
+              - vault.jeancloude.club
             annotations:
               external-dns.alpha.kubernetes.io/hostname: vault.jeancloude.club
         injector:
