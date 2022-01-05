@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kasten
+  name: k10
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -18,6 +18,13 @@ spec:
           basicAuth:
             enabled: true
             htpasswd: "tristan:{SHA}K+iK4HpzuMKnVlbTaxQSkD9/eLg="
+        eula:
+          accept: true
+          company: "Club Jean-Cloude"
+          email: tristan@rivoallan.net
+        clusterName: Icekubes
+        cluster:
+          domainName: jeancloude.club
         ingress:
           create: true
           annotations:
