@@ -33,10 +33,15 @@ spec:
             external-dns.alpha.kubernetes.io/hostname: kasten.jeancloude.club
         prometheus:
           server:
+            enabled: true
             persistentVolume:
               enabled: false
         grafana:
           enabled: false
+        persistence:
+          enabled: false
+        injectKanisterSidecar:
+          enabled: true
     repoURL: https://charts.kasten.io/
     targetRevision: 4.5.6
   syncPolicy:
