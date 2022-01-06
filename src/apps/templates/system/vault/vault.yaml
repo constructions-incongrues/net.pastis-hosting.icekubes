@@ -30,6 +30,9 @@ spec:
         ui:
           enabled: true
           serviceType: "ClusterIP"
+        dataStorage:
+          enabled: true
+          size: 1Gi
     repoURL: https://helm.releases.hashicorp.com
     targetRevision: 0.18.0
   syncPolicy:
