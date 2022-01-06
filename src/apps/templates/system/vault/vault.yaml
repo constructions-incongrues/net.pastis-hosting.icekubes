@@ -29,7 +29,7 @@ spec:
                 cluster_address = "[::]:8201"
               }
               storage "file" {
-                path = "/vault/data"
+                path = "/mnt/vault/data"
               }
           ingress:
             enabled: true
