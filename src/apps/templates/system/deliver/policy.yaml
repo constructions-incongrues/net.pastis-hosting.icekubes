@@ -1,3 +1,4 @@
+---
 kind: Policy
 apiVersion: config.kio.kasten.io/v1alpha1
 metadata:
@@ -26,3 +27,25 @@ spec:
         profile:
           name: k10locationprofile-icekubes-de
           namespace: kasten-io
+    - action: export
+      exportParameters:
+        frequency: "@weekly"
+        receiveString: bIzAPpoanmENljEtlRJwgfd/R1VFDnWYyDOipxkiKcB6N8l7nHycf7SWOvO+hvs1OFXwzKuNGU+u7zELhTr9gW087zgRMe+reImVp96ryYGog/gz+j4GYRCC3oHOL6ZFTNEyhn1A2P0fr7OQ7NzNnUj3N9TUxXNC6UuRHG6S3/igltEMQBjWk0qxuH/zLDhop4RBUIKsvjhc00o3MTiL9929XXSzHSjrpihH94zbaJdioYyeZS3AdosHtK2Qh965Mo7HaaGIcsFhEjSyoQslpieW4vuefe2C0hKKT2lyXyc/FH7GtmBwrjawsczW8McviAwvKtBNgmI5gsU4nwqHCOUMrPZyOF9PqIclnJvr5OX80E6Ji4uG4S0pmVewhXhq+dD0P8gLgPz/RW0wz9ytaRu8wr9HQLKP6FimzZhBJCJcna1FJNCCdit4AVbK0Oj3Mwbe4PM3ePXmBUYP6Bx1QCy7z9819LlrdkykaX4c9sMgsgAFgQyLBQMNYSxFCo/klvrEKFTPiGNh4JBYmx+53HcPlewxUvyaTDJ0et+okmc2vt5OL9/3AUhGNRHxOizFGhZPvARUvbR46nN3srEQuZQ2wtgRn2aEZYT914/91EyJfw
+        profile:
+          name: k10locationprofile-icekubes-de
+          namespace: kasten-io
+        migrationToken:
+          name: system-deliver-backup-migration-token
+          namespace: kasten-io
+        exportData:
+          enabled: true
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: system-deliver-backup-migration-token
+  namespace: kasten-io
+data:
+  migrationToken: >-
+    Ykl6QVBwb2FubUVObGpFdGxSSndnZmQvUjFWRkRuV1l5RE9pcHhraUtjQjZOOGw3bkh5Y2Y3U1dPdk8raHZzMU9GWHd6S3VOR1UrdTd6RUxoVHI5Z1cwODd6Z1JNZStyZUltVnA5NnJ5WUdvZy9neitqNEdZUkNDM29IT0w2WkZUTkV5aG4xQTJQMGZyN09RN056Tm5VajNOOVRVeFhOQzZVdVJIRzZTMy9pZ2x0RU1RQmpXazBxeHVIL3pMRGhvcDRSQlVJS3N2amhjMDBvM01UaUw5OTI5WFhTekhTanJwaWhIOTR6YmFKZGlvWXllWlMzQWRvc0h0SzJRaDk2NU1vN0hhYUdJY3NGaEVqU3lvUXNscGllVzR2dWVmZTJDMGhLS1QybHlYeWMvRkg3R3RtQndyamF3c2N6VzhNY3ZpQXd2S3RCTmdtSTVnc1U0bndxSENPVU1yUFp5T0Y5UHFJY2xuSnZyNU9YODBFNkppNHVHNFMwcG1WZXdoWGhxK2REMFA4Z0xnUHovUlcwd3o5eXRhUnU4d3I5SFFMS1A2RmltelpoQkpDSmNuYTFGSk5DQ2RpdDRBVmJLME9qM013YmU0UE0zZVBYbUJVWVA2QngxUUN5N3o5ODE5TGxyZGt5a2FYNGM5c01nc2dBRmdReUxCUU1OWVN4RkNvL2tsdnJFS0ZUUGlHTmg0SkJZbXgrNTNIY1BsZXd4VXZ5YVRESjBldCtva21jMnZ0NU9MOS8zQVVoR05SSHhPaXpGR2haUHZBUlV2YlI0Nm5OM3NyRVF1WlEyd3RnUm4yYUVaWVQ5MTQvOTFFeUpmdw==
+type: Opaque
