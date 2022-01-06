@@ -1,0 +1,28 @@
+kind: Policy
+apiVersion: config.kio.kasten.io/v1alpha1
+metadata:
+  name: system-deliver-backup
+  namespace: kasten-io
+spec:
+  frequency: "@weekly"
+  retention:
+    weekly: 4
+    monthly: 12
+    yearly: 7
+  selector:
+    matchExpressions:
+      - key: k10.kasten.io/appNamespace
+        operator: In
+        values:
+          - argo-cd
+  actions:
+    - action: backup
+      backupParameters:
+        filters:
+          excludeResources:
+            - group: extensions
+              version: v1beta1
+              resource: ingresses
+        profile:
+          name: k10locationprofile-icekubes-de
+          namespace: kasten-io
