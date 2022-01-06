@@ -15,7 +15,7 @@ spec:
     helm:
       values: |
         image:
-          tag: 23.0.0-fpm
+          tag: 23.0.0-apache
         replicaCount: 1
         cronjob:
           enabled: true
@@ -30,7 +30,7 @@ spec:
           volumePermissions:
             enabled: true
         nginx:
-          enabled: true
+          enabled: false
         persistence:
           enabled: true
         redis:
@@ -38,10 +38,6 @@ spec:
           architecture: standalone
           volumePermissions:
             enabled: true
-        lifecycle:
-          postStart:
-            exec:
-              command: ["/bin/sh", "-c", "chmod -R 777 ./config"]
         nextcloud:
           host: club.jeancloude.club
           configs:
@@ -135,10 +131,6 @@ spec:
           enabled: true
           annotations:
             external-dns.alpha.kubernetes.io/hostname: club.jeancloude.club
-
-        extraSecurityContext:
-          runAsNonRoot: false
-          readOnlyRootFilesystem: false
     repoURL: https://nextcloud.github.io/helm
     targetRevision: 2.11.3
   syncPolicy:
