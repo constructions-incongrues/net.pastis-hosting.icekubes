@@ -36,8 +36,9 @@ spec:
         redis:
           enabled: true
           architecture: standalone
-          podSecurityContext:
-            enabled: false
+          master:
+            podSecurityContext:
+              enabled: false
         nextcloud:
           host: club.jeancloude.club
           configs:
@@ -133,8 +134,8 @@ spec:
             external-dns.alpha.kubernetes.io/hostname: club.jeancloude.club
 
         extraSecurityContext:
-          runAsUser: "1001"
-          runAsGroup: "1001"
+          # runAsUser: "1001"
+          # runAsGroup: "1001"
           runAsNonRoot: true
           readOnlyRootFilesystem: false
     repoURL: https://nextcloud.github.io/helm
