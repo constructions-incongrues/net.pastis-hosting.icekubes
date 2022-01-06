@@ -18,7 +18,7 @@ spec:
           enabled: true
           dataStorage:
             enabled: true
-            size: 5gi
+            size: 5Gi
             path: /mnt/vault/data
           ingress:
             enabled: true
