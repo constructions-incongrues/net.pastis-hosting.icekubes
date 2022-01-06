@@ -30,6 +30,10 @@ spec:
         ui:
           enabled: true
           serviceType: "ClusterIP"
+        dataStorage:
+          enabled: true
+          size: 5gi
+          path: /mnt/vault/data
     repoURL: https://helm.releases.hashicorp.com
     targetRevision: 0.18.0
   syncPolicy:
