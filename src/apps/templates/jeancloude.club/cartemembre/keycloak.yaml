@@ -17,13 +17,13 @@ spec:
         proxyAddressForwarding: true
         postgresql:
           postgresqlPassword: keycloak
+          volumePermissions:
+            enabled: true
         ingress:
           enabled: true
           hostname: cartemembre.jeancloude.club
           annotations:
             external-dns.alpha.kubernetes.io/hostname: cartemembre.jeancloude.club
-        containerSecurityContext:
-          enabled: false
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 5.2.8
   syncPolicy:
