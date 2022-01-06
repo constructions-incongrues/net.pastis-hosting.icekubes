@@ -38,6 +38,10 @@ spec:
           architecture: standalone
           volumePermissions:
             enabled: true
+        lifecycle:
+          postStart:
+            exec:
+              command: ["/bin/sh", "-c", "chmod -R 777 ./config"]
         nextcloud:
           host: club.jeancloude.club
           configs:
