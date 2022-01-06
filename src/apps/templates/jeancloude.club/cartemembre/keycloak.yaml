@@ -19,6 +19,9 @@ spec:
           postgresqlPassword: keycloak
           volumePermissions:
             enabled: true
+          primary:
+            annotations:
+              kanister.kasten.io/blueprint: postgres-bp
         ingress:
           enabled: true
           hostname: cartemembre.jeancloude.club
