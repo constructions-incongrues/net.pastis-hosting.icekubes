@@ -15,7 +15,7 @@ spec:
     helm:
       values: |
         image:
-          tag: 23.0.0-apache
+          tag: 23.0.0-fpm
         replicaCount: 1
         cronjob:
           enabled: true
@@ -28,7 +28,7 @@ spec:
             persistence:
               enabled: true
         nginx:
-          enabled: false
+          enabled: true
         persistence:
           enabled: true
         redis:
@@ -126,6 +126,12 @@ spec:
           enabled: true
           annotations:
             external-dns.alpha.kubernetes.io/hostname: club.jeancloude.club
+
+        extraSecurityContext:
+          # runAsUser: "33"
+          # runAsGroup: "33"
+          runAsNonRoot: true
+          readOnlyRootFilesystem: false
     repoURL: https://nextcloud.github.io/helm
     targetRevision: 2.11.2
   syncPolicy:
