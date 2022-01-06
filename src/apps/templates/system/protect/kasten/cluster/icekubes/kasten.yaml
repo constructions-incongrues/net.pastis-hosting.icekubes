@@ -14,6 +14,8 @@ spec:
     chart: k10
     helm:
       values: |
+        scc:
+          create: false
         auth:
           basicAuth:
             enabled: true
@@ -33,6 +35,8 @@ spec:
           server:
             persistentVolume:
               enabled: false
+        grafana:
+          enabled: false
     repoURL: https://charts.kasten.io/
     targetRevision: 4.5.6
   syncPolicy:
