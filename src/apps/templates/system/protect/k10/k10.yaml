@@ -15,7 +15,8 @@ spec:
     helm:
       values: |
         global:
-          imagePullSecret: ~
+          imagePullSecret: 
+            name: ""
         auth:
           basicAuth:
             enabled: true
