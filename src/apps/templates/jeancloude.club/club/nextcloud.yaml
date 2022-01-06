@@ -29,6 +29,8 @@ spec:
               enabled: true
             podSecurityContext:
               enabled: false
+            containerSecurityContext:
+              enabled: false
         nginx:
           enabled: true
         persistence:
@@ -38,6 +40,8 @@ spec:
           architecture: standalone
           master:
             podSecurityContext:
+              enabled: false
+            containerSecurityContext:
               enabled: false
         nextcloud:
           host: club.jeancloude.club
