@@ -3,6 +3,8 @@ kind: IngressRoute
 metadata:
   name: traefik-exposed-dashboard
   namespace: traefik
+  labels:
+    argocd.argoproj.io/instance: kasten
 spec:
   entryPoints:
   - web

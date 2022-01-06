@@ -3,6 +3,8 @@ apiVersion: config.kio.kasten.io/v1alpha1
 metadata:
   name: jeancloude-club-cartemembre-backup
   namespace: kasten-io
+  labels:
+    argocd.argoproj.io/instance: kasten
 spec:
   frequency: "@hourly"
   retention:
