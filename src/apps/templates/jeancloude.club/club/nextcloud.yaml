@@ -27,10 +27,8 @@ spec:
           primary:
             persistence:
               enabled: true
-            podSecurityContext:
-              enabled: false
-            containerSecurityContext:
-              enabled: false
+          volumePermissions:
+            enabled: true
         nginx:
           enabled: true
         persistence:
@@ -38,11 +36,8 @@ spec:
         redis:
           enabled: true
           architecture: standalone
-          master:
-            podSecurityContext:
-              enabled: false
-            containerSecurityContext:
-              enabled: false
+          volumePermissions:
+            enabled: true
         nextcloud:
           host: club.jeancloude.club
           configs:
