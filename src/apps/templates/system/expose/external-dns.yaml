@@ -17,7 +17,7 @@ spec:
         policy: sync
         provider: cloudflare
         cloudflare:
-          apiToken: 3nvKsWWxkuc2Wc1oh73rEi6t0XH4QfuMaQQ2lN4g
+          apiToken: C6l3Ek8k13OzXHmvJp413hrFXQNUHBGIb20X476x
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 6.0.2
   syncPolicy:
