@@ -28,7 +28,7 @@ spec:
         ingress:
           create: false
           annotations:
-            external-dns.alpha.kubernetes.io/hostname: k10.jeancloude.club
+            external-dns.alpha.kubernetes.io/hostname: kasten.jeancloude.club
         prometheus:
           server:
             persistentVolume:
