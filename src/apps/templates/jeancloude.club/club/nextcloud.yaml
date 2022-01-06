@@ -133,12 +133,12 @@ spec:
             external-dns.alpha.kubernetes.io/hostname: club.jeancloude.club
 
         extraSecurityContext:
-          # runAsUser: "1001"
-          # runAsGroup: "1001"
+          runAsUser: "1001"
+          runAsGroup: "1001"
           runAsNonRoot: true
           readOnlyRootFilesystem: false
     repoURL: https://nextcloud.github.io/helm
-    targetRevision: 2.11.2
+    targetRevision: 2.11.3
   syncPolicy:
     automated:
       prune: true
