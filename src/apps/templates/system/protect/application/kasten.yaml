@@ -14,9 +14,6 @@ spec:
     chart: k10
     helm:
       values: |
-        global:
-          imagePullSecret: 
-            name: ""
         auth:
           basicAuth:
             enabled: true

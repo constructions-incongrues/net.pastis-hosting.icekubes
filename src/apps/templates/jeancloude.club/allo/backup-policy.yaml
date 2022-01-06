@@ -1,0 +1,44 @@
+kind: Policy
+apiVersion: config.kio.kasten.io/v1alpha1
+metadata:
+  name: jeancloude-club-allo-backup
+  namespace: kasten-io
+spec:
+  frequency: "@hourly"
+  retention:
+    hourly: 24
+    daily: 7
+    weekly: 4
+    monthly: 12
+    yearly: 7
+  selector:
+    matchExpressions:
+      - key: k10.kasten.io/appNamespace
+        operator: In
+        values:
+          - jeancloude-club-keycloak
+  selector:
+    matchExpressions:
+      - key: k10.kasten.io/appNamespace
+        operator: In
+        values:
+          - jeancloude-club-keycloak
+  actions:
+    - action: backup
+      backupParameters:
+        filters:
+          excludeResources:
+            - group: extensions
+              version: v1beta1
+              resource: ingresses
+        profile:
+          name: k10locationprofile-icekubes-de
+          namespace: kasten-io
+    - action: export
+      exportParameters:
+        frequency: "@hourly"
+        profile:
+          name: k10locationprofile-icekubes-de
+          namespace: kasten-io
+        exportData:
+          enabled: true
