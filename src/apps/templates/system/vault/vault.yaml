@@ -27,6 +27,9 @@ spec:
           enabled: true
         csi:
           enabled: true
+        ui:
+          enabled: true
+          serviceType: "ClusterIP"
     repoURL: https://helm.releases.hashicorp.com
     targetRevision: 0.18.0
   syncPolicy:
