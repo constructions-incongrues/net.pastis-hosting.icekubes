@@ -14,11 +14,11 @@ spec:
     chart: vault
     helm:
       values: |
+        dataStorage:
+          enabled: true
+          mountPath: /mnt/vault/data
         server:
           enabled: true
-          dataStorage:
-            enabled: true
-            mountPath: /mnt/vault/data
           ingress:
             enabled: true
             hosts:
