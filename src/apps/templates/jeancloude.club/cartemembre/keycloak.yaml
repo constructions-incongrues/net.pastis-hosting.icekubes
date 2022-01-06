@@ -24,6 +24,8 @@ spec:
           primary:
             annotations:
               kanister.kasten.io/blueprint: postgres-bp
+        service:
+          type: ClusterIP
         ingress:
           enabled: true
           hostname: cartemembre.jeancloude.club
