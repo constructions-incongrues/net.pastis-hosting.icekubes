@@ -6,3 +6,5 @@ metadata:
   name: csi-cinder-snapclass
 deletionPolicy: Delete
 driver: cinder.csi.openstack.org
+parameters:
+  force-create: 'true'
