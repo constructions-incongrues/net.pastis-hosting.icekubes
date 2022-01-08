@@ -42,7 +42,7 @@ spec:
         features:
           community: true
     repoURL: https://charts.appscode.com/stable/
-    targetRevision: 6.0.2
+    targetRevision: v2021.11.24
   syncPolicy:
     automated:
       prune: true
