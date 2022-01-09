@@ -24,11 +24,10 @@ spec:
         mariadb:
           enabled: true
           architecture: standalone
-          primary:
-            persistence:
-              enabled: true
-            accessModes:
-              - ReadWriteMany
+          persistence:
+            enabled: true
+          accessModes:
+            - ReadWriteMany
           volumePermissions:
             enabled: true
         nginx:
