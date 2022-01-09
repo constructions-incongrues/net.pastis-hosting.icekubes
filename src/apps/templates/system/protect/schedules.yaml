@@ -1,0 +1,14 @@
+apiVersion: velero.io/v1
+kind: Schedule
+metadata:
+  name: keycloak
+  namespace: velero
+spec:
+  schedule: '0 0 * * *'
+  template:
+    includedNamespaces:
+      - jeancloude-club-keycloak
+    includedResources:
+      - '*'
+    ttl: 168h
+  useOwnerReferencesInBackup: true
