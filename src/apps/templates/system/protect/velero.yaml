@@ -42,6 +42,7 @@ spec:
         snapshotsEnabled: false
         upgradeCRDs: false
         DefaultVolumesToRestic: true
+        deployRestic: true
         
     repoURL: https://vmware-tanzu.github.io/helm-charts
     targetRevision: 2.27.1
