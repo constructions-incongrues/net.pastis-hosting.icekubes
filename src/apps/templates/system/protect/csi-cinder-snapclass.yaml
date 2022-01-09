@@ -2,7 +2,7 @@ apiVersion: snapshot.storage.k8s.io/v1beta1
 kind: VolumeSnapshotClass
 metadata:
   annotations:
-    k10.kasten.io/is-snapshot-class: 'true'
+    k10.kasten.io/is-snapshot-class: 'false'
   name: csi-cinder-snapclass
 deletionPolicy: Delete
 driver: cinder.csi.openstack.org

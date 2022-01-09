@@ -21,9 +21,6 @@ spec:
             size: 1Gi
           volumePermissions:
             enabled: true
-          primary:
-            annotations:
-              kanister.kasten.io/blueprint: postgres-bp
         service:
           type: ClusterIP
         ingress:
