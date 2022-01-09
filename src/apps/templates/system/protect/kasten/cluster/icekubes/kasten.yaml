@@ -1,0 +1,52 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kasten
+  namespace: argo-cd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kasten-io
+  project: system.protect
+  source:
+    chart: k10
+    helm:
+      values: |
+        scc:
+          create: false
+        auth:
+          basicAuth:
+            enabled: true
+            htpasswd: "tristan:{SHA}K+iK4HpzuMKnVlbTaxQSkD9/eLg="
+        eula:
+          accept: true
+          company: "Club Jean-Cloude"
+          email: tristan@rivoallan.net
+        clusterName: Icekubes
+        cluster:
+          domainName: jeancloude.club
+        ingress:
+          create: false
+          annotations:
+            external-dns.alpha.kubernetes.io/hostname: kasten.jeancloude.club
+        prometheus:
+          server:
+            enabled: true
+            persistentVolume:
+              enabled: false
+        grafana:
+          enabled: false
+        persistence:
+          enabled: false
+        injectKanisterSidecar:
+          enabled: false
+    repoURL: https://charts.kasten.io/
+    targetRevision: 4.5.6
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+      - CreateNamespace=true

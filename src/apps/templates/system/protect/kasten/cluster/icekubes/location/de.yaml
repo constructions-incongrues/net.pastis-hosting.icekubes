@@ -1,0 +1,24 @@
+apiVersion: config.kio.kasten.io/v1alpha1
+kind: Profile
+metadata:
+  name: k10locationprofile-icekubes-de
+  namespace: kasten-io
+  labels:
+    argocd.argoproj.io/instance: kasten
+spec:
+  locationSpec:
+    credential:
+      secret:
+        apiVersion: v1
+        kind: secret
+        name: k10secret-icekubes-de
+        namespace: kasten-io
+      secretType: AwsAccessKey
+    objectStore:
+      endpoint: https://s3.de.cloud.ovh.net
+      name: kasten
+      objectStoreType: S3
+      pathType: Directory
+      region: de
+    type: ObjectStore
+  type: Location
