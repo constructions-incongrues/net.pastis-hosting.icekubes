@@ -1,0 +1,51 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: stash
+  namespace: argo-cd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-system
+  project: system.protect
+  source:
+    chart: stash
+    helm:
+      values: |
+        global:
+          license: |
+            -----BEGIN CERTIFICATE-----
+            MIID6DCCAtCgAwIBAgIIYZSjDMkSJhowDQYJKoZIhvcNAQELBQAwJTEWMBQGA1UE
+            ChMNQXBwc0NvZGUgSW5jLjELMAkGA1UEAxMCY2EwHhcNMjIwMTA4MjMyOTA1WhcN
+            MjMwMTA4MjMyOTA1WjCBpDEOMAwGA1UEBhMFc3Rhc2gxEjAQBgNVBAgTCWNvbW11
+            bml0eTE1MBYGA1UEChMPc3Rhc2gtY29tbXVuaXR5MBsGA1UEChMUcGFub3B0aWNv
+            bi1jb21tdW5pdHkxGDAWBgNVBAsTD3N0YXNoLWNvbW11bml0eTEtMCsGA1UEAxMk
+            NjM1N2JiMWQtNDNhYS00NTY2LTg0NzMtNzM3MTdiOGU1OTcyMIIBIjANBgkqhkiG
+            9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1gKF2Ea6a0K7HjkEj+qVT7yis6TFx9YlCS6e
+            i3xD7qWyOYuUYxIRI6uY7aaBexri0m0tA7/gU3bdC2q2MSNiIHkoYggvjFJ+hU99
+            3lmetKBWpc9sha7RdjCoOiy4H3PlsIhcOyHZjWe8arT230jLjTyk8zURikZLeDgV
+            oJVtTBOSsEwI9kPvZM9YkeuyL3kQDZlFCrbspTKS2zGNTfwkMLeFPu/jATtshU0Z
+            k02KebxQlMDEG/UfaDHMRL7RwrdsRXS+tFScL5285u8SoJy16q1j3HCoPFMjYhoy
+            0tTZxV23nrMyvKYphYjlu1xFxJSjvmtB7DWZmzKFE5uAkW0MRQIDAQABo4GbMIGY
+            MA4GA1UdDwEB/wQEAwIFoDATBgNVHSUEDDAKBggrBgEFBQcDAjBxBgNVHREEajBo
+            giQ2MzU3YmIxZC00M2FhLTQ1NjYtODQ3My03MzcxN2I4ZTU5NzKBKVRyaXN0YW4g
+            Uml2b2FsbGFuIDx0cmlzdGFuQHJpdm9hbGxhbi5uZXQ+gRV0cmlzdGFuQHJpdm9h
+            bGxhbi5uZXQwDQYJKoZIhvcNAQELBQADggEBAGN3Iy7KNj+dGRD60cZJSNI0rxo+
+            HF8galal/c8FI51YUn3wDilU9CVEp4Dfw+KPV0eCYXTcJUMzajlNO59pfH22Ui9b
+            VcU5GKWpN1MlnwtCVRvTwzplcGqplqcPFiVtiCzPCldTWVZSEYVVgd3vZNc9eL4V
+            8o8AaK0m7g3w6hZiP84qEKtV/xSGIX3q9XdJuNeqbrHb1PD6c1AevGOuQQtxs6oh
+            1xkOw1C6/062iIlcg2azqqS1PeHfcs37me/j/iBEvH6h0hH3CyhIBNbnzQ9JOW9d
+            g6yQIWDA6bjeBQTF1RcYQIyHiB22QZKTQqbY26VY5wuq5o33UMlm/mCj7N4=
+            -----END CERTIFICATE-----
+        features:
+          community: true
+    repoURL: https://charts.appscode.com/stable/
+    targetRevision: v2021.11.24
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+      - CreateNamespace=true
