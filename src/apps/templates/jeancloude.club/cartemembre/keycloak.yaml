@@ -17,7 +17,7 @@ spec:
         proxyAddressForwarding: true
         postgresql:
           postgresqlPassword: keycloak
-          postgresqlPostgresPassword: postgres
+          postgresqlPostgresPassword: keycloak
           persistence:
             size: 1Gi
           volumePermissions:
