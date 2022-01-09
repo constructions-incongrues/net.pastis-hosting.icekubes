@@ -21,6 +21,7 @@ spec:
             prefix: jeancloude.club
           volumeSnapshotLocation:
             name: default
+          defaultVolumesToRestic: true
         credentials:
           name: velero-credentials
           extraSecretRef: velero-credentials
@@ -39,11 +40,10 @@ spec:
             - mountPath: /target
               name: plugins
         backupsEnabled: true
-        snapshotsEnabled: true
+        snapshotsEnabled: false
         upgradeCRDs: false
-        defaultVolumesToRestic: true
         deployRestic: true
-        
+
     repoURL: https://vmware-tanzu.github.io/helm-charts
     targetRevision: 2.27.1
   syncPolicy:
