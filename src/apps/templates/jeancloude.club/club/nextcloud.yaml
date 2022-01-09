@@ -27,14 +27,14 @@ spec:
           primary:
             persistence:
               enabled: true
-          accessModes:
-            - ReadWriteMany
+            accessModes: ReadWriteMany
           volumePermissions:
             enabled: true
         nginx:
           enabled: false
         persistence:
           enabled: true
+          accessMode: ReadWriteMany
         redis:
           enabled: true
           architecture: standalone
