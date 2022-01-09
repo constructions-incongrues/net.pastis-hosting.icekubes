@@ -19,6 +19,8 @@ spec:
           postgresqlPassword: keycloak
           persistence:
             size: 1Gi
+            accessModes:
+              - ReadWriteMany
           volumePermissions:
             enabled: true
         service:
