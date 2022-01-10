@@ -8,6 +8,8 @@ bootstrap:
 	kubectl apply --wait -f src/apps/templates/platform/applications/kasten.yaml
 	kubectl -n platform-kasten wait --for condition=Established --timeout=60s crd profiles.config.kio.kasten.io
 	kubectl -n platform-kasten wait --for condition=Established --timeout=60s crd policies.config.kio.kasten.io
+	kubectl apply --wait -f src/apps/templates/platform/applications/traefik.yaml
+	kubectl -n platform-traefik wait --for condition=Established --timeout=60s crd policies.config.kio.kasten.io
 	helm template --dependency-update --wait --wait-for-jobs src/apps | kubectl apply --wait -f -
 
 portforward:
