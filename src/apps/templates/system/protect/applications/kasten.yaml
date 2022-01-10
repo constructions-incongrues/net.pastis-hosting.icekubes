@@ -30,7 +30,7 @@ spec:
         cluster:
           domainName: jeancloude.club
         ingress:
-          create: true
+          create: false
           class: nginx
           annotations:
             external-dns.alpha.kubernetes.io/hostname: kasten.jeancloude.club
