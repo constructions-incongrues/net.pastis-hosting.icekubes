@@ -17,7 +17,7 @@ spec:
         rbac:
           create: true
         scc:
-          create: true
+          create: false
         auth:
           basicAuth:
             enabled: true
