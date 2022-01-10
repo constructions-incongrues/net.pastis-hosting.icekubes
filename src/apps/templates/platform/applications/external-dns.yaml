@@ -9,7 +9,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: external-dns
-  project: system.expose
+  project: platform
   source:
     chart: external-dns
     helm:
