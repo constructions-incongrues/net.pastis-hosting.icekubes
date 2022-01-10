@@ -8,7 +8,7 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: external-dns
+    namespace: platform-external-dns
   project: platform
   source:
     chart: external-dns

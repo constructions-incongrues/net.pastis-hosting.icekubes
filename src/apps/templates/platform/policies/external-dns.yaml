@@ -19,7 +19,7 @@ spec:
       - key: k10.kasten.io/appNamespace
         operator: In
         values:
-          - external-dns
+          - platform-external-dns
   actions:
     - action: backup
       backupParameters:

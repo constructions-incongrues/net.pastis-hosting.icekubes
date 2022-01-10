@@ -19,7 +19,7 @@ spec:
       - key: k10.kasten.io/appNamespace
         operator: In
         values:
-          - traefik
+          - platform-traefik
   actions:
     - action: backup
       backupParameters:
