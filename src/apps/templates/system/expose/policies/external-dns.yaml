@@ -1,0 +1,41 @@
+kind: Policy
+apiVersion: config.kio.kasten.io/v1alpha1
+metadata:
+  name: external-dns-backup
+  namespace: kasten-io
+  labels:
+    argocd.argoproj.io/instance: external-dns
+    app.kubernetes.io/instance: external-dns
+    app.kubernetes.io/name: external-dns
+spec:
+  frequency: "@daily"
+  retention:
+    daily: 4
+    weekly: 1
+    monthly: 1
+    yearly: 1
+  selector:
+    matchExpressions:
+      - key: k10.kasten.io/appNamespace
+        operator: In
+        values:
+          - external-dns
+  actions:
+    - action: backup
+      backupParameters:
+        filters:
+          excludeResources:
+            - group: extensions
+              version: v1beta1
+              resource: ingresses
+        profile:
+          name: icekubes-infrastructure-openstack
+          namespace: kasten-io
+    - action: export
+      exportParameters:
+        frequency: "@daily"
+        profile:
+          name: icekubes-location-de
+          namespace: kasten-io
+        exportData:
+          enabled: true
