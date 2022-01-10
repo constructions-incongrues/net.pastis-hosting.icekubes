@@ -1,10 +1,12 @@
 kind: Profile
 apiVersion: config.kio.kasten.io/v1alpha1
 metadata:
-  name: k10infrastructureprofile-icekubes-openstack
+  name: icekubes
   namespace: kasten-io
   labels:
     argocd.argoproj.io/instance: kasten
+    app.kubernetes.io/instance: kasten
+    app.kubernetes.io/name: kasten
 spec:
   infra:
     credential:
@@ -12,7 +14,7 @@ spec:
       secret:
         apiVersion: v1
         kind: secret
-        name: k10secret-icekubes-openstack
+        name: icekubes-openstack-de
         namespace: kasten-io
     openStack:
       keystoneEndpoint: https://auth.cloud.ovh.net/v3/

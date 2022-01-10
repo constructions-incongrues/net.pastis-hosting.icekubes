@@ -15,7 +15,7 @@ spec:
     helm:
       values: |
         scc:
-          create: false
+          create: true
         auth:
           basicAuth:
             enabled: true
@@ -23,7 +23,7 @@ spec:
         eula:
           accept: true
           company: "Club Jean-Cloude"
-          email: tristan@rivoallan.net
+          email: jeancloude@jeancloude.club
         clusterName: Icekubes
         cluster:
           domainName: jeancloude.club
@@ -35,11 +35,11 @@ spec:
           server:
             enabled: true
             persistentVolume:
-              enabled: false
+              enabled: true
         grafana:
           enabled: false
         persistence:
-          enabled: false
+          enabled: true
         injectKanisterSidecar:
           enabled: true
           namespaceSelector:

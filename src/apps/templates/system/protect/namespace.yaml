@@ -6,4 +6,6 @@ metadata:
     k10.kasten.io/forcegenericbackup: 'true'
   labels:
     argocd.argoproj.io/instance: kasten
+    app.kubernetes.io/instance: kasten
+    app.kubernetes.io/name: kasten
     k10/injectKanisterSidecar: 'true'

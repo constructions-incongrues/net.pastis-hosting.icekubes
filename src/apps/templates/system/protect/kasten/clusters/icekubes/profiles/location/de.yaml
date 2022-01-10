@@ -1,17 +1,19 @@
 apiVersion: config.kio.kasten.io/v1alpha1
 kind: Profile
 metadata:
-  name: k10locationprofile-icekubes-de
+  name: icekubes-location-de
   namespace: kasten-io
   labels:
     argocd.argoproj.io/instance: kasten
+    app.kubernetes.io/instance: kasten
+    app.kubernetes.io/name: kasten
 spec:
   locationSpec:
     credential:
       secret:
         apiVersion: v1
         kind: secret
-        name: k10secret-icekubes-de
+        name: icekubes-aws
         namespace: kasten-io
       secretType: AwsAccessKey
     objectStore:
