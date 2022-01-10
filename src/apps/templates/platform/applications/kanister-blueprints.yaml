@@ -16,6 +16,7 @@ spec:
     targetRevision: 0.71.0
     directory:
       recurse: true
+      exclude: 'foundationdb/local_cluster.yaml'
   syncPolicy:
     automated:
       prune: true
