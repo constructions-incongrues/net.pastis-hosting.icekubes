@@ -15,7 +15,7 @@ spec:
     helm:
       values: |
         scc:
-          create: true
+          create: false
         auth:
           basicAuth:
             enabled: true
