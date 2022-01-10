@@ -42,11 +42,9 @@ spec:
           enabled: false
         injectKanisterSidecar:
           enabled: true
+          namespaceSelector:
+            matchLabels:
+              k10/injectKanisterSidecar: true
     repoURL: https://charts.kasten.io/
     targetRevision: 4.5.6
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: false
-    syncOptions:
-      - CreateNamespace=true
+  syncPolicy: {}
