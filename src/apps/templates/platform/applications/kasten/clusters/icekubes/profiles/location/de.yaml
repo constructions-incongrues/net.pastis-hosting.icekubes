@@ -1,7 +1,7 @@
 apiVersion: config.kio.kasten.io/v1alpha1
 kind: Profile
 metadata:
-  name: icekubes-location-de
+  name: icekubes-location-objectstore-de
   namespace: kasten-io
   labels:
     argocd.argoproj.io/instance: kasten
@@ -19,8 +19,9 @@ spec:
     objectStore:
       endpoint: https://s3.de.cloud.ovh.net
       name: kasten
+      path: icekubes
       objectStoreType: S3
       pathType: Directory
-      region: de
+      region: DE
     type: ObjectStore
   type: Location

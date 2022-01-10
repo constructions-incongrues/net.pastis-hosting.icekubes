@@ -33,7 +33,7 @@ spec:
       exportParameters:
         frequency: "@hourly"
         profile:
-          name: icekubes-location-de
+          name: icekubes-location-objectstore-de
           namespace: kasten-io
         exportData:
           enabled: true

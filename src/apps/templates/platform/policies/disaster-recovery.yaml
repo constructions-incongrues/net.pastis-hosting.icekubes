@@ -17,7 +17,7 @@ spec:
               version: v1beta1
               resource: ingresses
         profile:
-          name: icekubes-location-de
+          name: icekubes-location-objectstore-de
           namespace: kasten-io
   retention:
     daily: 1
