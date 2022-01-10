@@ -14,7 +14,7 @@ spec:
       secret:
         apiVersion: v1
         kind: secret
-        name: icekubes-openstack-de
+        name: icekubes-openstack
         namespace: kasten-io
     openStack:
       keystoneEndpoint: https://auth.cloud.ovh.net/v3/
