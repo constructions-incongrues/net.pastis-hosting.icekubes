@@ -14,6 +14,8 @@ spec:
     path: examples/stable
     repoURL: https://github.com/kanisterio/kanister.git
     targetRevision: 0.71.0
+    directory:
+      recurse: true
   syncPolicy:
     automated:
       prune: true
