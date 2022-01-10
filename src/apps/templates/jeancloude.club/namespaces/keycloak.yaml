@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: keycloak
+  name: club-jeancloude-keycloak
   annotations:
     k10.kasten.io/forcegenericbackup: 'true'
   labels:

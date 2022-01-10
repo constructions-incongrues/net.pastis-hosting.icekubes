@@ -8,7 +8,7 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: jeancloude-club-rocketchat
+    namespace: club-jeancloude-rocketchat
   project: jeancloude.club
   source:
     chart: rocketchat

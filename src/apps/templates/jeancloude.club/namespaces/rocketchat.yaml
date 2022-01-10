@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: rocketchat
+  name: club-jeancloude-rocketchat
   annotations:
     k10.kasten.io/forcegenericbackup: 'true'
   labels:
