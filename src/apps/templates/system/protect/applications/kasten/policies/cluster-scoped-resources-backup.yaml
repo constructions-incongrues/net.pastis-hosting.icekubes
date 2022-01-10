@@ -1,0 +1,37 @@
+kind: Policy
+apiVersion: config.kio.kasten.io/v1alpha1
+metadata:
+  name: cluster-scoped-resources-backup
+  namespace: kasten-io
+  labels:
+    argocd.argoproj.io/instance: kasten
+    app.kubernetes.io/instance: kasten
+    app.kubernetes.io/name: kasten
+spec:
+  frequency: "@hourly"
+  retention:
+    hourly: 24
+    daily: 7
+    weekly: 4
+    monthly: 12
+    yearly: 7
+  selector:
+    matchExpressions:
+      - key: k10.kasten.io/appNamespace
+        operator: In
+        values:
+          - kasten-io-cluster
+  actions:
+    - action: backup
+      backupParameters:
+        filters: {}
+        profile:
+          name: icekubes-location-de
+          namespace: kasten-io
+    - action: export
+      exportParameters:
+        frequency: "@hourly"
+        receiveString: bIzAPpoanmE17XJ/tBgwoMxBZEsGFhiB2gOp9Rh5eLMCPr1ipnfhbqGwRZ/WgdAHKRnwzKuNGU+u7zELhTr9uRZ/vRkbcc6QRqqL5MbG0JOYiKoyoW91GRn2x7vFUrdQaq5e7npr6uxTr7OQ7Nz15gulFt6U5Eh8ylXSBAOLzcirxNBXEWuumj6ognSOPS1O2OgpV6mer3Rc00o3MTiL9929XXSzHSjrpihH94zbaJdioYyeZS3AdosHtK2Qh965Mo7HaaGIcsFhEjSyoQslpieW4vuefe2C0hKKT2lyXyc/FH7GtmBwrjawsczW8McviAwvKtBNgmI5gsU4nwqHCOUMrPZyOF9PqIclnJvr5OX80E6J0YiB6ip/kgawgn09/dD0Ps8CgKf7F20wm9X/bxm4xupCQeDV6FimzZhBJCJcna1MLcSfYSJlWUHMkvv+IkmB7uUhbuvqAV4P6Bx1QCy7z9819LlrdkykaX4c9sMgsgAFgQyLBQMNYSxFCo/klvrEKFTPiGNh4JBYmx+53HcPlewxUvyaTDJ0et+okmc2vt5OL9/3AUhGNRHxOizFGhZPvARUvbR46nN3srEQuZQ2GVWmnM9r7N32uIfbx2E7+Q
+        profile:
+          name: icekubes-location-de
+          namespace: kasten-io
