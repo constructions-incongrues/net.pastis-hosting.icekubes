@@ -5,7 +5,7 @@ metadata:
   annotations:
     k10.kasten.io/forcegenericbackup: 'true'
   labels:
-    argocd.argoproj.io/instance: kasten
-    app.kubernetes.io/instance: kasten
-    app.kubernetes.io/name: kasten
+    argocd.argoproj.io/instance: external-dns
+    app.kubernetes.io/instance: external-dns
+    app.kubernetes.io/name: external-dns
     k10/injectKanisterSidecar: 'true'
