@@ -6,7 +6,8 @@ bootstrap:
 	helm upgrade --install --namespace platform-argocd --atomic argo-cd src/charts/argocd/
 	kubectl apply --wait -f src/apps/templates/platform/project.yaml
 	kubectl apply --wait -f src/apps/templates/platform/applications/kasten.yaml
-	kubectl -n platform-kasten wait --for condition=established --timeout=60s crd/config.kio.kasten.io/v1alpha1
+	kubectl -n platform-kasten wait --for condition=Established --timeout=60s crd profiles.config.kio.kasten.io
+	kubectl -n platform-kasten wait --for condition=Established --timeout=60s crd policies.config.kio.kasten.io
 	helm template --dependency-update --wait --wait-for-jobs src/apps | kubectl apply --wait -f -
 
 portforward:

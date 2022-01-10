@@ -1,7 +1,7 @@
 apiVersion: config.kio.kasten.io/v1alpha1
 kind: Policy
 metadata:
-  name: k10-disaster-recovery-policy
+  name: platform-kasten-disaster-recovery-policy
   namespace: platform-kasten
   labels:
     argocd.argoproj.io/instance: kasten
