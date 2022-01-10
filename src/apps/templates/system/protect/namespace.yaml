@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: system.protect
+  name: kasten-io
   annotations:
     k10.kasten.io/forcegenericbackup: 'true'
   labels:
