@@ -18,8 +18,8 @@ spec:
       secretType: AwsAccessKey
     objectStore:
       endpoint: https://s3.de.cloud.ovh.net
-      name: kasten
-      path: net.pastis-hosting.icekubes
+      name: net.pastis-hosting.icekubes
+      path: kasten
       objectStoreType: S3
       pathType: Directory
       region: DE
