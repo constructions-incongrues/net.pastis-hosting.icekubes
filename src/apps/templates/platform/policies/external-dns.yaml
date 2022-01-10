@@ -2,7 +2,7 @@ kind: Policy
 apiVersion: config.kio.kasten.io/v1alpha1
 metadata:
   name: external-dns-backup
-  namespace: kasten-io
+  namespace: platform-kasten
   labels:
     argocd.argoproj.io/instance: external-dns
     app.kubernetes.io/instance: external-dns
@@ -33,6 +33,6 @@ spec:
         frequency: "@daily"
         profile:
           name: icekubes-location-objectstore-de
-          namespace: kasten-io
+          namespace: platform-kasten
         exportData:
           enabled: true

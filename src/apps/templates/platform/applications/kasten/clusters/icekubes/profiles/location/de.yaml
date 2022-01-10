@@ -2,7 +2,7 @@ apiVersion: config.kio.kasten.io/v1alpha1
 kind: Profile
 metadata:
   name: icekubes-location-objectstore-de
-  namespace: kasten-io
+  namespace: platform-kasten
   labels:
     argocd.argoproj.io/instance: kasten
     app.kubernetes.io/instance: kasten
@@ -14,7 +14,7 @@ spec:
         apiVersion: v1
         kind: secret
         name: icekubes-aws
-        namespace: kasten-io
+        namespace: platform-kasten
       secretType: AwsAccessKey
     objectStore:
       endpoint: https://s3.de.cloud.ovh.net

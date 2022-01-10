@@ -2,13 +2,13 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: kanister-blueprints
-  namespace: argo-cd
+  namespace: platform-argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: kasten-io
+    namespace: platform-kasten
   project: platform
   source:
     path: examples/stable

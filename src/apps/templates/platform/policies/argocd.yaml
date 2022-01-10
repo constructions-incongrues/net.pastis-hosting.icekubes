@@ -1,12 +1,12 @@
 kind: Policy
 apiVersion: config.kio.kasten.io/v1alpha1
 metadata:
-  name: argo-cd-backup
-  namespace: kasten-io
+  name: namespace: platform-argocd-backup
+  namespace: platform-kasten
   labels:
-    argocd.argoproj.io/instance: argo-cd
-    app.kubernetes.io/instance: argo-cd
-    app.kubernetes.io/name: argo-cd
+    argocd.argoproj.io/instance: namespace: platform-argocd
+    app.kubernetes.io/instance: namespace: platform-argocd
+    app.kubernetes.io/name: namespace: platform-argocd
 spec:
   frequency: "@daily"
   retention:
@@ -19,7 +19,7 @@ spec:
       - key: k10.kasten.io/appNamespace
         operator: In
         values:
-          - argo-cd
+          - namespace: platform-argocd
   actions:
     - action: backup
       backupParameters:
@@ -33,6 +33,6 @@ spec:
         frequency: "@daily"
         profile:
           name: icekubes-location-objectstore-de
-          namespace: kasten-io
+          namespace: platform-kasten
         exportData:
           enabled: true

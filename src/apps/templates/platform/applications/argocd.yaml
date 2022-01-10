@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argo-cd
-  namespace: argo-cd
+  name: argocd
+  namespace: platform-argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: argo-cd
+    namespace: platform-argocd
   project: platform
   source:
-    path: src/charts/argo-cd
+    path: src/charts/argocd
     repoURL: https://github.com/constructions-incongrues/club.jeancloude.k8s.git
     targetRevision: HEAD
   syncPolicy:
