@@ -19,7 +19,7 @@ spec:
     objectStore:
       endpoint: https://s3.de.cloud.ovh.net
       name: kasten
-      path: icekubes
+      path: net.pastis-hosting.icekubes
       objectStoreType: S3
       pathType: Directory
       region: DE
