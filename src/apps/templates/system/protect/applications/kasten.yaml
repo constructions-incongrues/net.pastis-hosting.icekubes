@@ -14,10 +14,6 @@ spec:
     chart: k10
     helm:
       values: |
-        statefulSet:
-          enabled: true
-          annotations:
-            k10.kasten.io/forcegenericbackup: 'true'
         rbac:
           create: true
         scc:
@@ -34,7 +30,8 @@ spec:
         cluster:
           domainName: jeancloude.club
         ingress:
-          create: false
+          create: true
+          class: nginx
           annotations:
             external-dns.alpha.kubernetes.io/hostname: kasten.jeancloude.club
         prometheus:
@@ -47,6 +44,10 @@ spec:
               fsGroup: 0
             persistentVolume:
               enabled: true
+            statefulSet:
+              enabled: true
+              annotations:
+                k10.kasten.io/forcegenericbackup: 'true'
         grafana:
           enabled: false
         persistence:
