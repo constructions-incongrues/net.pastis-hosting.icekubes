@@ -28,9 +28,6 @@ spec:
             - group: extensions
               version: v1beta1
               resource: ingresses
-        profile:
-          name: icekubes-infrastructure-openstack
-          namespace: kasten-io
     - action: export
       exportParameters:
         frequency: "@daily"
