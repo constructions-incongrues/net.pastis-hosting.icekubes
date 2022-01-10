@@ -36,12 +36,11 @@ spec:
         prometheus:
           server:
             enabled: true
-            server:
-              securityContext:
-                runAsNonRoot: false
-                runAsUser: 0
-                runAsGroup: 0
-                fsGroup: 0
+            securityContext:
+              runAsNonRoot: false
+              runAsUser: 0
+              runAsGroup: 0
+              fsGroup: 0
             persistentVolume:
               enabled: true
         grafana:
