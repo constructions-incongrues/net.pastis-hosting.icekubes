@@ -4,7 +4,7 @@ bootstrap:
 	helm repo update
 	cd src/charts/argo-cd && helm dependency update
 	helm upgrade --install --namespace argo-cd --atomic argo-cd src/charts/argo-cd/
-	helm template src/apps | kubectl apply --wait -f -
+	helm template --dependency-update --validate --verify --wait --wait-for-jobs src/apps | kubectl apply --wait -f -
 
 portforward:
 	kubectl --namespace argo-cd port-forward svc/argocd-argocd-server 8080:443

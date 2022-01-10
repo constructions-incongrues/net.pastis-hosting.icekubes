@@ -9,7 +9,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: jeancloude-club-keycloak
-  project: club.jeancloude.cartemembre
+  project: jeancloude.club
   source:
     chart: keycloak
     helm:
