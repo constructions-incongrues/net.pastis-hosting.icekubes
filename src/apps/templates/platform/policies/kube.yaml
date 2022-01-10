@@ -1,7 +1,7 @@
 kind: Policy
 apiVersion: config.kio.kasten.io/v1alpha1
 metadata:
-  name: platform-argocd-backup
+  name: kube-backup
   namespace: platform-kasten
   labels:
     argocd.argoproj.io/instance:  platform-argocd
@@ -19,7 +19,10 @@ spec:
       - key: k10.kasten.io/appNamespace
         operator: In
         values:
-          - namespace: platform-argocd
+          - kube-system
+          - kube-public
+          - kube-node-lease
+          - default
   actions:
     - action: backup
       backupParameters:
