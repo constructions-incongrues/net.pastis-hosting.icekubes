@@ -43,8 +43,7 @@ spec:
         injectKanisterSidecar:
           enabled: true
           namespaceSelector:
-            matchLabels:
-              k10/injectKanisterSidecar: true
+            matchLabels: 'k10/injectKanisterSidecar'
     repoURL: https://charts.kasten.io/
     targetRevision: 4.5.6
   syncPolicy: {}
