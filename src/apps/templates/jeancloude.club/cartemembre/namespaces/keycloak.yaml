@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: argo-cd
+  name: keycloak
   annotations:
     k10.kasten.io/forcegenericbackup: 'true'
   labels:
-    argocd.argoproj.io/instance: argo-cd
-    app.kubernetes.io/instance: argo-cd
-    app.kubernetes.io/name: argo-cd
+    argocd.argoproj.io/instance: keycloak
+    app.kubernetes.io/instance: keycloak
+    app.kubernetes.io/name: keycloak
     k10/injectKanisterSidecar: 'true'

@@ -1,15 +1,16 @@
 kind: Policy
 apiVersion: config.kio.kasten.io/v1alpha1
 metadata:
-  name: argo-cd-backup
+  name: keycloak-backup
   namespace: kasten-io
   labels:
-    argocd.argoproj.io/instance: argo-cd
-    app.kubernetes.io/instance: argo-cd
-    app.kubernetes.io/name: argo-cd
+    argocd.argoproj.io/instance: keycloak
+    app.kubernetes.io/instance: keycloak
+    app.kubernetes.io/name: keycloak
 spec:
-  frequency: "@daily"
+  frequency: "@hourlu"
   retention:
+    hourly: 12
     daily: 4
     weekly: 1
     monthly: 1
@@ -19,7 +20,7 @@ spec:
       - key: k10.kasten.io/appNamespace
         operator: In
         values:
-          - argo-cd
+          - keycloak
   actions:
     - action: backup
       backupParameters:
@@ -30,7 +31,7 @@ spec:
               resource: ingresses
     - action: export
       exportParameters:
-        frequency: "@daily"
+        frequency: "@hourly"
         profile:
           name: icekubes-location-de
           namespace: kasten-io
