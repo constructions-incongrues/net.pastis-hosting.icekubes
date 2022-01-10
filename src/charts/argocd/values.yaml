@@ -1,7 +1,7 @@
 argocd:
   installCRDs: true
   dex:
-    enabled: false
+    enabled: true
   server:
     extraArgs:
       - --insecure
@@ -16,10 +16,10 @@ argocd:
       url: https://argocd.jeancloude.club
     ingress:
       enabled: true
-      annotations:
-        external-dns.alpha.kubernetes.io/hostname: argocd.jeancloude.club
       hosts:
         - argocd.jeancloude.club
+      annotations:
+        external-dns.alpha.kubernetes.io/hostname: argocd.jeancloude.club
       configManagementPlugins: |
         - name: kustomized-helm
           init:
