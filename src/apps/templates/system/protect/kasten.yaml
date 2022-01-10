@@ -34,6 +34,9 @@ spec:
         prometheus:
           server:
             enabled: true
+            server:
+              securityContext:
+                runAsNonRoot: false
             persistentVolume:
               enabled: true
         grafana:
