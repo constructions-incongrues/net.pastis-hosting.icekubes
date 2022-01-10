@@ -19,7 +19,7 @@ spec:
       - key: k10.kasten.io/appNamespace
         operator: In
         values:
-          - namespace: platform-argocd
+          - platform-argocd
   actions:
     - action: backup
       backupParameters:
