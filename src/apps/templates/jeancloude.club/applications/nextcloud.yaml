@@ -25,7 +25,6 @@ spec:
           enabled: true
           postgresqlPassword: keycloak
           postgresqlPostgresPassword: keycloak
-          usePasswordFile: true
           persistence:
             enabled: true
             size: 1Gi
