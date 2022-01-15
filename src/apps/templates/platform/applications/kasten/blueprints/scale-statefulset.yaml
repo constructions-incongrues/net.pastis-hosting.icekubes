@@ -11,17 +11,16 @@ actions:
   backupPrehook:
     phases:
     - func: ScaleWorkload
-    name: scaleDown
-    args:
+      name: scaleDown
+      args:
         namespace: "{{ .StatefulSet.Namespace }}"
         kind: statefulset
         replicas: 0
-
   backupPosthook:
     phases:
     - func: ScaleWorkload
-    name: scaleUp
-    args:
+      name: scaleUp
+      args:
         namespace: "{{ .StatefulSet.Namespace }}"
         kind: statefulset
         replicas: 1

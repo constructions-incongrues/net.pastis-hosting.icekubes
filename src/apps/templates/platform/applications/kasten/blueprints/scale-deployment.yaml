@@ -11,8 +11,8 @@ actions:
   backupPrehook:
     phases:
     - func: ScaleWorkload
-    name: scaleDown
-    args:
+      name: scaleDown
+      args:
         namespace: "{{ .Deployment.Namespace }}"
         kind: deployment
         replicas: 0
@@ -20,8 +20,8 @@ actions:
   backupPosthook:
     phases:
     - func: ScaleWorkload
-    name: scaleUp
-    args:
+      name: scaleUp
+      args:
         namespace: "{{ .Deployment.Namespace }}"
         kind: deployment
         replicas: 1
