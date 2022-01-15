@@ -2,8 +2,6 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: platform-kasten
-  annotations:
-    k10.kasten.io/forcegenericbackup: 'true'
   labels:
     argocd.argoproj.io/instance: kasten
     app.kubernetes.io/instance: kasten
