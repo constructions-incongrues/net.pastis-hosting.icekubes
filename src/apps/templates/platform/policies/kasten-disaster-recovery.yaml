@@ -10,7 +10,7 @@ metadata:
 spec:
   actions:
     - action: backup
-
+      backupParameters:
         profile:
           name: icekubes-location-objectstore-de
           namespace: platform-kasten
