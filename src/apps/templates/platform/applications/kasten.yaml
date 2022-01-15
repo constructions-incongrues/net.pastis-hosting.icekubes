@@ -16,6 +16,7 @@ spec:
       values: |
         ingress:
           create: true
+          class: traefik-internal
         apigateway:
           serviceResolver: endpoint
         externalGateway:
