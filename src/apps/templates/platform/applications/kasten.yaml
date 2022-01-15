@@ -42,7 +42,7 @@ spec:
             persistentVolume:
               enabled: false
         grafana:
-          enabled: true
+          enabled: false
         persistence:
           enabled: true
         services:
