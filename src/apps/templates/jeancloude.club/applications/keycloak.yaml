@@ -18,8 +18,6 @@ spec:
           createAdminUser: true
           adminUser: admin
           adminPassword: admin
-        commonAnnotations:
-          k10.kasten.io/forcegenericbackup: 'true'
         proxyAddressForwarding: true
         postgresql:
           postgresqlPassword: keycloak

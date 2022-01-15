@@ -1,0 +1,27 @@
+apiVersion: cr.kanister.io/v1alpha1
+kind: Blueprint
+metadata:
+  name: scale-statefulset
+  namespace: platform-kasten
+  labels:
+    app.kubernetes.io/component: kasten
+    app.kubernetes.io/instance: kasten
+    app.kubernetes.io/name: kasten
+actions:
+  backupPrehook:
+    phases:
+    - func: ScaleWorkload
+    name: scaleDown
+    args:
+        namespace: "{{ .StatefulSet.Namespace }}"
+        kind: statefulset
+        replicas: 0
+
+  backupPosthook:
+    phases:
+    - func: ScaleWorkload
+    name: scaleUp
+    args:
+        namespace: "{{ .StatefulSet.Namespace }}"
+        kind: statefulset
+        replicas: 1
