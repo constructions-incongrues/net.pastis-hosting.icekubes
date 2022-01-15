@@ -12,6 +12,12 @@ spec:
   project: jeancloude.club
   source:
     chart: keycloak
+    plugin:
+      name: argocd-lovely-plugin
+      env:
+        - name: LOVELY_HELM_PATCH
+          value: |
+            [{ "op": "add", "path": "/spec/containers/0/env", "value": { "action": "add", "name": "cluster, "value": "COUCOU" } }]
     helm:
       values: |
         auth:
@@ -26,6 +32,9 @@ spec:
             size: 1Gi
           volumePermissions:
             enabled: true
+          primary:
+            annotations:
+              k10.kasten.io/forcegenericbackup: 'true'
         service:
           type: ClusterIP
         ingress:
@@ -33,12 +42,6 @@ spec:
           hostname: cartemembre.jeancloude.club
           annotations:
             external-dns.alpha.kubernetes.io/hostname: cartemembre.jeancloude.club
-    plugin:
-      name: argocd-lovely-plugin
-      env:
-        - name: LOVELY_HELM_PATCH
-          value: |
-            [{ "op": "add", "path": "/spec/containers/0/env", "value": { "action": "add", "name": "cluster, "value": "COUCOU" } }]
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 5.2.8
   syncPolicy:
