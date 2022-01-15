@@ -16,7 +16,6 @@ spec:
       values: |
         commonAnnotations:
           k10.kasten.io/forcegenericbackup: 'true'
-          kanister.kasten.io/blueprint: postgres-bp
         proxyAddressForwarding: true
         postgresql:
           postgresqlPassword: keycloak
