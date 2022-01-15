@@ -22,12 +22,7 @@ spec:
           - platform-argocd
   actions:
     - action: backup
-      backupParameters:
-        filters:
-          excludeResources:
-            - group: extensions
-              version: v1beta1
-              resource: ingresses
+
     - action: export
       exportParameters:
         frequency: "@daily"
