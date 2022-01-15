@@ -7,7 +7,6 @@ metadata:
     app.kubernetes.io/component: kasten
     app.kubernetes.io/instance: kasten
     app.kubernetes.io/name: kasten
-    argocd.argoproj.io/instance: kasten
   annotations:
     external-dns.alpha.kubernetes.io/hostname: kasten.jeancloude.club
 spec:

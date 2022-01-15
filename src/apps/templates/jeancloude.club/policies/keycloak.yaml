@@ -23,11 +23,6 @@ spec:
           - club-jeancloude-keycloak
   actions:
     - action: backup
-      backupParameters:
-        filters:
-          excludeResources:
-            - group: extensions
-              resource: ingresses
     - action: export
       exportParameters:
         frequency: "@hourly"
