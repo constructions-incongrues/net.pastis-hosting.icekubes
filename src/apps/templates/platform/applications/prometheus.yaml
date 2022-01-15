@@ -15,7 +15,7 @@ spec:
     helm:
       values: ""
     repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: 0.53.1
+    targetRevision: 6.6.1
   syncPolicy:
     automated:
       prune: true
