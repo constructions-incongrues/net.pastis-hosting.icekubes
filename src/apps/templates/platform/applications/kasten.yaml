@@ -14,8 +14,6 @@ spec:
     chart: k10
     helm:
       values: |
-        externalGateway:
-          create: true
         rbac:
           create: true
         scc:
