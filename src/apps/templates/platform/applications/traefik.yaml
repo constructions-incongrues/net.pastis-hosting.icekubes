@@ -17,6 +17,9 @@ spec:
         ingressClass:
           enabled: true
           isDefaultClass: true
+        ingressRoute:
+          dashboard:
+            enabled: false
         providers:
           kubernetesIngress:
             publishedService:
