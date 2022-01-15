@@ -14,8 +14,10 @@ spec:
     chart: k10
     helm:
       values: |
-        apigateway:
-          serviceResolver: endpoint
+        externalGateway:
+          create: true
+        # apigateway:
+        #   serviceResolver: endpoint
         rbac:
           create: true
         scc:
