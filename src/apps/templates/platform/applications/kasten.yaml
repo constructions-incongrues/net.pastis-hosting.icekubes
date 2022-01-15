@@ -16,8 +16,6 @@ spec:
       values: |
         externalGateway:
           create: true
-        apigateway:
-          serviceResolver: endpoint
         rbac:
           create: true
         scc:
@@ -26,6 +24,8 @@ spec:
           basicAuth:
             enabled: true
             htpasswd: "tristan:{SHA}K+iK4HpzuMKnVlbTaxQSkD9/eLg="
+          tokenAuth:
+            enabled: true
         eula:
           accept: true
           company: "Club Jean-Cloude"
