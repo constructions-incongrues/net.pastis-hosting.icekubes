@@ -16,7 +16,7 @@ spec:
       values: |
         extraEnvVars:
           - name: KEYCLOAK_EXTRA_ARGS
-            value: "-Dkeycloak.import=/config/realm.json"
+            value: "-Dkeycloak.import=/config/realms.json"
         extraVolumeMounts:
           - name: config
             mountPath: "/config"
@@ -24,10 +24,10 @@ spec:
         extraVolumes:
           - name: config
             configMap:
-              name: keycloak-realm
+              name: realms
               items:
-              - key: "realm.json"
-                path: "realm.json"
+              - key: "realms.json"
+                path: "realms.json"
         auth:
           createAdminUser: true
           adminUser: admin
