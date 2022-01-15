@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/instance: keycloak
     app.kubernetes.io/name: keycloak
 data:
-  realm.json: |
+  realms.json: |
     {
       "id": "jeancloude.club",
       "realm": "jeancloude.club",
