@@ -21,18 +21,23 @@ spec:
           enabled: true
         internalDatabase:
           enabled: false
-        mariadb:
+        postgresql:
           enabled: true
-          architecture: standalone
-          primary:
-            persistence:
-              enabled: true
+          postgresqlPassword: keycloak
+          postgresqlPostgresPassword: keycloak
+          persistence:
+            size: 1Gi
           volumePermissions:
             enabled: true
+          primary:
+            annotations:
+              k10.kasten.io/forcegenericbackup: 'true'
         nginx:
           enabled: false
         persistence:
           enabled: true
+          annotations:
+            k10.kasten.io/forcegenericbackup: 'true'
         redis:
           enabled: true
           architecture: standalone
