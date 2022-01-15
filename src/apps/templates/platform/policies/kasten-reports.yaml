@@ -14,4 +14,4 @@ spec:
         statsIntervalDays: 1
   comment: The policy for enabling auto-generated reports.
   createdBy: k10-admin
-  frequency: '@daily'
+  frequency: '@hourly'
