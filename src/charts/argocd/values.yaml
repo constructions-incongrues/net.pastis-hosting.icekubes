@@ -1,4 +1,4 @@
-argocd:
+argo-cd:
   installCRDs: true
   dex:
     enabled: true
@@ -14,12 +14,6 @@ argocd:
           name: argocd
           url: https://argoproj.github.io/argo-helm
       url: https://argocd.jeancloude.club
-    ingress:
-      enabled: true
-      hosts:
-        - argocd.jeancloude.club
-      annotations:
-        external-dns.alpha.kubernetes.io/hostname: argocd.jeancloude.club
       configManagementPlugins: |
         - name: kustomized-helm
           init:
@@ -28,3 +22,15 @@ argocd:
           generate:
             command: ["/bin/sh", "-c"]
             args: ["echo \"$HELM_VALUES\" | helm template . --name-template $ARGOCD_APP_NAME --namespace $ARGOCD_APP_NAMESPACE $HELM_ARGS -f - --include-crds > all.yaml && kustomize build"]
+    ingress:
+      enabled: true
+      hosts:
+        - argocd.jeancloude.club
+      annotations:
+        external-dns.alpha.kubernetes.io/hostname: argocd.jeancloude.club
+    ingressGrpc:
+      enabled: true
+      hosts:
+        - argocd.jeancloude.club
+      annotations:
+        external-dns.alpha.kubernetes.io/hostname: argocd.jeancloude.club
