@@ -40,7 +40,9 @@ spec:
             k10.kasten.io/forcegenericbackup: 'true'
         redis:
           enabled: true
-          architecture: standalone
+          persistence:
+            enabled: false
+          architecture: replication
           volumePermissions:
             enabled: true
         nextcloud:
