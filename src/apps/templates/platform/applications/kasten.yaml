@@ -37,19 +37,10 @@ spec:
         prometheus:
           server:
             enabled: true
-            securityContext:
-              runAsNonRoot: false
-              runAsUser: 0
-              runAsGroup: 0
-              fsGroup: 0
             persistentVolume:
-              enabled: true
-            statefulSet:
-              enabled: true
-              annotations:
-                k10.kasten.io/forcegenericbackup: 'true'
+              enabled: false
         grafana:
-          enabled: false
+          enabled: true
         persistence:
           enabled: true
         services:
