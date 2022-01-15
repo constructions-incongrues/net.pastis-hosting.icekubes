@@ -13,7 +13,7 @@ spec:
   source:
     chart: kube-prometheus
     helm:
-      values:
+      values: |
         prometheus:
           ingress:
             enabled: true
