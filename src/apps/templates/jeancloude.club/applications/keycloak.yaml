@@ -12,12 +12,6 @@ spec:
   project: jeancloude.club
   source:
     chart: keycloak
-    plugin:
-      name: argocd-lovely-plugin
-      env:
-        - name: LOVELY_HELM_PATCH
-          value: |
-            [{ "op": "add", "path": "/spec/containers/0/env", "value": { "action": "add", "name": "cluster, "value": "COUCOU" } }]
     helm:
       values: |
         auth:
