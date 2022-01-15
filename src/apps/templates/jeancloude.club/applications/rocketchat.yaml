@@ -20,6 +20,8 @@ spec:
             username: mongo
             password: mongo
             database: rocketchat
+            annotations:
+              k10.kasten.io/forcegenericbackup: 'true'
         host: allo.jeancloude.club
         ingress:
           enabled: true
