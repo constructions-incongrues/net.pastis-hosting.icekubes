@@ -1,0 +1,17 @@
+apiVersion: config.kio.kasten.io/v1alpha1
+kind: Policy
+metadata:
+  name: k10-system-reports-policy
+  namespace: platform-kasten
+  labels:
+    argocd.argoproj.io/instance:  kasten
+    app.kubernetes.io/instance:  kasten
+    app.kubernetes.io/name: kasten
+spec:
+  actions:
+    - action: report
+      reportParameters:
+        statsIntervalDays: 1
+  comment: The policy for enabling auto-generated reports.
+  createdBy: k10-admin
+  frequency: '@daily'
