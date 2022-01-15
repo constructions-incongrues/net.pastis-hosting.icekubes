@@ -20,7 +20,7 @@ spec:
       - key: k10.kasten.io/appNamespace
         operator: In
         values:
-          - platform-kasten-cluster
+          - kasten-io-cluster
   actions:
     - action: backup
       backupParameters:
