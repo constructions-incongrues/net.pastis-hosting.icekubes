@@ -13,7 +13,7 @@ actions:
     - func: ScaleWorkload
       name: scaleDown
       args:
-        namespace: "{{ .Deployment.Namespace }}"
+        namespace: "{{ "{{" }} .Deployment.Namespace {{ "}}" }}"
         kind: deployment
         replicas: 0
 
@@ -22,6 +22,6 @@ actions:
     - func: ScaleWorkload
       name: scaleUp
       args:
-        namespace: "{{ .Deployment.Namespace }}"
+        namespace: "{{ "{{" }} .Deployment.Namespace {{ "}}" }}"
         kind: deployment
         replicas: 1

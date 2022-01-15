@@ -13,7 +13,7 @@ actions:
     - func: ScaleWorkload
       name: scaleDown
       args:
-        namespace: "{{ .StatefulSet.Namespace }}"
+        namespace: "{{ "{{" }} .StatefulSet.Namespace {{ "}}" }}"
         kind: statefulset
         replicas: 0
   backupPosthook:
@@ -21,6 +21,6 @@ actions:
     - func: ScaleWorkload
       name: scaleUp
       args:
-        namespace: "{{ .StatefulSet.Namespace }}"
+        namespace: "{{ "{{" }} .StatefulSet.Namespace {{ "}}" }}"
         kind: statefulset
         replicas: 1
