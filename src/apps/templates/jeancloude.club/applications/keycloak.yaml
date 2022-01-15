@@ -23,6 +23,7 @@ spec:
           postgresqlPassword: keycloak
           postgresqlPostgresPassword: keycloak
           persistence:
+            enabled: true
             size: 1Gi
           volumePermissions:
             enabled: true
