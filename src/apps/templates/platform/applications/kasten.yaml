@@ -37,6 +37,8 @@ spec:
         prometheus:
           server:
             enabled: true
+            baseURL: /kasten/prometheus/
+            prefixURL: /kasten/prometheus/
             persistentVolume:
               enabled: false
         grafana:
