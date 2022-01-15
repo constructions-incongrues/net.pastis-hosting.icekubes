@@ -16,6 +16,9 @@ spec:
       values: |
         externalGateway:
           create: true
+          fqdn:
+            type: external-dns
+            name: kasten.jeancloude.club
         rbac:
           create: true
         scc:
