@@ -22,7 +22,6 @@ spec:
           - platform-external-dns
   actions:
     - action: backup
-
     - action: export
       exportParameters:
         frequency: "@daily"

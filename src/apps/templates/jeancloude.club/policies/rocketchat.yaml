@@ -23,7 +23,6 @@ spec:
           - club-jeancloude-rocketchat
   actions:
     - action: backup
-
     - action: export
       exportParameters:
         frequency: "@hourly"

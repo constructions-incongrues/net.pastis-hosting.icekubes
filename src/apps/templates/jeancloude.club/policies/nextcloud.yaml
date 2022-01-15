@@ -23,7 +23,6 @@ spec:
           - club-jeancloude-nextcloud
   actions:
     - action: backup
-
     - action: export
       exportParameters:
         frequency: "@hourly"

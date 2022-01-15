@@ -22,7 +22,6 @@ spec:
           - platform-traefik
   actions:
     - action: backup
-
     - action: export
       exportParameters:
         frequency: "@daily"

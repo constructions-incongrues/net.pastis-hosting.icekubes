@@ -4,9 +4,9 @@ metadata:
   name: platform-kube-backup
   namespace: platform-kasten
   labels:
-    argocd.argoproj.io/instance:  platform-argocd
-    app.kubernetes.io/instance:  platform-argocd
-    app.kubernetes.io/name: platform-argocd
+    argocd.argoproj.io/instance:  kasten
+    app.kubernetes.io/instance:  kasten
+    app.kubernetes.io/name: kasten
 spec:
   frequency: "@daily"
   retention:
@@ -25,7 +25,6 @@ spec:
           - default
   actions:
     - action: backup
-
     - action: export
       exportParameters:
         frequency: "@daily"
