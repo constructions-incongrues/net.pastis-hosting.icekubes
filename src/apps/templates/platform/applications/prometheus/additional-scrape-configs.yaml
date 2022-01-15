@@ -16,7 +16,6 @@ stringData:
           labels:
             app: "kasten"
 metadata:
-  creationTimestamp: null
   name: additional-scrape-configs
   namespace: platform-prometheus
   labels:
