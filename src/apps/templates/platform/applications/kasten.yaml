@@ -27,8 +27,6 @@ spec:
           company: "Club Jean-Cloude"
           email: jeancloude@jeancloude.club
         clusterName: Icekubes
-        cluster:
-          domainName: jeancloude.club
         ingress:
           create: false
           class: nginx
