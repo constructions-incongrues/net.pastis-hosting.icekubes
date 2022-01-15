@@ -14,16 +14,8 @@ spec:
     chart: k10
     helm:
       values: |
-        ingress:
-          create: true
-          class: traefik-internal
-        apigateway:
-          serviceResolver: endpoint
         externalGateway:
           create: true
-          fqdn:
-            type: external-dns
-            name: kasten.jeancloude.club
         rbac:
           create: true
         scc:
