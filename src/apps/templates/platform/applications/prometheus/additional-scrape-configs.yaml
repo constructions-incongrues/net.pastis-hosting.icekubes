@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Secret
 stringData:
   configs: |
-    - job_name: kasten
+    - job_name: k10
       scrape_interval: 15s
       honor_labels: true
       scheme: http
@@ -14,7 +14,7 @@ stringData:
         - targets:
           - 'prometheus-server.platform-kasten.svc.cluster.local'
           labels:
-            app: "kasten"
+            app: "k10"
 metadata:
   name: additional-scrape-configs
   namespace: platform-prometheus
