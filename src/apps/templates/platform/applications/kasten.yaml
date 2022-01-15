@@ -16,8 +16,8 @@ spec:
       values: |
         externalGateway:
           create: true
-        # apigateway:
-        #   serviceResolver: endpoint
+        apigateway:
+          serviceResolver: endpoint
         rbac:
           create: true
         scc:
