@@ -19,7 +19,7 @@ spec:
             enabled: true
             hostname: prometheus.jeancloude.club
             annotations:
-              external-dns.alpha.kubernetes.io/hostname: club.jeancloude.club
+              external-dns.alpha.kubernetes.io/hostname: prometheus.jeancloude.club
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 6.6.1
   syncPolicy:
