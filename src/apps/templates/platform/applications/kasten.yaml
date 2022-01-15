@@ -14,6 +14,8 @@ spec:
     chart: k10
     helm:
       values: |
+        apigateway:
+          serviceResolver: endpoint
         rbac:
           create: true
         scc:
@@ -61,6 +63,7 @@ spec:
           namespaceSelector:
             matchLabels:
               k10/injectKanisterSidecar: 'true'
+
     repoURL: https://charts.kasten.io/
     targetRevision: 4.5.6
   syncPolicy:
