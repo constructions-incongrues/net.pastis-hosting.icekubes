@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: argocd
-  namespace: platform-argocd
+  namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
   annotations:
@@ -11,7 +11,7 @@ spec:
   destination:
     chart: argo-cd
     server: https://kubernetes.default.svc
-    namespace: platform-argocd
+    namespace: argocd
   project: default
   source:
     helm:
@@ -45,6 +45,6 @@ spec:
   syncPolicy:
     automated:
       prune: true
-      selfHeal: false
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true

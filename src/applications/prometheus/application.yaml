@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: prometheus
-  namespace: platform-argocd
+  namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
   annotations:
@@ -10,7 +10,7 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: platform-prometheus
+    namespace: prometheus
   project: default
   source:
     chart: kube-prometheus
@@ -33,6 +33,6 @@ spec:
   syncPolicy:
     automated:
       prune: true
-      selfHeal: false
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true
