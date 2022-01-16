@@ -12,7 +12,7 @@ spec:
     chart: argo-cd
     server: https://kubernetes.default.svc
     namespace: platform-argocd
-  project: platform
+  project: default
   source:
     helm:
       values: |

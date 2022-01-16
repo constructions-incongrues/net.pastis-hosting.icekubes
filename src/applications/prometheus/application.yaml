@@ -11,7 +11,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: platform-prometheus
-  project: platform
+  project: default
   source:
     chart: kube-prometheus
     helm:

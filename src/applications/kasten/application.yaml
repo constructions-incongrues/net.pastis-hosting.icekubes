@@ -11,7 +11,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: platform-kasten
-  project: platform
+  project: default
   source:
     chart: k10
     helm:

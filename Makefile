@@ -1,5 +1,4 @@
 bootstrap: helm argocd applicationset
-	
 
 helm:
 	helm repo add argo https://argoproj.github.io/argo-helm
