@@ -6,8 +6,8 @@ argocd:
 	helm upgrade --install --namespace platform-argocd --atomic argocd src/charts/argocd/
 
 platform: argocd
-	kubectl apply --wait -f src/projects/platform/templates/project.yaml
-	helm template --dependency-update --wait --wait-for-jobs src/projects/platform | kubectl apply --wait -f -
+	kubectl apply --wait -f src/platform/templates/project.yaml
+	helm template --dependency-update --wait --wait-for-jobs src/platform | kubectl apply --wait -f -
 
 bootstrap:
 	-kubectl create namespace platform-argocd

@@ -11,7 +11,7 @@ spec:
     namespace: platform-argocd
   project: platform
   source:
-    path: src/projects/platform
+    path: src/platform
     repoURL: https://github.com/constructions-incongrues/club.jeancloude.k8s.git
     targetRevision: HEAD
   syncPolicy:

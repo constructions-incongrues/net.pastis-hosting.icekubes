@@ -9,13 +9,13 @@ metadata:
     argocd.argoproj.io/sync-wave: "1"
 spec:
   destination:
+    chart: argo-cd
     server: https://kubernetes.default.svc
     namespace: platform-argocd
   project: platform
   source:
-    path: src/charts/argocd
-    repoURL: https://github.com/constructions-incongrues/club.jeancloude.k8s.git
-    targetRevision: HEAD
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: 3.13.0
   syncPolicy:
     automated:
       prune: true
