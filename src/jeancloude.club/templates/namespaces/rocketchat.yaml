@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: club-jeancloude-rocketchat
-  labels:
-    argocd.argoproj.io/instance: rocketchat
-    app.kubernetes.io/instance: rocketchat
-    app.kubernetes.io/name: rocketchat
-    k10/injectKanisterSidecar: 'true'

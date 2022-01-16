@@ -1,21 +1,27 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd
+  name: external-dns
   namespace: platform-argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "10"
 spec:
   destination:
-    chart: argo-cd
     server: https://kubernetes.default.svc
-    namespace: platform-argocd
+    namespace: platform-external-dns
   project: platform
   source:
+    chart: external-dns
+    helm:
+      values: |
+        policy: sync
+        provider: cloudflare
+        cloudflare:
+          apiToken: C6l3Ek8k13OzXHmvJp413hrFXQNUHBGIb20X476x
     repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: 3.13.0
+    targetRevision: 6.0.2
   syncPolicy:
     automated:
       prune: true

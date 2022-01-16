@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: club-jeancloude-nextcloud
-  labels:
-    argocd.argoproj.io/instance: nextcloud
-    app.kubernetes.io/instance: nextcloud
-    app.kubernetes.io/name: nextcloud
-    k10/injectKanisterSidecar: 'true'

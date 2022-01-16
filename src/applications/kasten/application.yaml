@@ -6,7 +6,7 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "20"
 spec:
   destination:
     server: https://kubernetes.default.svc
@@ -33,7 +33,7 @@ spec:
           create: false
           class: nginx
           annotations:
-            external-dns.alpha.kubernetes.io/hostname: kasten.jeancloude.club
+            external-dns.alpha.kubernetes.io/hostname: kasten.pastis-hosting.net
         prometheus:
           server:
             enabled: true
