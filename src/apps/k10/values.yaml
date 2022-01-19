@@ -27,7 +27,8 @@ k10:
   grafana:
     enabled: false
   persistence:
-    enabled: true
+    enabled: false
+    size: 2Gi
   services:
     securityContext:
       runAsUser: 0
