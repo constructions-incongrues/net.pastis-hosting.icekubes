@@ -1,0 +1,38 @@
+rbac:
+  create: true
+scc:
+  create: false
+auth:
+  basicAuth:
+    enabled: true
+    htpasswd: "tristan:{SHA}K+iK4HpzuMKnVlbTaxQSkD9/eLg="
+eula:
+  accept: true
+  company: "Club Jean-Cloude"
+  email: jeancloude@jeancloude.club
+clusterName: Icekubes
+ingress:
+  create: true
+  host: kasten.pastis-hosting.net
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: kasten.pastis-hosting.net
+prometheus:
+  server:
+    enabled: true
+    baseURL: /kasten/prometheus/
+    prefixURL: /kasten/prometheus/
+    persistentVolume:
+      enabled: false
+grafana:
+  enabled: false
+persistence:
+  enabled: true
+services:
+  securityContext:
+    runAsUser: 0
+    fsGroup: 0
+injectKanisterSidecar:
+  enabled: true
+  namespaceSelector:
+    matchLabels:
+      k10/injectKanisterSidecar: 'true'
