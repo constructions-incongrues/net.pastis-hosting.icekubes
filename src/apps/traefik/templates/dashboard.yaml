@@ -4,7 +4,7 @@ metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
   namespace: {{ .Release.Namespace }}
-  name: {{ .Release.Name }}-dashboard
+  name: {{ .Release.Name }}-dashboard-ingressroute
 spec:
   entryPoints:
     - web
