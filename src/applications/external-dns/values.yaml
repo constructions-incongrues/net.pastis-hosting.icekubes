@@ -1,7 +1,0 @@
-provider: cloudflare
-cloudflare:
-  apiToken: BYR8IAr6DNRc5JfUZtGtirRzLJV-XMJAfwYjIKHK
-policy: upsert-only
-domainFilters:
-  - jeancloude.club
-  - pastis-hosting.net
