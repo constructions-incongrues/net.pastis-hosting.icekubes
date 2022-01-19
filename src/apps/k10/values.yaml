@@ -14,14 +14,14 @@ k10:
   clusterName: Icekubes
   ingress:
     create: true
-    host: kasten.pastis-hosting.net
+    host: k10.pastis-hosting.net
     annotations:
-      external-dns.alpha.kubernetes.io/hostname: kasten.pastis-hosting.net
+      external-dns.alpha.kubernetes.io/hostname: k10.pastis-hosting.net
   prometheus:
     server:
       enabled: true
-      baseURL: /kasten/prometheus/
-      prefixURL: /kasten/prometheus/
+      baseURL: /k10/prometheus/
+      prefixURL: /k10/prometheus/
       persistentVolume:
         enabled: false
   grafana:
