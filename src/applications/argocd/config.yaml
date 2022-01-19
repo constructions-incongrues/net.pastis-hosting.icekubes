@@ -1,6 +1,6 @@
 helm:
   chart: argo-cd
-  repoURL: https://charts.bitnami.com/bitnami
+  repoURL: https://argoproj.github.io/argo-helm
   targetRevision: 3.30.0
   values: |
     installCRDs: true
