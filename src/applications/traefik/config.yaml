@@ -8,7 +8,7 @@ helm:
       isDefaultClass: true
     ingressRoute:
       dashboard:
-        enabled: true
+        enabled: false
     providers:
       kubernetesIngress:
         publishedService:
