@@ -1,4 +1,4 @@
-bootstrap: helm argocd applicationset
+bootstrap: helm argocd argocd-applicationset
 
 helm:
 	helm repo add argo https://argoproj.github.io/argo-helm
@@ -18,7 +18,7 @@ argocd:
 		--wait \
 		--wait-for-jobs
 
-applicationset:
+argocd-applicationset:
 	helm upgrade \
 		argocd-applicationset \
 		argo/argocd-applicationset \

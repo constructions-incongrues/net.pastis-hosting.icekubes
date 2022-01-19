@@ -1,0 +1,9 @@
+helm:
+  chart: external-dns
+  repoURL: https://charts.bitnami.com/bitnami
+  targetRevision: 6.0.2
+  values: |
+    policy: sync
+    provider: cloudflare
+    cloudflare:
+      apiToken: C6l3Ek8k13OzXHmvJp413hrFXQNUHBGIb20X476x

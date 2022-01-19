@@ -2,22 +2,31 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: platform
+  namespace: argocd
 spec:
   generators:
   - git:
       repoURL: https://github.com/constructions-incongrues/net.pastis-hosting.k8s.git
       revision: HEAD
-      directories:
-      - path: src/applications/*
+      files:
+      - path: src/applications/**/config.yaml
   template:
     metadata:
-      name: '{{path.basename}}'
+      name: '{{ path.basename }}'
+      finalizers:
+      - resources-finalizer.argocd.argoproj.io
     spec:
       project: default
+      chart: '{{ helm.chart }}'
       source:
-        repoURL: https://github.com/constructions-incongrues/net.pastis-hosting.k8s.git
-        targetRevision: HEAD
-        path: '{{path}}'
+        repoURL: '{{ helm.repoURL }}'
+        targetRevision: '{{ helm.targetRevision }}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{path.basename}}'
+        namespace: '{{ path.basename }}'
