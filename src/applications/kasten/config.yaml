@@ -1,7 +1,7 @@
 helm:
   chart: k10
   repoURL: https://charts.kasten.io/
-  targetRevision: 4.5.6
+  targetRevision: 4.5.7
   values: |
     rbac:
       create: true
