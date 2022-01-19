@@ -17,8 +17,7 @@ helm:
       email: jeancloude@jeancloude.club
     clusterName: Icekubes
     ingress:
-      create: false
-      class: nginx
+      create: true
       annotations:
         external-dns.alpha.kubernetes.io/hostname: kasten.pastis-hosting.net
     prometheus:
