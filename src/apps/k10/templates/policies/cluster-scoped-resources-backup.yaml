@@ -1,0 +1,33 @@
+kind: Policy
+apiVersion: config.kio.kasten.io/v1alpha1
+metadata:
+  labels:
+{{ include "helm.labels" . | indent 4 }}
+  namespace: {{ .Release.Namespace }}
+  name: {{ .Release.Name }}-cluster-scoped-resources-backup
+spec:
+  frequency: "@daily"
+  retention:
+    daily: 1
+    weekly: 1
+    monthly: 1
+    yearly: 1
+  selector:
+    matchExpressions:
+      - key: k10.kasten.io/appNamespace
+        operator: In
+        values:
+          - kasten-io-cluster
+  actions:
+    - action: backup
+      backupParameters:
+        filters: {}
+        profile:
+          name: {{ .Release.Name }}-icekubes-location-objectstore-de
+          namespace: {{ .Release.Namespace }}
+    - action: export
+      exportParameters:
+        frequency: "@daily"
+        profile:
+          name: {{ .Release.Name }}-icekubes-location-objectstore-de
+          namespace: {{ .Release.Namespace }}

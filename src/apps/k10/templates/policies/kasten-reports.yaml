@@ -1,0 +1,13 @@
+apiVersion: config.kio.kasten.io/v1alpha1
+kind: Policy
+metadata:
+  labels:
+{{ include "helm.labels" . | indent 4 }}
+  namespace: {{ .Release.Namespace }}
+  name: {{ .Release.Name }}-system-reports-policy
+spec:
+  actions:
+    - action: report
+      reportParameters:
+        statsIntervalDays: 1
+  frequency: '@daily'
