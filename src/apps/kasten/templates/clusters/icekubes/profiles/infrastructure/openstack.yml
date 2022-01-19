@@ -1,0 +1,20 @@
+kind: Profile
+apiVersion: config.kio.kasten.io/v1alpha1
+metadata:
+  labels:
+{{ include "helm.labels" . | indent 4 }}
+  namespace: {{ .Release.Namespace }}
+  name: {{ .Release.Name }}-icekubes-infrastructure-openstack
+spec:
+  infra:
+    credential:
+      secretType: OpenStackAccount
+      secret:
+        apiVersion: v1
+        kind: Secret
+        name: {{ .Release.Name }}-icekubes-openstack
+        namespace: {{ .Release.Namespace }}
+    openStack:
+      keystoneEndpoint: https://auth.cloud.ovh.net/v3/
+    type: OpenStack
+  type: Infra

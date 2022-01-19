@@ -1,0 +1,26 @@
+apiVersion: config.kio.kasten.io/v1alpha1
+kind: Profile
+metadata:
+  labels:
+{{ include "helm.labels" . | indent 4 }}
+  namespace: {{ .Release.Namespace }}
+  name: {{ .Release.Name }}-kanister-profile
+spec:
+  type: Kanister
+  kanister:
+    credential:
+      secretType: AwsAccessKey
+      secret:
+        apiVersion: v1
+        kind: secret
+        name: {{ .Release.Name }}-icekubes-aws
+        namespace: {{ .Release.Namespace }}
+    location:
+      type: ObjectStore
+      objectStore:
+        endpoint: https://s3.de.cloud.ovh.net
+        name: net.pastis-hosting.icekubes
+        path: kanister
+        objectStoreType: S3
+        pathType: Directory
+        region: DE
