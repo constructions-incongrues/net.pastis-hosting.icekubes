@@ -9,10 +9,10 @@ metadata:
     app.kubernetes.io/name: traefik
     argocd.argoproj.io/instance: traefik
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: traefik.pastis-hosting.net
+    external-dns.alpha.kubernetes.io/hostname: trfk.pastis-hosting.net
 spec:
   rules:
-    - host: traefik.pastis-hosting.net
+    - host: trfk.pastis-hosting.net
       http:
         paths:
           - path: /
