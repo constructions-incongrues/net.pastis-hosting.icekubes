@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: traefik
+  namespace: traefik
+  labels:
+    app.kubernetes.io/component: traefik
+    app.kubernetes.io/instance: traefik
+    app.kubernetes.io/name: traefik
+    argocd.argoproj.io/instance: traefik
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: traefik.pastis-hosting.net
+spec:
+  rules:
+    - host: traefik.pastis-hosting.net
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: traefik
+                port:
+                  name: http

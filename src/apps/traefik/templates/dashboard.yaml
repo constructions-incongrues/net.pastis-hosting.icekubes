@@ -1,0 +1,19 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: dashboard
+  namespace: traefik
+  labels:
+    app.kubernetes.io/component: traefik
+    app.kubernetes.io/instance: traefik
+    app.kubernetes.io/name: traefik
+    argocd.argoproj.io/instance: traefik
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`traefik.pastis-hosting.net`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
+      kind: Rule
+      services:
+        - name: api@internal
+          kind: TraefikService
