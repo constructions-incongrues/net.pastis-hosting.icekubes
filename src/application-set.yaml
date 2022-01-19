@@ -21,6 +21,8 @@ spec:
         chart: '{{ helm.chart }}'
         repoURL: '{{ helm.repoURL }}'
         targetRevision: '{{ helm.targetRevision }}'
+        helm:
+          values: '{{ helm.values }}'
       syncPolicy:
         automated:
           prune: true
