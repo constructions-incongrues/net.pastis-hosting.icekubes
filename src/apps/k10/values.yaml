@@ -28,7 +28,6 @@ k10:
     enabled: false
   persistence:
     enabled: false
-    size: 2Gi
   services:
     securityContext:
       runAsUser: 0
