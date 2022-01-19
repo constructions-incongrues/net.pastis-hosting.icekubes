@@ -22,7 +22,7 @@ spec:
         repoURL: '{{ helm.repoURL }}'
         targetRevision: '{{ helm.targetRevision }}'
         helm:
-          valuesFiles:
+          valueFiles:
             - values.yaml
       syncPolicy:
         automated:
