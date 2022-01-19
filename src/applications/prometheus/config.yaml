@@ -9,9 +9,9 @@ helm:
         hostname: prometheus.pastis-hosting.net
         annotations:
           external-dns.alpha.kubernetes.io/hostname: prometheus.pastis-hosting.net
-    # additionalScrapeConfigs:
-    #   enabled: true
-    #   type: external
-    #   external:
-    #     name: additional-scrape-configs
-    #     key: configs
+    additionalScrapeConfigs:
+      enabled: false
+      type: external
+      external:
+        name: additional-scrape-configs
+        key: configs
