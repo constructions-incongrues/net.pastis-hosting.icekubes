@@ -17,8 +17,8 @@ spec:
       - resources-finalizer.argocd.argoproj.io
     spec:
       project: default
-      chart: '{{ helm.chart }}'
       source:
+        chart: '{{ helm.chart }}'
         repoURL: '{{ helm.repoURL }}'
         targetRevision: '{{ helm.targetRevision }}'
       syncPolicy:
