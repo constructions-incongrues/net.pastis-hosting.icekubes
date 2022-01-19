@@ -1,13 +1,10 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: traefik
-  namespace: traefik
   labels:
-    app.kubernetes.io/component: traefik
-    app.kubernetes.io/instance: traefik
-    app.kubernetes.io/name: traefik
-    argocd.argoproj.io/instance: traefik
+{{ include "helm.labels" . | indent 4 }}
+  namespace: {{ .Release.Namespace }}
+  name: {{ .Release.Name }}-dashboard
   annotations:
     external-dns.alpha.kubernetes.io/hostname: trfk.pastis-hosting.net
 spec:
