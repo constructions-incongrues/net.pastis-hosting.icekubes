@@ -1,4 +1,7 @@
 k10:
+  global:
+    persistence:
+      enabled: false
   rbac:
     create: true
   scc:
@@ -25,8 +28,6 @@ k10:
       persistentVolume:
         enabled: false
   grafana:
-    enabled: false
-  persistence:
     enabled: false
   services:
     securityContext:
