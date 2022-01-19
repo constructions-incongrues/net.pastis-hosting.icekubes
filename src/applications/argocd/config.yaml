@@ -21,9 +21,3 @@ helm:
           - argocd.pastis-hosting.net
         annotations:
           external-dns.alpha.kubernetes.io/hostname: argocd.pastis-hosting.net
-      ingressGrpc:
-        enabled: true
-        hosts:
-          - argocd.pastis-hosting.net
-        annotations:
-          external-dns.alpha.kubernetes.io/hostname: argocd.pastis-hosting.net
