@@ -18,6 +18,7 @@ helm:
     clusterName: Icekubes
     ingress:
       create: true
+      host: kasten.pastis-hosting.net
       annotations:
         external-dns.alpha.kubernetes.io/hostname: kasten.pastis-hosting.net
     prometheus:
