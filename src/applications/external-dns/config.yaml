@@ -6,4 +6,4 @@ helm:
     policy: sync
     provider: cloudflare
     cloudflare:
-      apiToken: C6l3Ek8k13OzXHmvJp413hrFXQNUHBGIb20X476x
+      apiToken: BYR8IAr6DNRc5JfUZtGtirRzLJV-XMJAfwYjIKHK
