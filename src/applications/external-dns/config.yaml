@@ -3,7 +3,10 @@ helm:
   repoURL: https://charts.bitnami.com/bitnami
   targetRevision: 6.0.2
   values: |
-    policy: sync
     provider: cloudflare
     cloudflare:
       apiToken: BYR8IAr6DNRc5JfUZtGtirRzLJV-XMJAfwYjIKHK
+    policy: upsert-only
+    domainFilters:
+      - jeancloude.club
+      - pastis-hosting.net
