@@ -4,7 +4,7 @@ metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
   namespace: {{ .Release.Namespace }}
-  name: {{ .Release.Name }}-applicationset
+  name: {{ .Release.Name }}-pastishosting-applicationset
 spec:
   generators:
   - git:
@@ -18,7 +18,7 @@ spec:
       finalizers:
       - resources-finalizer.argocd.argoproj.io
     spec:
-      project: default
+      project: pastis-hosting.net
       source:
         repoURL: https://github.com/constructions-incongrues/net.pastis-hosting.k8s.git
         targetRevision: HEAD
