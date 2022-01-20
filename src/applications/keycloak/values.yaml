@@ -1,18 +1,18 @@
 keycloak:
-  # extraEnvVars:
-  #   - name: KEYCLOAK_EXTRA_ARGS
-  #     value: "-Dkeycloak.import=/config/realms.json"
-  # extraVolumeMounts:
-  #   - name: config
-  #     mountPath: "/config"
-  #     readOnly: true
-  # extraVolumes:
-  #   - name: config
-  #     configMap:
-  #       name: realms
-  #       items:
-  #       - key: "realms.json"
-  #         path: "realms.json"
+  extraEnvVars:
+    - name: KEYCLOAK_EXTRA_ARGS
+      value: "-Dkeycloak.import=/config/realms.json"
+  extraVolumeMounts:
+    - name: config
+      mountPath: "/config"
+      readOnly: true
+  extraVolumes:
+    - name: config
+      configMap:
+        name: realms
+        items:
+        - key: "realms.json"
+          path: "realms.json"
   auth:
     createAdminUser: true
     adminUser: admin
