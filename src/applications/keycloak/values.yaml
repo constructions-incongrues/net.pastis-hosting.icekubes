@@ -9,7 +9,7 @@ keycloak:
   extraVolumes:
     - name: config
       configMap:
-        name: realms
+        name: "{{ .Release.Name }}-realms-cm"
         items:
         - key: "realms.json"
           path: "realms.json"
