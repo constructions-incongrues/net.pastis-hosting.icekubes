@@ -1,0 +1,38 @@
+keycloak:
+  # extraEnvVars:
+  #   - name: KEYCLOAK_EXTRA_ARGS
+  #     value: "-Dkeycloak.import=/config/realms.json"
+  # extraVolumeMounts:
+  #   - name: config
+  #     mountPath: "/config"
+  #     readOnly: true
+  # extraVolumes:
+  #   - name: config
+  #     configMap:
+  #       name: realms
+  #       items:
+  #       - key: "realms.json"
+  #         path: "realms.json"
+  auth:
+    createAdminUser: true
+    adminUser: admin
+    adminPassword: admin
+  proxyAddressForwarding: true
+  postgresql:
+    postgresqlPassword: keycloak
+    postgresqlPostgresPassword: keycloak
+    persistence:
+      enabled: true
+      size: 1Gi
+    volumePermissions:
+      enabled: true
+    primary:
+      annotations:
+        k10.kasten.io/forcegenericbackup: 'true'
+  service:
+    type: ClusterIP
+  ingress:
+    enabled: true
+    hostname: keycloak.pastis-hosting.net
+    annotations:
+      external-dns.alpha.kubernetes.io/hostname: keycloak.pastis-hosting.net
