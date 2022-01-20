@@ -4,7 +4,7 @@ metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
   namespace: k10
-  name: {{ .Release.Name }}-system-reports-policy
+  name: k10-system-reports-policy
 spec:
   actions:
     - action: report

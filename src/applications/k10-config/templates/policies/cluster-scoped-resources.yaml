@@ -4,7 +4,7 @@ metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
   namespace: k10
-  name: {{ .Release.Name }}-cluster-scoped-resources-backup
+  name: k10-cluster-scoped-resources-backup
 spec:
   frequency: "@daily"
   retention:
