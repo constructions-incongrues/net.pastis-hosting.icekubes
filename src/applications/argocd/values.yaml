@@ -2,6 +2,10 @@ argo-cd:
   installCRDs: true
   dex:
     enabled: false
+  repoServer:
+    extraArgs:
+      - --parallelismlimit
+      - 10
   server:
     extraArgs:
       - --insecure
