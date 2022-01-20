@@ -8,8 +8,15 @@ k10:
     create: false
   auth:
     basicAuth:
-      enabled: true
+      enabled: false
       htpasswd: "tristan:{SHA}K+iK4HpzuMKnVlbTaxQSkD9/eLg="
+    oidcAuth:
+      enabled: true
+      providerURL: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
+      scopes: profile email
+      clientID: k10
+      clientSecret: Z93q0Sl0d3OIBU0XITmtgphuibtbvf20
+      usernameClaim: email
   eula:
     accept: true
     company: "Club Jean-Cloude"
