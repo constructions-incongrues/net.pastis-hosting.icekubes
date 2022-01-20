@@ -3,7 +3,7 @@ kind: Policy
 metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
-  namespace: {{ .Release.Namespace }}
+  namespace: k10
   name: {{ .Release.Name }}-disaster-recovery-policy
 spec:
   frequency: "@daily"
@@ -17,7 +17,7 @@ spec:
       backupParameters:
         profile:
           name: {{ .Release.Name }}-icekubes-location-objectstore-de
-          namespace: {{ .Release.Namespace }}
+          namespace: k10
   selector:
     matchExpressions:
       - key: k10.kasten.io/appNamespace

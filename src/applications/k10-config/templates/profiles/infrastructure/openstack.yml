@@ -3,7 +3,7 @@ apiVersion: config.kio.kasten.io/v1alpha1
 metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
-  namespace: {{ .Release.Namespace }}
+  namespace: k10
   name: {{ .Release.Name }}-icekubes-infrastructure-openstack
 spec:
   infra:
@@ -13,7 +13,7 @@ spec:
         apiVersion: v1
         kind: Secret
         name: {{ .Release.Name }}-icekubes-openstack
-        namespace: {{ .Release.Namespace }}
+        namespace: k10
     openStack:
       keystoneEndpoint: https://auth.cloud.ovh.net/v3/
     type: OpenStack

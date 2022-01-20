@@ -3,7 +3,7 @@ apiVersion: config.kio.kasten.io/v1alpha1
 metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
-  namespace: {{ .Release.Namespace }}
+  namespace: k10
   name: {{ .Release.Name }}-cluster-scoped-resources-backup
 spec:
   frequency: "@daily"
@@ -24,10 +24,10 @@ spec:
         filters: {}
         profile:
           name: {{ .Release.Name }}-icekubes-location-objectstore-de
-          namespace: {{ .Release.Namespace }}
+          namespace: k10
     - action: export
       exportParameters:
         frequency: "@daily"
         profile:
           name: {{ .Release.Name }}-icekubes-location-objectstore-de
-          namespace: {{ .Release.Namespace }}
+          namespace: k10

@@ -3,7 +3,7 @@ kind: Profile
 metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
-  namespace: {{ .Release.Namespace }}
+  namespace: k10
   name: {{ .Release.Name }}-kanister-profile
 spec:
   type: Kanister
@@ -14,7 +14,7 @@ spec:
         apiVersion: v1
         kind: secret
         name: {{ .Release.Name }}-icekubes-aws
-        namespace: {{ .Release.Namespace }}
+        namespace: k10
     location:
       type: ObjectStore
       objectStore:
