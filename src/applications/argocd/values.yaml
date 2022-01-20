@@ -2,6 +2,7 @@ argo-cd:
   installCRDs: true
   dex:
     enabled: true
+    extraArgs: [--parallelismlimit 1]
   server:
     extraArgs:
       - --insecure
@@ -11,12 +12,12 @@ argo-cd:
           name: stable
           url: https://charts.helm.sh/stable
       url: https://argocd.pastis-hosting.net
-      # oidc.config: |
-      #   name: Keycloak
-      #   issuer: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
-      #   clientID: argocd
-      #   clientSecret: $oidc.keycloak.clientSecret
-      #   requestedScopes: ["openid", "profile", "email", "groups"]
+      oidc.config: |
+        name: Keycloak
+        issuer: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
+        clientID: argocd
+        clientSecret: $oidc.keycloak.clientSecret
+        requestedScopes: ["openid", "profile", "email", "groups"]
     ingress:
       enabled: true
       hosts:
