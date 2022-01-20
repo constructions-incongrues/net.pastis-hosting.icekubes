@@ -3,7 +3,7 @@ argo-cd:
   dex:
     enabled: true
   repoServer:
-    extraArgs: [--parallelismlimit 1]
+    extraArgs: [--parallelismlimit=1]
   server:
     extraArgs:
       - --insecure
