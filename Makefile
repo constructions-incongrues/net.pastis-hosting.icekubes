@@ -1,7 +1,7 @@
 bootstrap:
 	helm upgrade \
 		argocd \
-		./src/apps/argocd \
+		./src/applications/argocd \
 		--atomic \
 		--create-namespace \
 		--dependency-update \
