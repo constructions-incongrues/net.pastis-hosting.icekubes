@@ -1,5 +1,7 @@
 argo-cd:
   installCRDs: true
+  dex:
+    enabled: false
   server:
     extraArgs:
       - --insecure
