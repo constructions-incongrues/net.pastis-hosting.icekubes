@@ -23,7 +23,7 @@ argo-cd:
         requestedScopes: ["openid", "profile", "email", "groups"]
     rbacConfig:
       policy.csv: |
-        g, argocd-admins, role:admin
+        g, argocd:admins, role:admin
     ingress:
       enabled: true
       hosts:
