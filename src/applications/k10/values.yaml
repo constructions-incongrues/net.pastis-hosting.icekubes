@@ -18,7 +18,7 @@ k10:
       clientSecret: Z93q0Sl0d3OIBU0XITmtgphuibtbvf20
       usernameClaim: email
       groupClaim: groups
-      redirectURL: https://k10.pastis-hosting.net/k10/
+      redirectURL: https://k10.pastis-hosting.net/
       prompt: connect
   eula:
     accept: true
