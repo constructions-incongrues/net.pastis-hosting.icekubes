@@ -16,9 +16,8 @@ traefik:
     - "--entryPoints.websecure.forwardedHeaders.insecure=true"
 
 traefik-forward-auth:
-  # secret -- Secret used for signing. If empty, one will be generated. If specifying your own in env use "-"
-  secret: ""
-
+  default:
+    provider: oidc
   providers:
     oidc:
       # providers.oidc.enabled -- Enable the generic OIDC provider
