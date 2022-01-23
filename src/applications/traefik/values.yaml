@@ -20,19 +20,15 @@ traefik-forward-auth:
     provider: oidc
   providers:
     oidc:
-      # providers.oidc.enabled -- Enable the generic OIDC provider
       enabled: true
-      # providers.oidc.issuerUrl -- Issuer URL
-      issuerUrl: "https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net"
-      # providers.oidc.clientId -- Client ID
-      clientId: "traefik"
-      # providers.oidc.clientSecret -- Client Secret
-      clientSecret: "blpGQIb6ccCZgc1D8ZFYbSIxu1l9nA09"
+      issuerUrl: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
+      clientId: traefik
+      clientSecret: blpGQIb6ccCZgc1D8ZFYbSIxu1l9nA09
 
   ingress:
     enabled: true
     annotations:
-      external-dns.alpha.kubernetes.io/hostname: argocd.pastis-hosting.net
+      external-dns.alpha.kubernetes.io/hostname: trfk.pastis-hosting.net
     hosts:
       - host: trfk.pastis-hosting.net
         paths:

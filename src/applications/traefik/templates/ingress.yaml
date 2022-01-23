@@ -12,7 +12,7 @@ spec:
     - host: trfk.pastis-hosting.net
       http:
         paths:
-          - path: /
+          - path: /dashboard/
             pathType: ImplementationSpecific
             backend:
               service:
