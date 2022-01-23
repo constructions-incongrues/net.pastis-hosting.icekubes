@@ -5,17 +5,13 @@ metadata:
   namespace: {{ .Release.Namespace }}
   name: {{ .Release.Name }}-route
 spec:
-  entryPoints:                      # [1]
+  entryPoints:
     - https
-  routes:                           # [2]
+  routes:
   - kind: Rule
-    match: Host(`trfk.pastis-hosting.net`) && Path(`/dashboard`) # [3]
-    middlewares:                    # [5]
-    - name: traefik-forward-auth             # [6]
+    match: Host(`trfk.pastis-hosting.net`) && Path(`/dashboard`)
+    middlewares:
+    - name: traefik-forward-auth
     services:
     - kind: TraefikService
-      name:
-  - kind: Rule
-    match: Host(`trfk.pastis-hosting.net`) && Path(`/dashboard`) # [3]
-    middlewares:                    # [5]
-    - name: traefik-forward-auth             # [6]
+      name: dashboard@internal

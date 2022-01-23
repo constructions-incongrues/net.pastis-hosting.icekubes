@@ -20,6 +20,8 @@ traefik-forward-auth:
     provider: oidc
   cookie:
     domain: .pastis-hosting.net
+  middleware:
+    enabled: true
   providers:
     oidc:
       enabled: true
