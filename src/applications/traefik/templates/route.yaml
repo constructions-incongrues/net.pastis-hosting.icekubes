@@ -12,13 +12,13 @@ spec:
     kind: Rule
     services:
       - name: dashboard@internal
-        port: 80
+        kind: TraefikService
     middlewares:
       - name: traefik-forward-auth
   - match: Host(`trfk.pastis-hosting.net`) && Path(`/api`)
     kind: Rule
     services:
       - name: api@internal
-        port: 80
+        kind: TraefikService
     middlewares:
       - name: traefik-forward-auth
