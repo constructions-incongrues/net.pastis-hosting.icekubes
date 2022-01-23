@@ -19,7 +19,7 @@ traefik-forward-auth:
   default:
     provider: oidc
   cookie:
-    domain: .jeancloude.club
+    domain: .pastis-hosting.net
   providers:
     oidc:
       enabled: false
