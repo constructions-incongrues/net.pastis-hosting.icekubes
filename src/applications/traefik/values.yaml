@@ -22,12 +22,12 @@ traefik-forward-auth:
     domain: .pastis-hosting.net
   providers:
     oidc:
-      enabled: false
+      enabled: true
       issuerUrl: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
       clientId: traefik
       clientSecret: 5qcAAVXRkG5F5AtCsloXnP1TnQxIJry4
     genericOauth:
-      enabled: true
+      enabled: false
       authUrl: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
       tokenUrl: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net/protocol/openid-connect/token
       userUrl: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net/protocol/openid-connect/userinfo
