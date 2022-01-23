@@ -1,0 +1,9 @@
+dependencies:
+- name: traefik
+  repository: https://helm.traefik.io/traefik
+  version: 10.6.2
+- name: traefik-forward-auth
+  repository: https://k8s-at-home.com/charts/
+  version: 1.0.10
+digest: sha256:cae1277c0aeb8cfd8f08d8f902a5faf0c3cb70f76491c5b58a2968e6c4068ff8
+generated: "2022-01-23T06:13:48.766430325+01:00"
