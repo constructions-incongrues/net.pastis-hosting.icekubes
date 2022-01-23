@@ -22,11 +22,19 @@ traefik-forward-auth:
     domain: .jeancloude.club
   providers:
     oidc:
-      enabled: true
+      enabled: false
       issuerUrl: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
       clientId: traefik
-      clientSecret: blpGQIb6ccCZgc1D8ZFYbSIxu1l9nA09
-
+      clientSecret: 5qcAAVXRkG5F5AtCsloXnP1TnQxIJry4
+    genericOauth:
+      enabled: true
+      authUrl: "https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net"
+      tokenUrl: "https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net/protocol/openid-connect/token"
+      userUrl: "https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net/protocol/openid-connect/userinfo"
+      clientId: "traefik"
+      clientSecret: "5qcAAVXRkG5F5AtCsloXnP1TnQxIJry4"
+      scope: "profile, email"
+      tokenStyle: "access_token"
   ingress:
     enabled: true
     annotations:
