@@ -34,6 +34,6 @@ traefik-forward-auth:
     annotations:
       external-dns.alpha.kubernetes.io/hostname: argocd.pastis-hosting.net
     hosts:
-      - host: trfk-auth.pastis-hosting.net
+      - host: trfk.pastis-hosting.net
         paths:
           - /
