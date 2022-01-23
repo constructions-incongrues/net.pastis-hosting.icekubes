@@ -18,6 +18,8 @@ traefik:
 traefik-forward-auth:
   default:
     provider: oidc
+  cookie:
+    domain: .jeancloude.club
   providers:
     oidc:
       enabled: true
