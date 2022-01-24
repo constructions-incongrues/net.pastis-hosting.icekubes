@@ -39,4 +39,5 @@ traefik-forward-auth:
       external-dns.alpha.kubernetes.io/hostname: auth.traefik.pastis-hosting.net
     hosts:
       - host: auth.traefik.pastis-hosting.net
-        paths: []
+        paths:
+          - /
