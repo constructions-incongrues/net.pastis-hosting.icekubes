@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  labels:
+{{ include "helm.labels" . | indent 4 }}
+  namespace: {{ .Release.Namespace }}
+  name: {{ .Release.Name }}-ingress
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: trfk.pastis-hosting.net
+spec:
+  rules:
+    - host: trfk.pastis-hosting.net
