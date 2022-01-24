@@ -33,12 +33,4 @@ traefik-forward-auth:
       issuerUrl: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
       clientId: traefik
       clientSecret: 5qcAAVXRkG5F5AtCsloXnP1TnQxIJry4
-  ingress:
-    enabled: true
-    annotations:
-      external-dns.alpha.kubernetes.io/hostname: auth.traefik.pastis-hosting.net
-    hosts:
-      - host: auth.traefik.pastis-hosting.net
-        paths:
-          - /
-  urlPath: /dashboard
+  urlPath: /dashboard/
