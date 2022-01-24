@@ -20,6 +20,8 @@ rollingUpdate:
   maxUnavailable: 0
 
 traefik-forward-auth:
+  logging:
+    level: debug
   authHost: auth.traefik.pastis-hosting.net
   urlPath: /dashboard/
   default:
