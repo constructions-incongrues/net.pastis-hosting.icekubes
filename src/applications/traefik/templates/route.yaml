@@ -9,7 +9,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`trfk.pastis-hosting.net`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
+    - match: Host(`trfk.pastis-hosting.net`) && (PathPrefix(`/dashboard/`) || PathPrefix(`/api`))
       kind: Rule
       services:
         - name: api@internal
