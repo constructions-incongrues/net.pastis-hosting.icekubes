@@ -9,6 +9,7 @@ traefik:
       enabled: true
       annotations:
         external-dns.alpha.kubernetes.io/hostname: trfk.pastis-hosting.net
+        kubernetes.io/ingress.class: traefik-internal
   providers:
     kubernetesIngress:
       publishedService:
