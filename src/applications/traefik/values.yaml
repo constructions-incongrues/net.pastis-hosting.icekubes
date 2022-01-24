@@ -27,7 +27,7 @@ traefik-forward-auth:
   default:
     provider: oidc
   cookie:
-    domain: .pastis-hosting.net
+    # domain: .pastis-hosting.net
     insecure: true
   middleware:
     enabled: true
