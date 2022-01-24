@@ -14,6 +14,8 @@ traefik:
     - "--entryPoints.web.forwardedHeaders.insecure=true"
     - "--entryPoints.websecure.proxyProtocol.insecure=true"
     - "--entryPoints.websecure.forwardedHeaders.insecure=true"
+rollingUpdate:
+  maxUnavailable: 0
 
 traefik-forward-auth:
   default:
