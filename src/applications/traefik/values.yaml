@@ -21,6 +21,7 @@ rollingUpdate:
 
 traefik-forward-auth:
   authHost: auth.traefik.pastis-hosting.net
+  urlPath: /dashboard/
   default:
     provider: oidc
   cookie:
