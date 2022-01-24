@@ -1,4 +1,7 @@
 traefik:
+  api:
+    dashboard: true
+    insecure: true
   deployment:
     replicas: 3
   ingressClass:
