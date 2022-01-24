@@ -35,7 +35,7 @@ traefik-forward-auth:
       enabled: true
       issuerUrl: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
       clientId: traefik
-      clientSecret: 5qcAAVXRkG5F5AtCsloXnP1TnQxIJry4
+      clientSecret: hRjBDv4TYC3vfXS1tIiU7DFDMR8nwsF2
   ingress:
     enabled: true
     annotations:
