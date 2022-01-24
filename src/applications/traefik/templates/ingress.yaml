@@ -10,4 +10,14 @@ metadata:
 spec:
   rules:
     - host: trfk.pastis-hosting.net
-      path: /
+      http:
+        paths:
+          - path: /dashboard/
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: traefik
+                port:
+                  name: http
+                middleware:
+                  - traefik-forward-auth
