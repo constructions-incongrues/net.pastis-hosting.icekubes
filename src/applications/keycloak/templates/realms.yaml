@@ -629,7 +629,7 @@ data:
           "enabled": true,
           "alwaysDisplayInConsole": false,
           "clientAuthenticatorType": "client-secret",
-          "secret": "**********",
+          "secret": "Evc9Sx9x5pktvCFsFdFNhn0RhCXGeJZi",
           "redirectUris": [
             "https://argocd.pastis-hosting.net/auth/callback",
             "http://argocd.pastis-hosting.net/auth/callback"

@@ -19,7 +19,7 @@ argo-cd:
         name: Keycloak
         issuer: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
         clientID: argocd
-        clientSecret: x6rPKRYEeutmutH8oRJKmTA9fQixAfA3
+        clientSecret: Evc9Sx9x5pktvCFsFdFNhn0RhCXGeJZi
         requestedScopes: ["openid", "profile", "email", "groups"]
     rbacConfig:
       policy.csv: |
