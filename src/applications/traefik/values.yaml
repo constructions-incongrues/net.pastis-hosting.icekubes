@@ -41,3 +41,4 @@ traefik-forward-auth:
       - host: auth.traefik.pastis-hosting.net
         paths:
           - /
+  urlPath: https://auth.traefik.pastis-hosting.net/_oauth
