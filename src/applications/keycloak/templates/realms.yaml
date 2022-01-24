@@ -735,7 +735,7 @@ data:
           "enabled": true,
           "alwaysDisplayInConsole": false,
           "clientAuthenticatorType": "client-secret",
-          "secret": "**********",
+          "secret": "wVEHH8E7znBbCv44ajP4Be4Y2N8CffI2",
           "redirectUris": [
             "https://k10.pastis-hosting.net/k10/*"
           ],
