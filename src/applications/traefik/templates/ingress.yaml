@@ -10,3 +10,4 @@ metadata:
 spec:
   rules:
     - host: trfk.pastis-hosting.net
+      path: /
