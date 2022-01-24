@@ -4,7 +4,7 @@ metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
   namespace: {{ .Release.Namespace }}
-  name: {{ .Release.Name }}-route
+  name: {{ .Release.Name }}-admin-routes
 spec:
   entryPoints:
     - https
