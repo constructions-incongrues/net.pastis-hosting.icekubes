@@ -1,7 +1,7 @@
 traefik:
-  # ingressClass:
-  #   enabled: true
-  #   isDefaultClass: true
+  ingressClass:
+    enabled: true
+    isDefaultClass: true
   ingressRoute:
     dashboard:
       enabled: false
