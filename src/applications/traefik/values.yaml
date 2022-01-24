@@ -23,7 +23,7 @@ traefik-forward-auth:
   logging:
     level: debug
   # authHost: auth.traefik.pastis-hosting.net
-  # urlPath: /dashboard/
+  urlPath: /dashboard/
   default:
     provider: oidc
   cookie:
