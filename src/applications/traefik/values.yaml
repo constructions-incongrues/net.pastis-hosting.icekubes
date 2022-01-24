@@ -23,6 +23,7 @@ traefik-forward-auth:
     domain: .pastis-hosting.net
   middleware:
     enabled: true
+    name: traefik-forward-auth
   providers:
     oidc:
       enabled: true
