@@ -34,4 +34,3 @@ traefik-forward-auth:
       issuerUrl: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
       clientId: traefik
       clientSecret: 5qcAAVXRkG5F5AtCsloXnP1TnQxIJry4
-  urlPath: /dashboard/
