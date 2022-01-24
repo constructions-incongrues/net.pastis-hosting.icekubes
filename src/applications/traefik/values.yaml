@@ -33,12 +33,10 @@ traefik-forward-auth:
       issuerUrl: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
       clientId: traefik
       clientSecret: 5qcAAVXRkG5F5AtCsloXnP1TnQxIJry4
-    genericOauth:
-      enabled: false
-      authUrl: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
-      tokenUrl: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net/protocol/openid-connect/token
-      userUrl: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net/protocol/openid-connect/userinfo
-      clientId: traefik
-      clientSecret: 5qcAAVXRkG5F5AtCsloXnP1TnQxIJry4
-      scope: profile, email
-      tokenStyle: access_token
+  ingress:
+    enabled: true
+    annotations:
+      external-dns.alpha.kubernetes.io/hostname: auth.traefik.pastis-hosting.net
+    hosts:
+      - host: auth.traefik.pastis-hosting.net
+        paths: []
