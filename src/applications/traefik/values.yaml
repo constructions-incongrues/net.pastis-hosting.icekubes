@@ -4,11 +4,6 @@ traefik:
   ingressClass:
     enabled: true
     isDefaultClass: true
-  ingressRoute:
-    dashboard:
-      enabled: false
-      annotations:
-        kubernetes.io/ingress.class: traefik-internal
   providers:
     kubernetesIngress:
       publishedService:

@@ -1,7 +1,10 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: dashboard
+  labels:
+{{ include "helm.labels" . | indent 4 }}
+  namespace: {{ .Release.Namespace }}
+  name: {{ .Release.Name }}-dashboard-route
 spec:
   entryPoints:
     - web
