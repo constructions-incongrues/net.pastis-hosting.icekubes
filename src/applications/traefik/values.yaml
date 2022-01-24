@@ -1,7 +1,4 @@
 traefik:
-  api:
-    dashboard: true
-    insecure: true
   deployment:
     replicas: 3
   ingressClass:
@@ -9,7 +6,9 @@ traefik:
     isDefaultClass: true
   ingressRoute:
     dashboard:
-      enabled: false
+      enabled: true
+      annotations:
+        external-dns.alpha.kubernetes.io/hostname: trfk.pastis-hosting.net
   providers:
     kubernetesIngress:
       publishedService:
