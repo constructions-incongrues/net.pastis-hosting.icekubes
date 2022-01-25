@@ -30,7 +30,7 @@ traefik-forward-auth:
     # domain: .pastis-hosting.net
     insecure: true
   middleware:
-    enabled: true
+    enabled: false
     name: traefik-forward-auth
   providers:
     oidc:
