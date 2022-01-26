@@ -16,3 +16,5 @@ spec:
           kind: TraefikService
       middlewares:
         - name: traefik-forward-auth
+  tls:
+    certResolver: cloudflare
