@@ -19,7 +19,6 @@ traefik:
     - "--certificatesresolvers.cloudflare.acme.dnschallenge.provider=cloudflare"
     - "--certificatesresolvers.cloudflare.acme.email=tristan@jeancloude.club"
     - "--certificatesresolvers.cloudflare.acme.dnschallenge.resolvers=1.1.1.1"
-    - "--certificatesresolvers.cloudflare.acme.storage=/certs/acme.json"
   env:
     - name: CF_API_EMAIL
       value: contact@constructions-incongrues.net
