@@ -7,15 +7,9 @@ metadata:
   name: {{ .Release.Name }}-routes
 spec:
   entryPoints:
+    - web
     - websecure
   routes:
-    - match: Host(`trfk.pastis-hosting.net`) && (PathPrefix(`/dashboard/`) || PathPrefix(`/api`))
-      kind: Rule
-      services:
-        - name: api@internal
-          kind: TraefikService
-      middlewares:
-        - name: traefik-forward-auth
     - match: PathPrefix(`/_oauth`)
       kind: Rule
       services:
@@ -23,5 +17,3 @@ spec:
           port: http
       middlewares:
         - name: traefik-forward-auth
-  tls:
-    certResolver: cloudflare
