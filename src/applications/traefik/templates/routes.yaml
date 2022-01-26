@@ -16,7 +16,7 @@ spec:
           kind: TraefikService
       middlewares:
         - name: traefik-forward-auth
-    - match: PathPrefix(`_oauth`)
+    - match: PathPrefix(`/_oauth`)
       kind: Rule
       services:
         - name: traefik-traefik-forward-auth
