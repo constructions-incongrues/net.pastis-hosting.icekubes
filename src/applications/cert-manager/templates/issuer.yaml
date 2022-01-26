@@ -4,13 +4,13 @@ metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
   namespace: {{ .Release.Namespace }}
-  name: {{ .Release.Name }}-cloudflare-staging-issuer
+  name: {{ .Release.Name }}-pastis-hosting-net-issuer
 spec:
   acme:
     email: tristan@jeancloude.club
     server: https://acme-staging-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
-      name: {{ .Release.Name }}-cloudflare-staging-issuer-account-key
+      name: {{ .Release.Name }}-pastis-hosting-net-issuer-account-key
     solvers:
     - dns01:
         cloudflare:
@@ -18,3 +18,7 @@ spec:
           apiTokenSecretRef:
             name: {{ .Release.Name }}-cloudflare-api-token-secret
             key: api-token
+      selector:
+        dnsNames:
+        - 'pastis-hosting.net'
+        - '*.pastis-hosting.net'

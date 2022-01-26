@@ -34,7 +34,7 @@ argo-cd:
         secretName: argocd-ingress-cert
       annotations:
         external-dns.alpha.kubernetes.io/hostname: argocd.pastis-hosting.net
-        cert-manager.io/cluster-issuer: cert-manager-cloudflare-staging-issuer
+        cert-manager.io/cluster-issuer: cert-manager-pastis-hosting-net-issuer
     ingressGrpc:
       enabled: true
       hosts:
