@@ -12,8 +12,6 @@ traefik:
       publishedService:
         enabled: true
   additionalArguments:
-    - "--entryPoints.web.proxyProtocol.insecure=true"
-    - "--entryPoints.web.forwardedHeaders.insecure=true"
     - "--entryPoints.websecure.proxyProtocol.insecure=true"
     - "--entryPoints.websecure.forwardedHeaders.insecure=true"
 rollingUpdate:
