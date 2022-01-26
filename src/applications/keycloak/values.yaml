@@ -34,6 +34,7 @@ keycloak:
   ingress:
     enabled: true
     tls: true
+    selfSigned: false
     hostname: keycloak.pastis-hosting.net
     annotations:
       external-dns.alpha.kubernetes.io/hostname: keycloak.pastis-hosting.net
