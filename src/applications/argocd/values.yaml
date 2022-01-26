@@ -39,5 +39,9 @@ argo-cd:
       enabled: true
       hosts:
         - argocd.pastis-hosting.net
+      tls:
+      - hosts:
+        - argocd.pastis-hosting.net
+        secretName: argocd-ingress-cert
       annotations:
         external-dns.alpha.kubernetes.io/hostname: argocd.pastis-hosting.net
