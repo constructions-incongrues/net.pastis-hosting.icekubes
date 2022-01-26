@@ -44,7 +44,7 @@ rollingUpdate:
 traefik-forward-auth:
   logging:
     level: debug
-  # authHost: auth-traefik.pastis-hosting.net
+  authHost: auth-traefik.pastis-hosting.net
   default:
     provider: oidc
   cookie:

@@ -7,7 +7,8 @@ metadata:
   name: traefik-forward-auth
 spec:
   forwardAuth:
-    address: http://traefik-traefik-forward-auth.traefik:4181
+    # address: http://traefik-traefik-forward-auth.traefik:4181
+    address: https://auth-traefik.pastis-hosting.net
     trustForwardHeader: true
     authResponseHeaders:
       - X-Forwarded-User
