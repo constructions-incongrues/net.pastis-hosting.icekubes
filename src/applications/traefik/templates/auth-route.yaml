@@ -4,13 +4,13 @@ metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
   namespace: {{ .Release.Namespace }}
-  name: {{ .Release.Name }}-routes
+  name: {{ .Release.Name }}-auth-route
 spec:
   entryPoints:
     - web
     - websecure
   routes:
-    - match: PathPrefix(`/_oauth`)
+    - match: HostRegexp(`{any:.+}`) && PathPrefix(`/_oauth`)
       kind: Rule
       services:
         - name: traefik-traefik-forward-auth
