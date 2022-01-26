@@ -35,6 +35,7 @@ argo-cd:
       annotations:
         external-dns.alpha.kubernetes.io/hostname: argocd.pastis-hosting.net
         cert-manager.io/cluster-issuer: cert-manager-pastis-hosting-net-issuer
+        traefik.ingress.kubernetes.io/router.tls: "true"
     ingressGrpc:
       enabled: true
       hosts:
@@ -45,3 +46,5 @@ argo-cd:
         secretName: argocd-ingress-cert
       annotations:
         external-dns.alpha.kubernetes.io/hostname: argocd.pastis-hosting.net
+        cert-manager.io/cluster-issuer: cert-manager-pastis-hosting-net-issuer
+        traefik.ingress.kubernetes.io/router.tls: "true"
