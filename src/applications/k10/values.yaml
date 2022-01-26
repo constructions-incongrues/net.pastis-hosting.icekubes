@@ -30,6 +30,7 @@ k10:
     host: k10.pastis-hosting.net
     annotations:
       external-dns.alpha.kubernetes.io/hostname: k10.pastis-hosting.net
+      cert-manager.io/cluster-issuer: cert-manager-pastis-hosting-net-issuer
   prometheus:
     server:
       enabled: true
