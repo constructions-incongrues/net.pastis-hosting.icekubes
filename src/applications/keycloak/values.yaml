@@ -31,3 +31,5 @@ keycloak:
         k10.kasten.io/forcegenericbackup: 'true'
   service:
     type: ClusterIP
+  keycloakConfigCli:
+    enabled: true
