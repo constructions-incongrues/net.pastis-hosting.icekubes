@@ -4,12 +4,19 @@ metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
   namespace: {{ .Release.Namespace }}
-  name: {{ .Release.Name }}-auth-route
+  name: {{ .Release.Name }}-routes
 spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`auth-traefik.pastis-hosting.net`)
+    - match: Host(`trfk.pastis-hosting.net`) && (PathPrefix(`/dashboard/`) || PathPrefix(`/api`))
+      kind: Rule
+      services:
+        - name: api@internal
+          kind: TraefikService
+      middlewares:
+        - name: traefik-forward-auth
+    - match: PathPrefix(`_oauth`)
       kind: Rule
       services:
         - name: traefik-traefik-forward-auth
