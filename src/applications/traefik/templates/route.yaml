@@ -8,7 +8,6 @@ metadata:
 spec:
   entryPoints:
     - web
-    - websecure
   routes:
     - match: Host(`trfk.pastis-hosting.net`) && (PathPrefix(`/dashboard/`) || PathPrefix(`/api`))
       kind: Rule

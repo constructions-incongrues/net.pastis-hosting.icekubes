@@ -1,0 +1,19 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+{{ include "helm.labels" . | indent 4 }}
+  namespace: {{ .Release.Namespace }}
+  name: {{ .Release.Name }}-cloudflare-staging-issuer
+spec:
+  acme:
+    email: tristan@jeancloude.club
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: {{ .Release.Name }}-cloudflare-staging-issuer-account-key
+    solvers:
+    - dns01:
+        cloudflare:
+          email: contact@constructions-incongrues.net
+          apiTokenSecretRef:
+            name: {{ .Release.Name }}-cloudflare-api-token-secret
+            key: api-token
