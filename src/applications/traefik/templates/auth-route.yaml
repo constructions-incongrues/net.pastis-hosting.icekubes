@@ -13,6 +13,7 @@ spec:
       kind: Rule
       services:
         - name: traefik-traefik-forward-auth
+          port: http
       middlewares:
         - name: traefik-forward-auth
   tls:
