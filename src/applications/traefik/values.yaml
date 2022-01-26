@@ -1,4 +1,7 @@
 traefik:
+  logs:
+    general:
+      level: DEBUG
   persistence:
     enabled: true
     accessMode: ReadWriteMany
