@@ -28,6 +28,9 @@ k10:
   ingress:
     create: true
     host: k10.pastis-hosting.net
+    tls:
+      enabled: true
+      secretName: k10-ingress-secret
     annotations:
       external-dns.alpha.kubernetes.io/hostname: k10.pastis-hosting.net
       cert-manager.io/cluster-issuer: cert-manager-pastis-hosting-net-issuer
