@@ -7,7 +7,6 @@ metadata:
   name: {{ .Release.Name }}-auth-route
 spec:
   entryPoints:
-    - web
     - websecure
   routes:
     - match: HostRegexp(`{any:.+}`) && PathPrefix(`/_oauth`)
