@@ -9,7 +9,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: HostRegexp(`{any:.+}`) && PathPrefix(`/_oauth`)
+    - match: Host(`trfk.pastis-hosting.net`) && && PathPrefix(`/_oauth`)
       kind: Rule
       services:
         - name: traefik-traefik-forward-auth
