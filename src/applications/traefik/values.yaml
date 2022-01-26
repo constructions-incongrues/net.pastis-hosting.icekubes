@@ -26,7 +26,6 @@ traefik-forward-auth:
   logging:
     level: debug
   authHost: auth-traefik.pastis-hosting.net
-  # urlPath: /dashboard/
   default:
     provider: oidc
   cookie:
@@ -46,7 +45,11 @@ traefik-forward-auth:
     annotations:
       external-dns.alpha.kubernetes.io/hostname: auth-traefik.pastis-hosting.net
       traefik.ingress.kubernetes.io/router.tls: "true"
+      cert-manager.io/cluster-issuer: cert-manager-pastis-hosting-net-issuer
     hosts:
       - host: auth-traefik.pastis-hosting.net
         paths:
           - /
+    tls:
+    - hosts:
+      - auth-traefik.pastis-hosting.net
