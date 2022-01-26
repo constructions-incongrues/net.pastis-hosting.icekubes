@@ -52,4 +52,5 @@ traefik-forward-auth:
           - /
     tls:
     - hosts:
-      - auth-traefik.pastis-hosting.net
+      - traefik-forward-auth.pastis-hosting.net
+      secretName: traefik-forward-auth-ingress
