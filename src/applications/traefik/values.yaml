@@ -17,7 +17,8 @@ traefik:
     - "--entryPoints.websecure.proxyProtocol.insecure=true"
     - "--entryPoints.websecure.forwardedHeaders.insecure=true"
   ports:
-    redirectTo: websecure
+    web:
+      redirectTo: websecure
 rollingUpdate:
   maxUnavailable: 0
 
