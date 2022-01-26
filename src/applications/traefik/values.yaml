@@ -45,15 +45,12 @@ rollingUpdate:
   maxUnavailable: 0
 
 traefik-forward-auth:
-  logging:
-    level: debug
-  # authHost: auth-traefik.pastis-hosting.net
   default:
     provider: oidc
   cookie:
     domain: pastis-hosting.net
   middleware:
-    enabled: false
+    enabled: true
     name: traefik-forward-auth
   providers:
     oidc:
@@ -61,17 +58,3 @@ traefik-forward-auth:
       issuerUrl: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
       clientId: traefik
       clientSecret: hRjBDv4TYC3vfXS1tIiU7DFDMR8nwsF2
-  ingress:
-    enabled: false
-    annotations:
-      external-dns.alpha.kubernetes.io/hostname: auth-traefik.pastis-hosting.net
-      traefik.ingress.kubernetes.io/router.tls: "true"
-      cert-manager.io/cluster-issuer: cert-manager-pastis-hosting-net-issuer
-    hosts:
-      - host: auth-traefik.pastis-hosting.net
-        paths:
-          - /
-    tls:
-    - hosts:
-      - auth-traefik.pastis-hosting.net
-      secretName: traefik-forward-auth-ingress
