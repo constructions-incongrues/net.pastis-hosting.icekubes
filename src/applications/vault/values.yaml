@@ -7,8 +7,8 @@ vault:
         external-dns.alpha.kubernetes.io/hostname: vault.pastis-hosting.net
         traefik.ingress.kubernetes.io/router.tls: "true"
       hosts:
-        - vault.pastis-hosting.net
+        - host: vault.pastis-hosting.net
       tls:
-      - hosts:
-        - vault.pastis-hosting.net
-        secretName: vault-ingress-cert
+        - secretName: vault-ingress-cert
+          hosts:
+            - vault.pastis-hosting.net
