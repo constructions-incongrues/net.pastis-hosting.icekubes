@@ -38,3 +38,4 @@ keycloak:
     annotations:
       external-dns.alpha.kubernetes.io/hostname: keycloak.pastis-hosting.net
       cert-manager.io/cluster-issuer: cert-manager-pastis-hosting-net-issuer
+      traefik.ingress.kubernetes.io/router.tls: "true"

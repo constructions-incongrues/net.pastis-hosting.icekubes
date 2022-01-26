@@ -34,6 +34,7 @@ k10:
     annotations:
       external-dns.alpha.kubernetes.io/hostname: k10.pastis-hosting.net
       cert-manager.io/cluster-issuer: cert-manager-pastis-hosting-net-issuer
+      traefik.ingress.kubernetes.io/router.tls: "true"
   prometheus:
     server:
       enabled: true
