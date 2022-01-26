@@ -19,6 +19,5 @@ spec:
             name: {{ .Release.Name }}-cloudflare-api-token-secret
             key: api-token
       selector:
-        dnsNames:
+        dnsZones:
         - 'pastis-hosting.net'
-        - '*.pastis-hosting.net'
