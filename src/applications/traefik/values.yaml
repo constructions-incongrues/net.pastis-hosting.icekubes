@@ -22,7 +22,7 @@ rollingUpdate:
 traefik-forward-auth:
   logging:
     level: debug
-  authHost: auth.traefik.pastis-hosting.net
+  authHost: auth-traefik.pastis-hosting.net
   # urlPath: /dashboard/
   default:
     provider: oidc
@@ -41,8 +41,8 @@ traefik-forward-auth:
   ingress:
     enabled: true
     annotations:
-      external-dns.alpha.kubernetes.io/hostname: auth.traefik.pastis-hosting.net
+      external-dns.alpha.kubernetes.io/hostname: auth-traefik.pastis-hosting.net
     hosts:
-      - host: auth.traefik.pastis-hosting.net
+      - host: auth-traefik.pastis-hosting.net
         paths:
           - /
