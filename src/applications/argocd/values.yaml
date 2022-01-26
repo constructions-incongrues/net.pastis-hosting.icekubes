@@ -5,7 +5,7 @@ argo-cd:
   repoServer:
     extraArgs:
       - '--parallelismlimit'
-      - '3'
+      - '10'
   server:
     extraArgs:
       - --insecure
