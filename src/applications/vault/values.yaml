@@ -1,7 +1,8 @@
 vault:
-  ingress:
-    enabled: true
-    annotations:
-      cert-manager.io/cluster-issuer: cert-manager-pastis-hosting-net-issuer
-      external-dns.alpha.kubernetes.io/hostname: vault.pastis-hosting.net
-      traefik.ingress.kubernetes.io/router.tls: "true"
+  server:
+    ingress:
+      enabled: true
+      annotations:
+        cert-manager.io/cluster-issuer: cert-manager-pastis-hosting-net-issuer
+        external-dns.alpha.kubernetes.io/hostname: vault.pastis-hosting.net
+        traefik.ingress.kubernetes.io/router.tls: "true"
