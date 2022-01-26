@@ -31,12 +31,3 @@ keycloak:
         k10.kasten.io/forcegenericbackup: 'true'
   service:
     type: ClusterIP
-  ingress:
-    enabled: true
-    tls: true
-    selfSigned: false
-    hostname: keycloak.pastis-hosting.net
-    annotations:
-      external-dns.alpha.kubernetes.io/hostname: keycloak.pastis-hosting.net
-      cert-manager.io/cluster-issuer: cert-manager-pastis-hosting-net-issuer
-      traefik.ingress.kubernetes.io/router.tls: "true"
