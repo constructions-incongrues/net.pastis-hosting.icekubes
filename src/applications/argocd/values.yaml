@@ -30,6 +30,7 @@ argo-cd:
         - argocd.pastis-hosting.net
       annotations:
         external-dns.alpha.kubernetes.io/hostname: argocd.pastis-hosting.net
+        cert-manager.io/cluster-issuer: nameOfClusterIssuer
     ingressGrpc:
       enabled: true
       hosts:
