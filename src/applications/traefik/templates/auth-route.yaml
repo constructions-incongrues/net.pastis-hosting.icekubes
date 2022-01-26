@@ -16,3 +16,5 @@ spec:
           port: http
       middlewares:
         - name: traefik-forward-auth
+  tls:
+    certResolver: cloudflare
