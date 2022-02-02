@@ -6,3 +6,4 @@ external-dns:
   policy: upsert-only
   domainFilters:
     - pastis-hosting.net
+    - jeancloude-club
