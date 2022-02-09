@@ -3,8 +3,8 @@ kind: ApplicationSet
 metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
-  namespace: {{ .Release.Namespace }}
-  name: {{ .Release.Name }}-pastishosting-applicationset
+  namespace: ph-argocd
+  name: pastis-hosting
 spec:
   generators:
   - git:
@@ -15,6 +15,7 @@ spec:
   template:
     metadata:
       name: '{{`{{path.basename}}`}}'
+      namespace: '{{ Release.Namespace }}'
       finalizers:
       - resources-finalizer.argocd.argoproj.io
     spec:
@@ -31,4 +32,4 @@ spec:
           - CreateNamespace=true
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{`{{path.basename}}`}}'
+        namespace: '{{`{{ Release.Namespace }}-{{ path.basename }}`}}'
