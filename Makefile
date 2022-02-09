@@ -6,7 +6,7 @@ bootstrap:
 		--create-namespace \
 		--dependency-update \
 		--install \
-		--namespace argocd \
+		--namespace ph-argocd \
 		--wait \
 		--wait-for-jobs
 
