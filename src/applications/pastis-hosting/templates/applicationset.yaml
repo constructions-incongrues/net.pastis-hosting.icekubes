@@ -19,7 +19,7 @@ spec:
       finalizers:
       - resources-finalizer.argocd.argoproj.io
     spec:
-      project: pastis-hosting.net
+      project: pastis-hosting
       source:
         repoURL: https://github.com/constructions-incongrues/net.pastis-hosting.k8s.git
         targetRevision: HEAD
