@@ -22,7 +22,7 @@ bootstrap:
 		--wait-for-jobs
 
 login:
-	argocd --grpc-web login --username admin --password $$(kubectl --namespace argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 --decode) argocd.pastis-hosting.net
+	argocd --grpc-web login --username admin --password $$(kubectl --namespace ph-argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 --decode) argocd.pastis-hosting.net
 
 password:
-	kubectl --namespace argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 --decode
+	kubectl --namespace ph-argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 --decode
