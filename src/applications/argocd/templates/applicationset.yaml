@@ -32,4 +32,4 @@ spec:
           - CreateNamespace=true
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{`ph-{{ path.basename }}`}}'
+        namespace: ph-argocd
