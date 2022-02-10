@@ -32,4 +32,4 @@ spec:
           - CreateNamespace=true
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{`{{ Release.Namespace }}-{{ path.basename }}`}}'
+        namespace: '{{`ph-{{ path.basename }}`}}'
