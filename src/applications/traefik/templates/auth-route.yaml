@@ -1,6 +1,10 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: cert-manager-pastis-hosting-net-issuer
+    external-dns.alpha.kubernetes.io/hostname: trfk.pastis-hosting.net
+    traefik.ingress.kubernetes.io/router.tls: "true"
   labels:
 {{ include "helm.labels" . | indent 4 }}
   namespace: {{ .Release.Namespace }}
