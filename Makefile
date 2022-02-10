@@ -11,13 +11,13 @@ bootstrap:
 		--wait-for-jobs
 
 	helm upgrade \
-		argocd \
+		pastis-hosting \
 		./src/applications/pastis-hosting \
 		--atomic \
 		--create-namespace \
 		--dependency-update \
 		--install \
-		--namespace ph \
+		--namespace ph-pastis-hosting \
 		--wait \
 		--wait-for-jobs
 
