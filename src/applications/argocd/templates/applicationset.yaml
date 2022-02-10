@@ -15,7 +15,7 @@ spec:
   template:
     metadata:
       name: '{{`{{path.basename}}`}}'
-      namespace: '{{ Release.Namespace }}'
+      namespace: ph-argocd
       finalizers:
       - resources-finalizer.argocd.argoproj.io
     spec:

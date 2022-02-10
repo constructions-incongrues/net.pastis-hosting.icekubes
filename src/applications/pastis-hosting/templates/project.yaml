@@ -4,7 +4,7 @@ kind: AppProject
 metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
-  namespace: {{ Release.Namespace }}
+  namespace: ph-argocd
   name: pastis-hosting
   # Finalizer that ensures that project is not deleted until it is not referenced by any application
   finalizers:

@@ -10,6 +10,17 @@ bootstrap:
 		--wait \
 		--wait-for-jobs
 
+	helm upgrade \
+		argocd \
+		./src/applications/pastis-hosting \
+		--atomic \
+		--create-namespace \
+		--dependency-update \
+		--install \
+		--namespace ph \
+		--wait \
+		--wait-for-jobs
+
 login:
 	argocd --grpc-web login --username admin --password $$(kubectl --namespace argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 --decode) argocd.pastis-hosting.net
 
