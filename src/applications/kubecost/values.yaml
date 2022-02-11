@@ -1,0 +1,16 @@
+cost-analyzer:
+  kubecostToken: "dHJpc3RhbkByaXZvYWxsYW4ubmV0xm343yadf98"
+  persistentVolume:
+    enabled: false
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: cert-manager-pastis-hosting-net-issuer
+      external-dns.alpha.kubernetes.io/hostname:  kubecost.pastis-hosting.net
+      traefik.ingress.kubernetes.io/router.tls: "true"
+    hosts:
+      - kubecost.pastis-hosting.net
+    tls:
+    - secretName: kubecost-tls
+      hosts:
+        - kubecost.pastis-hosting.net
