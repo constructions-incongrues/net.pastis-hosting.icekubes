@@ -29,5 +29,6 @@ keycloak:
     primary:
       annotations:
         k10.kasten.io/forcegenericbackup: 'true'
+        k10/injectKanisterSidecar: 'true'
   service:
     type: ClusterIP
