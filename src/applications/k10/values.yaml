@@ -52,4 +52,4 @@ k10:
     enabled: true
     objectSelector:
       matchLabels:
-        k10/injectKanisterSidecar: 'true'
+        k10.kasten.io/injectKanisterSidecar: 'true'
