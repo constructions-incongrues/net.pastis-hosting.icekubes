@@ -1,4 +1,5 @@
 cost-analyzer:
+  enabled: false
   kubecostToken: "dHJpc3RhbkByaXZvYWxsYW4ubmV0xm343yadf98"
   persistentVolume:
     enabled: false
