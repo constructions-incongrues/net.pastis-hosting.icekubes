@@ -1,8 +1,5 @@
 keycloak:
   replicaCount: 2
-  pdb:
-    create: true
-    minAvailable: 1
   extraEnvVars:
     - name: KEYCLOAK_EXTRA_ARGS
       value: "-Dkeycloak.migration.action=import -Dkeycloak.migration.provider=singleFile -Dkeycloak.migration.file=/config/realms.json"
