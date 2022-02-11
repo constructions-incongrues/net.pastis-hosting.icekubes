@@ -1,0 +1,28 @@
+apiVersion: config.kio.kasten.io/v1alpha1
+kind: Policy
+metadata:
+  labels:
+{{ include "helm.labels" . | indent 4 }}
+  namespace: {{ .Release.Namespace }}
+  name: {{ .Release.Name }}-k10-policy
+spec:
+  comment: ""
+  frequency: "@daily"
+  paused: false
+  actions:
+    - action: backup
+      backupParameters:
+        profile:
+          namespace: ph-k10
+          name: k10-config-icekubes-location-objectstore-de
+  retention:
+    daily: 7
+    weekly: 4
+    monthly: 12
+    yearly: 7
+  selector:
+    matchExpressions:
+      - key: k10.kasten.io/appNamespace
+        operator: In
+        values:
+          - ph-keycloak
