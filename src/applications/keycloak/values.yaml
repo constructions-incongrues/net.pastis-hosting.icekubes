@@ -1,4 +1,7 @@
 keycloak:
+  pdb:
+    create: true
+    minAvailable: 1
   extraEnvVars:
     - name: KEYCLOAK_EXTRA_ARGS
       value: "-Dkeycloak.migration.action=import -Dkeycloak.migration.provider=singleFile -Dkeycloak.migration.file=/config/realms.json"
@@ -19,7 +22,6 @@ keycloak:
     adminPassword: admin
   proxyAddressForwarding: true
   postgresql:
-    architecture: replication
     postgresqlPassword: keycloak
     postgresqlPostgresPassword: keycloak
     persistence:
@@ -32,7 +34,5 @@ keycloak:
         k10.kasten.io/forcegenericbackup: 'true'
       labels:
         k10.kasten.io/injectKanisterSidecar: 'true'
-    readReplicas:
-      replicaCount: 2
   service:
     type: ClusterIP
