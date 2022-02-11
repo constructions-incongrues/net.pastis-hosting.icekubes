@@ -32,5 +32,7 @@ keycloak:
         k10.kasten.io/forcegenericbackup: 'true'
       labels:
         k10.kasten.io/injectKanisterSidecar: 'true'
+    readReplicas:
+      replicaCount: 2
   service:
     type: ClusterIP
