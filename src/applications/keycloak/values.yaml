@@ -19,6 +19,7 @@ keycloak:
     adminPassword: admin
   proxyAddressForwarding: true
   postgresql:
+    architecture: replication
     postgresqlPassword: keycloak
     postgresqlPostgresPassword: keycloak
     persistence:
