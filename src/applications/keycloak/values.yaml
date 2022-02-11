@@ -1,4 +1,5 @@
 keycloak:
+  replicaCount: 2
   pdb:
     create: true
     minAvailable: 1
