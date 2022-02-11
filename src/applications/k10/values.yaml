@@ -50,6 +50,6 @@ k10:
       fsGroup: 0
   injectKanisterSidecar:
     enabled: true
-    namespaceSelector:
+    objectSelector:
       matchLabels:
         k10/injectKanisterSidecar: 'true'
