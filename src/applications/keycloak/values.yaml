@@ -36,3 +36,7 @@ keycloak:
         k10.kasten.io/injectKanisterSidecar: 'true'
   service:
     type: ClusterIP
+    annotations:
+      traefik.ingress.kubernetes.io/service.sticky.cookie: "true"
+      traefik.ingress.kubernetes.io/service.sticky.cookie.name: {{ .Release.Name }}
+      traefik.ingress.kubernetes.io/service.sticky.cookie.secure: "true"
