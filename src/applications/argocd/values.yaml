@@ -1,4 +1,6 @@
 argo-cd:
+  image:
+    tag: '2.3.0-rc5'
   installCRDs: true
   dex:
     enabled: false
