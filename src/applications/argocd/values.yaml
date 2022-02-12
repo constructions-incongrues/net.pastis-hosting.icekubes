@@ -17,7 +17,7 @@ argo-cd:
       image: alpine:3.8
       command: [sh, -c]
       args:
-        - apk add coreutils wget && \
+        - apk add --update coreutils wget && \
           wget -O argocd-vault-plugin https://github.com/argoproj-labs/argocd-vault-plugin/releases/download/v1.8.0/argocd-vault-plugin_1.8.0_linux_amd64 && \
           chmod +x argocd-vault-plugin && mv argocd-vault-plugin /custom-tools/
       volumeMounts:
