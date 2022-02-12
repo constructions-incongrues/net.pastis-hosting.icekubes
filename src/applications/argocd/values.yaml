@@ -9,6 +9,9 @@ argo-cd:
     extraArgs:
       - '--parallelismlimit'
       - '1'
+    volumes:
+    - name: custom-tools
+      emptyDir: {}
     initContainers:
     - name: download-tools
       image: alpine:3.8
