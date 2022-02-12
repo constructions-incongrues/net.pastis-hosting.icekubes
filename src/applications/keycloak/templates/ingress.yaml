@@ -5,6 +5,9 @@ metadata:
     cert-manager.io/cluster-issuer: cert-manager-pastis-hosting-net-issuer
     external-dns.alpha.kubernetes.io/hostname: keycloak.pastis-hosting.net
     traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/service.sticky.cookie: "true"
+    traefik.ingress.kubernetes.io/service.sticky.cookie.name: {{ .Release.Name }}-ingress
+    traefik.ingress.kubernetes.io/service.sticky.cookie.secure: "true"
   labels:
 {{ include "helm.labels" . | indent 4 }}
   namespace: {{ .Release.Namespace }}
