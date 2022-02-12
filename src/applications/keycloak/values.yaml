@@ -7,6 +7,8 @@ keycloak:
   serviceDiscovery:
     enabled: true
     protocol: dns.DNS_PING
+    properties:
+      - dns_query=keycloak-headless
   extraEnvVars:
     - name: KEYCLOAK_EXTRA_ARGS
       value: "-Dkeycloak.migration.action=import -Dkeycloak.migration.provider=singleFile -Dkeycloak.migration.file=/config/realms.json"
