@@ -9,6 +9,21 @@ argo-cd:
     extraArgs:
       - '--parallelismlimit'
       - '1'
+    initContainers:
+    - name: download-tools
+      image: alpine:3.8
+      command: [sh, -c]
+      args:
+        - wget -O argocd-vault-plugin https://github.com/argoproj-labs/argocd-vault-plugin/releases/download/v1.8.0/argocd-vault-plugin_1.8.0_linux_amd64 && \
+          chmod +x argocd-vault-plugin && \
+          mv argocd-vault-plugin /custom-tools/
+      volumeMounts:
+        - mountPath: /custom-tools
+          name: custom-tools
+    volumeMounts:
+    - mountPath: /usr/local/bin/argocd-vault-plugin
+      name: custom-tools
+      subPath: argocd-vault-plugin
   server:
     extraArgs:
       - --insecure
@@ -20,6 +35,11 @@ argo-cd:
         clientID: argocd
         clientSecret: Evc9Sx9x5pktvCFsFdFNhn0RhCXGeJZi
         requestedScopes: ["openid", "profile", "email", "groups"]
+      configManagementPlugins: |-
+        - name: argocd-vault-plugin
+          generate:
+            command: ["argocd-vault-plugin"]
+            args: ["generate", "./"]
     rbacConfig:
       policy.csv: |
         g, argocd:admins, role:admin
