@@ -1,4 +1,6 @@
 keycloak:
+  rbac:
+    create: true
   replicaCount: 2
   serviceDiscovery:
     enabled: true
