@@ -1,4 +1,6 @@
 keycloak:
+  serviceAccount:
+    name: keycloak
   rbac:
     create: true
   replicaCount: 2
