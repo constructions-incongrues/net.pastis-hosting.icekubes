@@ -40,7 +40,7 @@ argo-cd:
         - name: argocd-vault-plugin
           generate:
             command: ["argocd-vault-plugin"]
-            args: ["generate", "./"]
+            args: ["generate", "./", "-s", "{{ .Release.Namespace }}:argocd-vault-plugin-credentials"]
     rbacConfig:
       policy.csv: |
         g, argocd:admins, role:admin
