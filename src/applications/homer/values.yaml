@@ -74,7 +74,7 @@ homer:
               icon: "fas fa-lock"
               items:
                 - name: "État des services"
-                  icon: "fas fa-cloud-check"
+                  icon: "fas fa-check"
                   url: "https://status.pastis-hosting.net"
                   target: "_blank" # optional html tag target attribute
                 - name: "Keycloak"
