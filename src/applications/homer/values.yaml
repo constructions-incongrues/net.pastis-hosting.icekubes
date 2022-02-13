@@ -1,0 +1,90 @@
+#
+# IMPORTANT NOTE
+#
+# This chart inherits from our common library chart. You can check the default values/options here:
+# https://github.com/k8s-at-home/library-charts/tree/main/charts/stable/common/values.yaml
+#
+
+homer:
+  # -- environment variables.
+  # @default -- See below
+  env:
+    # -- Set the container timezone
+    TZ: Europe/Paris
+
+  ingress:
+      # -- Enable and configure ingress settings for the chart under this key.
+      # @default -- See values.yaml
+    main:
+      # -- Enables or disables the ingress
+      enabled: true
+
+      # -- Provide additional annotations which may be required.
+      annotations:
+        cert-manager.io/cluster-issuer: cert-manager-pastis-hosting-net-issuer
+        external-dns.alpha.kubernetes.io/hostname: www.pastis-hosting.net
+        traefik.ingress.kubernetes.io/router.tls: "true"
+
+      ## Configure the hosts for the ingress
+      hosts:
+        -  # -- Host address. Helm template can be passed.
+          host: www.pastis-hosting.net
+
+          ## Configure the paths for the host
+          paths:
+            -  # -- Path.  Helm template can be passed.
+              path: /
+
+      # -- Configure TLS for the ingress. Both secretName and hosts can process a Helm template.
+      tls:
+       - secretName: homer-tls
+         hosts:
+           - www.pastis-hosting.net
+
+  configmap:
+    config:
+      # -- Store homer configuration as a ConfigMap
+      enabled: false
+      # -- Homer configuration. See [image documentation](https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md) for more information.
+      # @default -- See values.yaml
+      data:
+        config.yml: |
+        title: "Pastis Hosting"
+        subtitle: "L'Affreux Pastis de la Rue des Gards"
+        logo: "assets/logo.png"
+
+        header: true # Set to false to hide the header
+
+        columns: "auto" # "auto" or number (must be a factor of 12: 1, 2, 3, 4, 6, 12)
+        connectivityCheck: true # whether you want to display a message when the apps are not accessible anymore (VPN disconnected for example)
+
+        # Optional navbar
+        # links: [] # Allows for navbar (dark mode, layout, and search) without any links
+        links:
+          - name: "Constructions Incongrues"
+            icon: "fab"
+            url: "https://www.constructions-incongrues.net"
+            target: "_blank" # optional html tag target attribute
+          - name: "Club Jean-Cloude"
+            icon: "fas"
+            url: "https://www.jeancloude.club"
+
+        # Services
+        # First level array represents a group.
+        # Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+        services:
+          - name: "Administration"
+            icon: "fas"
+            items:
+              - name: "Status Page"
+                logo: "assets/tools/sample.png"
+                # Alternatively a fa icon can be provided:
+                # icon: "fab fa-jenkins"
+                tag: "app"
+                url: "https://status.pastis-hosting.net"
+                target: "_blank" # optional html tag target attribute
+              - name: "Keycloak"
+                logo: "assets/tools/sample.png"
+                tag: "app"
+                url: "https://keycloak.pastis-hosting.net"
+                target: "_blank" # optional html tag target attribute
