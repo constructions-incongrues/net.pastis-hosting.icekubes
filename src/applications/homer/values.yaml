@@ -50,8 +50,8 @@ homer:
       data:
         config.yml: |
           title: "Pastis Hosting"
-          subtitle: "L'Affreux Pastis de la Rue des Gards"
-          logo: "assets/logo.png"
+          subtitle: "L'Affreux Pastis de la Rue des Gardes"
+          icon: "fas fa-glass"
 
           header: true # Set to false to hide the header
 
@@ -74,17 +74,13 @@ homer:
           # Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
           services:
             - name: "Administration"
-              icon: "fas"
+              icon: "fas fa-lock"
               items:
-                - name: "Status Page"
-                  logo: "assets/tools/sample.png"
-                  # Alternatively a fa icon can be provided:
-                  # icon: "fab fa-jenkins"
-                  tag: "app"
+                - name: "État des services"
+                  icon: "fab fa-cloud-check"
                   url: "https://status.pastis-hosting.net"
                   target: "_blank" # optional html tag target attribute
                 - name: "Keycloak"
-                  logo: "assets/tools/sample.png"
-                  tag: "app"
+                  icon: "fab fa-users"
                   url: "https://keycloak.pastis-hosting.net"
                   target: "_blank" # optional html tag target attribute
