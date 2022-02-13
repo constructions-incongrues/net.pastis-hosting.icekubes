@@ -51,22 +51,19 @@ homer:
         config.yml: |
           title: "Pastis Hosting"
           subtitle: "L'Affreux Pastis de la Rue des Gardes"
-          icon: "fas fa-glass"
+          icon: "fab fa-glass"
 
-          header: true # Set to false to hide the header
+          header: false # Set to false to hide the header
 
           columns: "auto" # "auto" or number (must be a factor of 12: 1, 2, 3, 4, 6, 12)
           connectivityCheck: true # whether you want to display a message when the apps are not accessible anymore (VPN disconnected for example)
 
           # Optional navbar
-          # links: [] # Allows for navbar (dark mode, layout, and search) without any links
           links:
             - name: "Constructions Incongrues"
-              icon: "fab"
               url: "https://www.constructions-incongrues.net"
               target: "_blank" # optional html tag target attribute
             - name: "Club Jean-Cloude"
-              icon: "fas"
               url: "https://www.jeancloude.club"
 
           # Services
@@ -77,10 +74,10 @@ homer:
               icon: "fas fa-lock"
               items:
                 - name: "État des services"
-                  icon: "fab fa-cloud-check"
+                  icon: "fas fa-cloud-check"
                   url: "https://status.pastis-hosting.net"
                   target: "_blank" # optional html tag target attribute
                 - name: "Keycloak"
-                  icon: "fab fa-users"
+                  icon: "fas fa-users"
                   url: "https://keycloak.pastis-hosting.net"
                   target: "_blank" # optional html tag target attribute
