@@ -68,6 +68,10 @@ homer:
               icon: "fas fa-user"
               url: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net/account/
               target: "_blank"
+            - name: "État des services"
+              icon: "fas fa-check"
+              url: "https://status.pastis-hosting.net"
+              target: "_blank"
 
           # Services
           # First level array represents a group.
@@ -99,10 +103,6 @@ homer:
                 - name: "Traefik"
                   icon: "fas fa-lock"
                   url: "https://trfk.pastis-hosting.net/dashboard/"
-                  target: "_blank"
-                - name: "Upptime"
-                  icon: "fas fa-lock-open"
-                  url: "https://status.pastis-hosting.net"
                   target: "_blank"
                 - name: "Vault"
                   icon: "fas fa-lock"
