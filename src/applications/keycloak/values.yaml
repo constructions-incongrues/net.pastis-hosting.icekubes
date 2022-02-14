@@ -12,7 +12,7 @@ keycloak:
       - dns_query=keycloak-headless
   extraEnvVars:
     - name: KEYCLOAK_EXTRA_ARGS
-      value: "-Dkeycloak.migration.action=import -Dkeycloak.migration.provider=singleFile -Dkeycloak.migration.file=/config/realms.json"
+      value: "-Dkeycloak.migration.action=import -Dkeycloak.migration.provider=singleFile -Dkeycloak.migration.file=/config/realms.json -Dkeycloak.migration.strategy=IGNORE_EXISTING"
   extraVolumeMounts:
     - name: config
       mountPath: "/config"
