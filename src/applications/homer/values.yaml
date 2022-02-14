@@ -62,12 +62,6 @@ homer:
           columns: "auto" # "auto" or number (must be a factor of 12: 1, 2, 3, 4, 6, 12)
           connectivityCheck: true # whether you want to display a message when the apps are not accessible anymore (VPN disconnected for example)
 
-          message:
-            style: "is-warning"
-            title: "En construction !"
-            icon: "fa fa-exclamation-triangle"
-            content: "Vingt fois sur le métier remettre l'ouvrage."
-
           # Optional navbar
           links:
             - name: "Mon Compte"
