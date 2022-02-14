@@ -62,6 +62,12 @@ homer:
           columns: "auto" # "auto" or number (must be a factor of 12: 1, 2, 3, 4, 6, 12)
           connectivityCheck: true # whether you want to display a message when the apps are not accessible anymore (VPN disconnected for example)
 
+          message:
+            style: "is-warning"
+            title: "En construction !"
+            icon: "fa fa-exclamation-triangle"
+            content: "Vingt fois sur le métier remettre l'ouvrage."
+
           # Optional navbar
           links:
             - name: "Mon Compte"
@@ -73,7 +79,7 @@ homer:
           # First level array represents a group.
           # Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
           services:
-            - name: "Administration"
+            - name: "Outils"
               icon: "fas fa-wrench"
               items:
                 - name: "ArgoCD"
