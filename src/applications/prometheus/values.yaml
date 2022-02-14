@@ -9,10 +9,6 @@ kube-prometheus:
         external-dns.alpha.kubernetes.io/hostname: prometheus.pastis-hosting.net
         cert-manager.io/cluster-issuer: cert-manager-pastis-hosting-net-issuer
         traefik.ingress.kubernetes.io/router.tls: "true"
-      extraTls:
-      - hosts:
-          - prometheus.pastis-hosting.net
-        secretName: prometheus.pastis-hosting.net-tls
   additionalScrapeConfigs:
     enabled: false
     type: external
