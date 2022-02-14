@@ -118,11 +118,11 @@ homer:
               items:
                 - name: "k8s"
                   icon: "fab fa-github"
-                  url: "https://github.com/constructions-incongrues/net.pastis-hosting.k8s"
+                  url: "https://vscode.dev/github/constructions-incongrues/net.pastis-hosting.k8s"
                   target: "_blank"
                 - name: "status"
                   icon: "fab fa-github"
-                  url: "https://github.com/constructions-incongrues/net.pastis-hosting.status"
+                  url: "https://vscode.dev/github/constructions-incongrues/net.pastis-hosting.status"
                   target: "_blank"
             - name: "Environnements"
               icon: "fas fa-water"
