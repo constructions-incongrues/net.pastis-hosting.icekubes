@@ -49,6 +49,7 @@ homer:
       # -- Store homer configuration as a ConfigMap
       enabled: true
       # -- Homer configuration. See [image documentation](https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md) for more information.
+      # -- Font Awesome Icons : https://fontawesome.com/v5/icons
       # @default -- See values.yaml
       data:
         config.yml: |
