@@ -1,3 +1,4 @@
+# https://docs.kasten.io/latest/install/advanced.html
 k10:
   global:
     persistence:
