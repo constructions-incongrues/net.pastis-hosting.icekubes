@@ -65,6 +65,7 @@ homer:
           # Optional navbar
           links:
             - name: "Mon Compte"
+              icon: "fas fa-user"
               url: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net/account/
               target: "_blank"
 
