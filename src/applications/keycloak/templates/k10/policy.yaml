@@ -4,7 +4,7 @@ metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
   namespace: {{ .Release.Namespace }}
-  name: ph-{{ .Release.Name }}-policy
+  name: k10-{{ .Release.Namespace }}-policy
 spec:
   comment: ""
   frequency: "@daily"
