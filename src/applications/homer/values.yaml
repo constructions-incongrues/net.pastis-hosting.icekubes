@@ -65,11 +65,11 @@ homer:
 
           # Optional navbar
           links:
-            - name: "Mon Compte"
+            - name: "Connexion"
               icon: "fas fa-user"
               url: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net/account/
               target: "_blank"
-            - name: "État des services"
+            - name: "Status"
               icon: "fas fa-check"
               url: "https://status.pastis-hosting.net"
               target: "_blank"
