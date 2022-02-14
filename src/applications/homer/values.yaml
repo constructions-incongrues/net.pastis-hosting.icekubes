@@ -71,7 +71,7 @@ homer:
           # Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
           services:
             - name: "Administration"
-              icon: "fas fa-gear"
+              icon: "fab fa-gear"
               items:
                 - name: "État des services"
                   icon: "fas fa-lock-open"
@@ -83,7 +83,7 @@ homer:
                   target: "_blank"
                 - name: "K10"
                   icon: "fas fa-lock"
-                  url: "https://k10.pastis-hosting.net"
+                  url: "https://k10.pastis-hosting.net/k10/"
                   target: "_blank"
                 - name: "Keycloak"
                   icon: "fas fa-lock"
