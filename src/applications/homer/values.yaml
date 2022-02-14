@@ -119,10 +119,10 @@ homer:
               icon: "fas fa-water"
               items:
                 - name: "Constructions Incongrues"
-                  icon: "fab fa-fish"
+                  icon: "fas fa-fish"
                   url: "https://www.constructions-incongrues.net"
                   target: "_blank"
-                - name: "status"
-                  icon: "fab fa-fish"
+                - name: "Club Jean-Cloude"
+                  icon: "fas fa-fish"
                   url: "https://www.jeancloude.club"
                   target: "_blank"
