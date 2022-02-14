@@ -1,10 +1,14 @@
+# https://github.com/bitnami/charts/blob/master/bitnami/kube-prometheus/values.yaml
 kube-prometheus:
   prometheus:
     ingress:
       enabled: true
       hostname: prometheus.pastis-hosting.net
+      tls: true
       annotations:
         external-dns.alpha.kubernetes.io/hostname: prometheus.pastis-hosting.net
+        cert-manager.io/cluster-issuer: cert-manager-pastis-hosting-net-issuer
+        traefik.ingress.kubernetes.io/router.tls: "true"
   additionalScrapeConfigs:
     enabled: false
     type: external
