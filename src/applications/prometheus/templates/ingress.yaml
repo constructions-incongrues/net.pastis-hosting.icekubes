@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: cert-manager-pastis-hosting-net-issuer
+    external-dns.alpha.kubernetes.io/hostname: prometheus.pastis-hosting.net
+    traefik.ingress.kubernetes.io/router.tls: "true"
+  labels:
+{{ include "helm.labels" . | indent 4 }}
+  namespace: {{ .Release.Namespace }}
+  name: {{ .Release.Name }}-ingress
+spec:
+  rules:
+  - host: prometheus.pastis-hosting.net
+    http:
+      paths:
+      - backend:
+          service:
+            name: {{ .Release.Name }}-operated
+            port:
+              name: web
+        path: /
+        pathType: ImplementationSpecific
+  tls:
+  - hosts:
+    - prometheus.pastis-hosting.net
+    secretName: prometheus-ingress
