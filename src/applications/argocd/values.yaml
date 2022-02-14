@@ -9,7 +9,7 @@ argo-cd:
   repoServer:
     extraArgs:
       - '--parallelismlimit'
-      - '1'
+      - '2'
     volumes:
     - name: custom-tools
       emptyDir: {}
