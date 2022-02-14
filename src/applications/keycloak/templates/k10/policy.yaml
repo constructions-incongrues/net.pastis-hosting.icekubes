@@ -25,7 +25,6 @@ spec:
         profile:
           name: k10-config-icekubes-location-objectstore-de
           namespace: ph-k10
-        receiveString: ""
         exportData:
           enabled: true
       retention:
