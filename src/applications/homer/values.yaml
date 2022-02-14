@@ -71,7 +71,7 @@ homer:
           # Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
           services:
             - name: "Administration"
-              icon: "fab fa-gear"
+              icon: "fas fa-gear"
               items:
                 - name: "État des services"
                   icon: "fas fa-lock-open"
