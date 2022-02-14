@@ -58,6 +58,7 @@ homer:
           icon: "fab fa-glass"
 
           header: false # Set to false to hide the header
+          footer: ""
 
           columns: "auto" # "auto" or number (must be a factor of 12: 1, 2, 3, 4, 6, 12)
           connectivityCheck: true # whether you want to display a message when the apps are not accessible anymore (VPN disconnected for example)
