@@ -20,7 +20,7 @@ spec:
         frequency: "@daily"
         receiveString: bIzAPpoanmFW6wAhohIsq/ZoW29TH1aI8RCgoGwHV5IkBe9muG+hfMHJJI3AlvczfQm/zKuNGU+u7zELhTr92hAN4w8RbcWqb5Wvsc+I2biLgf9G30BUPyKkw6XdEqUwE89M+G1M3rhD4LOQ7NyW4Hn7ANSI73JV9XGHDU2C5tuikaQpPkqIoWysnGzOL003ufo/QI6q+2QT00o3MTiL9929XXSzHSjrpihH94zbaJdioYyeZS3AdosHtK2Qh965Mo7HaaGIcsFhEjSyoQslpieW4vuefe2C0hKKT2lyXyc/FH7GtmBwrja1tcuM5ch+0EczZdJHkmIDmM1kkz2bE/VM86cDJ18M6J0hi4eaqqjlhCrfmd2V6DpIk0Gxk244uZXiYNtYnK7iATQwxoiwO0bmkrdcAeyarFC2yYZPMSAR36BfIMWEQT5nERCV38/yNAGQ//k8YrulRl9H7RR5RXvxz7dSpqUzPGykaX4c9sMruRgFgQy3AxVdKCxKQ8r7nOaVexnFz3su4JBPjQOwmy5Zs+E1YfqcbC90Zpiw3jbwUgjiUTfNQZWfkdZTW/4X
         migrationToken:
-          name: "ph-{{ .Release.Name }}-migration-token"
+          name: "k10-{{ .Release.Namespace }}-migration-token"
           namespace: "{{ .Release.Namespace }}"
         profile:
           name: k10-config-icekubes-location-objectstore-de
