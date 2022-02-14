@@ -69,7 +69,7 @@ homer:
               icon: "fas fa-user"
               url: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net/account/
               target: "_blank"
-            - name: "Status"
+            - name: "État des services"
               icon: "fas fa-check"
               url: "https://status.pastis-hosting.net"
               target: "_blank"
