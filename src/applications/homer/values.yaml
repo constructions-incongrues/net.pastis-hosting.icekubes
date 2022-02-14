@@ -63,11 +63,9 @@ homer:
 
           # Optional navbar
           links:
-            - name: "Constructions Incongrues"
-              url: "https://www.constructions-incongrues.net"
+            - name: "Mon Compte"
+              url: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net/account/
               target: "_blank"
-            - name: "Club Jean-Cloude"
-              url: "https://www.jeancloude.club"
 
           # Services
           # First level array represents a group.
@@ -114,4 +112,15 @@ homer:
                 - name: "status"
                   icon: "fab fa-github"
                   url: "https://github.com/constructions-incongrues/net.pastis-hosting.status"
+                  target: "_blank"
+            - name: "Environnements"
+              icon: "fas fa-water"
+              items:
+                - name: "Constructions Incongrues"
+                  icon: "fab fa-fish"
+                  url: "https://www.constructions-incongrues.net"
+                  target: "_blank"
+                - name: "status"
+                  icon: "fab fa-fish"
+                  url: "https://www.jeancloude.club"
                   target: "_blank"
