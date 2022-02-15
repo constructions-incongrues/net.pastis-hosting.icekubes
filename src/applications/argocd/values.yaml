@@ -55,7 +55,8 @@ argo-cd:
             args: ["helm dependency build"]
           generate:
             command: [sh, -c]
-            args: ["helm template -n $ARGOCD_APP_NAMESPACE $ARGOCD_APP_NAME . | argocd-vault-replacer"]    rbacConfig:
+            args: ["helm template -n $ARGOCD_APP_NAMESPACE $ARGOCD_APP_NAME . | argocd-vault-replacer"]
+    rbacConfig:
       policy.csv: |
         g, argocd:admins, role:admin
     ingress:
