@@ -2,10 +2,8 @@
 external-dns:
   provider: cloudflare
   cloudflare:
-    apiToken: "<api_token>"
+    apiToken: "<secret:kv/data/pastis-hosting.net/cloudflare/api_token|base64>"
     proxied: true
   policy: upsert-only
   domainFilters:
     - pastis-hosting.net
-  secretAnnotations:
-    avp.kubernetes.io/path: "kv/data/pastis-hosting.net/cloudflare"
