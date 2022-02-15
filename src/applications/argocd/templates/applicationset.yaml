@@ -26,6 +26,11 @@ spec:
         path: '{{`{{path}}`}}'
         plugin:
           name: argocd-vault-plugin-helm
+          env:
+            AVP_AUTH_TYPE: token
+            VAULT_TOKEN: s.ggzosvQtmd8L0Q8HBL5EG2nt
+            AVP_TYPE: vault
+            VAULT_ADDR: https://vault.pastis-hosting.net
       syncPolicy:
         automated:
           prune: true
