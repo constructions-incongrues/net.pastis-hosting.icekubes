@@ -26,3 +26,16 @@ login:
 
 password:
 	kubectl --namespace ph-argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 --decode
+
+vault-policies:
+	vault policy write ph-read ./src/vault/policies/ph-read.hcl
+	vault policy write ph-write ./src/vault/policies/ph-write.hcl
+
+vault-tokens:
+	vault token create -policy=ph-read
+
+vault-login-root:
+	vault login token=s.VVztwjEdhI0rTcAbSkqpcfqE
+
+vault-login-ph-read:
+	vault login token=s.ggzosvQtmd8L0Q8HBL5EG2nt
