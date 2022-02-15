@@ -7,6 +7,9 @@ argo-cd:
   dex:
     enabled: false
   repoServer:
+    serviceAccount:
+      create: true
+      name: argocd-repo-server
     extraArgs:
       - '--parallelismlimit'
       - '2'

@@ -31,8 +31,8 @@ vault: vault-login-root vault-kv vault-policies vault-auth vault-secrets
 
 vault-auth:
 	-vault auth enable kubernetes
-	vault write auth/kubernetes/role/argocd-vault-replacer \
-			bound_service_account_names=argocd-vault-replacer \
+	vault write auth/kubernetes/role/argocd-repo-server \
+			bound_service_account_names=argocd-repo-server \
 			bound_service_account_namespaces=ph-argocd \
 			policies=ph-write \
 			ttl=1h
