@@ -1,9 +1,11 @@
+# https://github.com/bitnami/charts/blob/master/bitnami/external-dns/values.yaml
 external-dns:
   provider: cloudflare
   cloudflare:
-    apiToken: BYR8IAr6DNRc5JfUZtGtirRzLJV-XMJAfwYjIKHK
+    apiToken: "<api_token>"
     proxied: true
   policy: upsert-only
   domainFilters:
     - pastis-hosting.net
-    - jeancloude.club
+  secretAnnotations:
+    avp.kubernetes.io/path: "kv/data/pastis-hosting.net/cloudflare"
