@@ -2,7 +2,7 @@
 external-dns:
   provider: cloudflare
   cloudflare:
-    apiToken: "<kv:data/pastis-hosting.net/cloudflare/api_token|base64>"
+    apiToken: "<secret:kv/data/pastis-hosting.net/cloudflare~api_token|base64>"
     proxied: true
   policy: upsert-only
   domainFilters:
