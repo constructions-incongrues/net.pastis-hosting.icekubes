@@ -24,17 +24,17 @@ spec:
         repoURL: https://github.com/constructions-incongrues/net.pastis-hosting.k8s.git
         targetRevision: HEAD
         path: '{{`{{path}}`}}'
-        plugin:
-          name: argocd-vault-plugin-helm
-          env:
-            - name: AVP_AUTH_TYPE
-              value: token
-            - name: VAULT_TOKEN
-              value: s.ggzosvQtmd8L0Q8HBL5EG2nt
-            - name: AVP_TYPE
-              value: vault
-            - name: VAULT_ADDR
-              value: https://vault.pastis-hosting.net
+        # plugin:
+        #   name: argocd-vault-plugin-helm
+        #   env:
+        #     - name: AVP_AUTH_TYPE
+        #       value: token
+        #     - name: VAULT_TOKEN
+        #       value: s.ggzosvQtmd8L0Q8HBL5EG2nt
+        #     - name: AVP_TYPE
+        #       value: vault
+        #     - name: VAULT_ADDR
+        #       value: https://vault.pastis-hosting.net
       syncPolicy:
         automated:
           prune: true
