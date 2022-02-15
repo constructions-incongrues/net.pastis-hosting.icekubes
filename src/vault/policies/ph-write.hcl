@@ -1,3 +1,3 @@
 path "kv/data/pastis-hosting.net/*" {
-  capabilities = ["create", "update"]
+  capabilities = ["read", "list", "create", "update", "delete"]
 }

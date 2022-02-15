@@ -27,7 +27,15 @@ login:
 password:
 	kubectl --namespace ph-argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 --decode
 
-vault: vault-login-root vault-kv vault-policies vault-secrets
+vault: vault-login-root vault-kv vault-policies vault-auth vault-secrets
+
+vault-auth:
+	-vault auth enable kubernetes
+	vault write auth/kubernetes/role/argocd-vault-replacer \
+			bound_service_account_names=argocd-vault-replacer \
+			bound_service_account_namespaces=ph-argocd \
+			policies=ph-write \
+			ttl=1h
 
 vault-secrets:
 	vault kv put kv/pastis-hosting.net/cloudflare api_token=BYR8IAr6DNRc5JfUZtGtirRzLJV-XMJAfwYjIKHK
@@ -38,7 +46,7 @@ vault-kv:
 vault-login-root:
 	vault login token=s.GpFEzwuuG1Pwa7ikhoS2Us7c
 
-vault-policies: vault-login-root
+vault-policies:
 	vault policy write ph-read ./src/vault/policies/ph-read.hcl
 	vault policy write ph-write ./src/vault/policies/ph-write.hcl
 
