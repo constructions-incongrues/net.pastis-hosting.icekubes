@@ -47,7 +47,7 @@ argo-cd:
             args: ["helm dependency build"]
           generate:
             command: ["sh", "-c"]
-            args: ["helm template $ARGOCD_APP_NAME . > all.yaml && argocd-vault-plugin generate all.yaml -s ph-argocd:argocd-vault-plugin-credentials"]
+            args: ["helm template $ARGOCD_APP_NAME . > all.yaml && argocd-vault-plugin generate all.yaml -s argocd-vault-plugin-credentials"]
     rbacConfig:
       policy.csv: |
         g, argocd:admins, role:admin
