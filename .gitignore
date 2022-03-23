@@ -1,4 +1,4 @@
 .vscode
 /scratchpad
 /etc
-/src/applications/*/charts/
+/src/applications/*/*/charts/
