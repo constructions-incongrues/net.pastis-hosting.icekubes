@@ -11,7 +11,7 @@ spec:
       repoURL: https://github.com/constructions-incongrues/net.pastis-hosting.k8s.git
       revision: HEAD
       directories:
-      - path: src/applications/*
+      - path: src/applications/enabled/*
   template:
     metadata:
       name: '{{`{{path.basename}}`}}'

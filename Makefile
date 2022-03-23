@@ -1,7 +1,7 @@
 bootstrap:
 	helm upgrade \
 		argocd \
-		./src/applications/argocd \
+		./src/applications/enabled/argocd \
 		--atomic \
 		--create-namespace \
 		--dependency-update \
@@ -12,7 +12,7 @@ bootstrap:
 
 	helm upgrade \
 		pastis-hosting \
-		./src/applications/pastis-hosting \
+		./src/applications/enabled/pastis-hosting \
 		--atomic \
 		--create-namespace \
 		--dependency-update \
