@@ -1,4 +1,5 @@
 bootstrap:
+	helm dependency build ./src/applications/enabled/argocd/
 	helm upgrade \
 		argocd \
 		./src/applications/enabled/argocd \

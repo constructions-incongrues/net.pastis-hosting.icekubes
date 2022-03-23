@@ -24,8 +24,6 @@ spec:
         repoURL: https://github.com/constructions-incongrues/net.pastis-hosting.k8s.git
         targetRevision: HEAD
         path: '{{`{{path}}`}}'
-        plugin:
-          name: helm-argocd-vault-replacer
       syncPolicy:
         automated:
           prune: true
