@@ -1,0 +1,93 @@
+{
+  "id" : 1,
+  "name" : "Name",
+  "description" : "Description",
+  "revision" : 0,
+  "lastModifiedDate" : "2022-03-23T06:11:53Z",
+  "lastModifiedAgent" : "structurizr-web/2702/diagram",
+  "properties" : {
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdXNlciA9IHBlcnNvbiAiVXNlciIKICAgICAgICBhZG1pbiA9IHBlcnNvbiAiQWRtaW4iCiAgICAgICAga2V5Y2xvYWsgPSBzb2Z0d2FyZVN5c3RlbSAiS2V5Y2xvYWsiCiAgICAgICAgdXNlciAtPiBrZXljbG9hayAiVXNlcyIKICAgICAgICBhZG1pbiAtPiBrZXljbG9hayAiQWRtaW5pc3RyYXRlcyIKICAgIH0KCiAgICB2aWV3cyB7CiAgICAgICAgc3lzdGVtQ29udGV4dCBrZXljbG9hayAiRGlhZ3JhbTEiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9MYXlvdXQKICAgICAgICB9CgogICAgICAgIHRoZW1lIGRlZmF1bHQKICAgIH0KCn0K"
+  },
+  "configuration" : { },
+  "model" : {
+    "people" : [ {
+      "id" : "1",
+      "tags" : "Element,Person",
+      "name" : "User",
+      "relationships" : [ {
+        "id" : "4",
+        "tags" : "Relationship",
+        "sourceId" : "1",
+        "destinationId" : "3",
+        "description" : "Uses"
+      } ],
+      "location" : "Unspecified"
+    }, {
+      "id" : "2",
+      "tags" : "Element,Person",
+      "name" : "Admin",
+      "relationships" : [ {
+        "id" : "5",
+        "tags" : "Relationship",
+        "sourceId" : "2",
+        "destinationId" : "3",
+        "description" : "Administrates"
+      } ],
+      "location" : "Unspecified"
+    } ],
+    "softwareSystems" : [ {
+      "id" : "3",
+      "tags" : "Element,Software System",
+      "name" : "Keycloak",
+      "location" : "Unspecified",
+      "documentation" : { }
+    } ]
+  },
+  "documentation" : { },
+  "views" : {
+    "systemContextViews" : [ {
+      "softwareSystemId" : "3",
+      "key" : "Diagram1",
+      "order" : 1,
+      "paperSize" : "A5_Landscape",
+      "dimensions" : {
+        "width" : 1516,
+        "height" : 1416
+      },
+      "automaticLayout" : {
+        "implementation" : "Graphviz",
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "nodeSeparation" : 300,
+        "edgeSeparation" : 0,
+        "vertices" : false
+      },
+      "enterpriseBoundaryVisible" : true,
+      "elements" : [ {
+        "id" : "1",
+        "x" : 207,
+        "y" : 207
+      }, {
+        "id" : "2",
+        "x" : 907,
+        "y" : 207
+      }, {
+        "id" : "3",
+        "x" : 532,
+        "y" : 907
+      } ],
+      "relationships" : [ {
+        "id" : "4"
+      }, {
+        "id" : "5"
+      } ]
+    } ],
+    "configuration" : {
+      "branding" : { },
+      "styles" : { },
+      "themes" : [ "https://static.structurizr.com/themes/default/theme.json" ],
+      "terminology" : { },
+      "lastSavedView" : "Diagram1"
+    }
+  }
+}

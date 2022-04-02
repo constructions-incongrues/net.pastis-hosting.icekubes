@@ -2,3 +2,5 @@
 /scratchpad
 /etc
 /src/applications/*/*/charts/
+.terraform/*
+docs/.structurizr

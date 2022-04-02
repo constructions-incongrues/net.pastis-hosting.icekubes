@@ -27,6 +27,9 @@ login:
 password:
 	kubectl --namespace ph-argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 --decode
 
+structurizr:
+	docker run -it --rm -p 8080:8080 -v $$PWD/docs/:/usr/local/structurizr structurizr/lite
+
 vault: vault-login-root vault-kv vault-policies vault-auth vault-secrets
 
 vault-auth:
