@@ -5,10 +5,10 @@ terraform {
       source = "hashicorp/kubernetes"
       version = "2.9.0"
     }
-    ovh = {
-      source = "ovh/ovh"
-      version = "0.16.0"
-    }
+    # ovh = {
+    #   source = "ovh/ovh"
+    #   version = "0.16.0"
+    # }
     helm = {
       source = "hashicorp/helm"
       version = "2.5.0"
@@ -20,11 +20,17 @@ terraform {
   }
 }
 
-provider "ovh" {
-  endpoint           = "ovh-eu"
-  application_key    = "IfgYXAWtC0eZCUSe"
-  application_secret = "KIwBm9sUJV5VaISmiPE2BBmJ9vdD3T0I"
-  consumer_key       = "4ILb2SBa43x8nV4PU0eRGa75TyF9oZDH"
+# provider "ovh" {
+#   endpoint           = "ovh-eu"
+#   application_key    = "aab595368b5511b9"
+#   application_secret = "ddee47aa907a57faab971512c5d769c4"
+#   consumer_key       = "8fae16a0bc4eab0265d08c85a6a6dda0"
+# }
+
+provider "google" {
+  project = "net-pastis-hosting-icekubes"
+  region  = "europe-west1"
+  zone    = "europe-west1-b"
 }
 
 provider "kubernetes" {
