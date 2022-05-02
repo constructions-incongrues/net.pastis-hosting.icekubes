@@ -3,7 +3,7 @@
 on: [push, pull_request]
 jobs:
   infracost:
-    runs-on: ubuntu-latest # The following are JavaScript actions (not Docker)
+    runs-on: ubuntu-latest
     env:
       working-directory: src/terraform
 
@@ -17,6 +17,8 @@ jobs:
       # can run Terraform commands as they would in the shell.
       - name: Install terraform
         uses: hashicorp/setup-terraform@v1
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
         with:
           terraform_wrapper: false # This is recommended so the `terraform show` command outputs valid JSON
 
