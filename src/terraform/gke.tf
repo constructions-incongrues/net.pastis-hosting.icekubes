@@ -13,6 +13,10 @@ variable "gke_num_nodes" {
   description = "number of gke nodes"
 }
 
+variable "gke_cluster_location" {
+  description = "gke cluster location"
+}
+
 # GCP project
 # resource "google_project" "pĥ" {
 #   name                = "Pastis Hosting"
@@ -33,13 +37,13 @@ resource "google_project_service" "compute" {
 # GKE cluster
 resource "google_container_cluster" "primary" {
   name     = "${var.project_id}-gke"
-  location = var.region
+  location = var.gke_cluster_location
   
   # We can't create a cluster with no node pool defined, but we want to only use
   # separately managed node pools. So we create the smallest possible default
   # node pool and immediately delete it.
-  remove_default_node_pool = true
   initial_node_count       = 1
+  remove_default_node_pool = true
 
   network    = google_compute_network.vpc.name
   subnetwork = google_compute_subnetwork.subnet.name
