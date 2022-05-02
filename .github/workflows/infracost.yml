@@ -17,8 +17,6 @@ jobs:
       # can run Terraform commands as they would in the shell.
       - name: Install terraform
         uses: hashicorp/setup-terraform@v1
-        env:
-          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
         with:
           terraform_wrapper: false # This is recommended so the `terraform show` command outputs valid JSON
 
@@ -27,10 +25,14 @@ jobs:
       - name: Terraform init
         run: terraform init
         working-directory: ${{ env.working-directory }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
       - name: Terraform plan
         run: terraform plan -out tfplan.binary
         working-directory: ${{ env.working-directory }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
       - name: Terraform show
         run: terraform show -json tfplan.binary > plan.json
