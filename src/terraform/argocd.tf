@@ -3,6 +3,7 @@ resource "helm_release" "argocd" {
   chart      = "./src/applications/enabled/argocd"
   namespace  = kubernetes_namespace.ph-argocd.metadata[0].annotations.name
   timeout    = 1800
+  atomic     = true
 }
 
 resource "kubernetes_namespace" "ph-argocd" {
