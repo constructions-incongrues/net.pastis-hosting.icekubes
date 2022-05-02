@@ -42,7 +42,7 @@ resource "google_container_cluster" "primary" {
   # We can't create a cluster with no node pool defined, but we want to only use
   # separately managed node pools. So we create the smallest possible default
   # node pool and immediately delete it.
-  enable_autopilot         = true
+  enable_autopilot         = false
   initial_node_count       = 1
 
   network    = google_compute_network.vpc.name
