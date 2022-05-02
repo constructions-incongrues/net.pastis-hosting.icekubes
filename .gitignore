@@ -4,3 +4,6 @@
 /src/applications/*/*/charts/
 .terraform/*
 docs/.structurizr
+src/terraform/.infracost/.infracost-cache
+src/terraform/.infracost/terraform_modules/manifest.json
+src/terraform/infracost-run.json
