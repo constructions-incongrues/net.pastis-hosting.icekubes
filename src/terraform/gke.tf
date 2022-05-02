@@ -13,6 +13,10 @@ variable "gke_num_nodes" {
   description = "number of gke nodes"
 }
 
+variable "gke_zone" {
+  description = "cluster zone"
+}
+
 # GCP project
 # resource "google_project" "pĥ" {
 #   name                = "Pastis Hosting"
@@ -34,7 +38,7 @@ resource "google_project_service" "compute" {
 resource "google_container_cluster" "primary" {
   name     = "${var.project_id}-gke"
   location = var.region
-  zone     = var.zone
+  zone     = var.gke_zone
   
   # We can't create a cluster with no node pool defined, but we want to only use
   # separately managed node pools. So we create the smallest possible default
