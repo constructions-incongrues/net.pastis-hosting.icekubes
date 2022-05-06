@@ -18,25 +18,34 @@ variable "gke_cluster_location" {
 }
 
 # GCP project
-# resource "google_project" "pĥ" {
-#   name                = "Pastis Hosting"
-#   project_id          = var.project_id
-#   auto_create_network = false
-# }
+data "google_billing_account" "tristan" {
+  display_name = "Mon compte de facturation"
+  open         = true
+}
+
+resource "google_project" "ph" {
+  name                = "Pastis Hosting"
+  project_id          = var.project_id
+  auto_create_network = false
+  billing_account     = data.google_billing_account.tristan.id
+}
 
 resource "google_project_service" "container" {
-  project = var.project_id
-  service = "container.googleapis.com"
+  project                    = google_project.ph.project_id
+  service                    = "container.googleapis.com"
+  disable_dependent_services = true
 }
 
 resource "google_project_service" "compute" {
-  project = var.project_id
-  service = "compute.googleapis.com"
+  project                    = google_project.ph.project_id
+  service                    = "compute.googleapis.com"
+  disable_dependent_services = true
 }
 
 # GKE cluster
 resource "google_container_cluster" "primary" {
-  name     = "${var.project_id}-gke"
+  project  = google_project.ph.project_id
+  name     = "${google_project.ph.project_id}-gke"
   location = var.gke_cluster_location
   
   # We can't create a cluster with no node pool defined, but we want to only use
@@ -52,9 +61,14 @@ resource "google_container_cluster" "primary" {
 # Separately Managed Node Pool
 resource "google_container_node_pool" "primary_nodes" {
   name       = "${google_container_cluster.primary.name}-node-pool"
-  location   = var.region
+  location   = var.gke_cluster_location
   cluster    = google_container_cluster.primary.name
   node_count = var.gke_num_nodes
+  project    = google_project.ph.project_id
+
+  depends_on = [
+    google_project_service.container
+  ]
 
   node_config {
     oauth_scopes = [
@@ -63,12 +77,12 @@ resource "google_container_node_pool" "primary_nodes" {
     ]
 
     labels = {
-      env = var.project_id
+      env = google_project.ph.project_id
     }
 
     # preemptible  = true
-    machine_type = "e2-micro"
-    tags         = ["gke-node", "${var.project_id}-gke"]
+    machine_type = "e2-small"
+    tags         = ["gke-node", "${google_project.ph.project_id}-gke"]
     metadata = {
       disable-legacy-endpoints = "true"
     }
