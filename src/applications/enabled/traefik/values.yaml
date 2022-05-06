@@ -4,7 +4,7 @@ traefik:
       level: DEBUG
   persistence:
     enabled: true
-    accessMode: ReadWriteMany
+    accessMode: ReadWriteOnce
     subPath: "traefik"
     size: 1Gi
   securityContext:
