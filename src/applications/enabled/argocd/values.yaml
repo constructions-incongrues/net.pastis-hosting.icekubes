@@ -10,9 +10,9 @@ argo-cd:
     serviceAccount:
       create: true
       name: argocd-repo-server
-    extraArgs:
-      - '--parallelismlimit'
-      - '2'
+    # extraArgs:
+    #   - '--parallelismlimit'
+    #   - '4'
   server:
     extraArgs:
       - --insecure
