@@ -2,7 +2,7 @@
 argo-cd:
   global:
     image:
-      tag: 'v2.3.0-rc5'
+      tag: 'v2.3.3'
   installCRDs: true
   dex:
     enabled: false
@@ -13,26 +13,6 @@ argo-cd:
     extraArgs:
       - '--parallelismlimit'
       - '2'
-
-    volumes:
-    - name: custom-tools
-      emptyDir: {}
-
-    volumeMounts:
-    - name: custom-tools
-      mountPath: /usr/local/bin/argocd-vault-replacer
-      subPath: argocd-vault-replacer
-    envFrom:
-      - secretRef:
-          name: argocd-vault-replacer-credentials
-
-    initContainers:
-    - name: argocd-vault-replacer-install
-      image: ghcr.io/crumbhole/argocd-vault-replacer
-      imagePullPolicy: Always
-      volumeMounts:
-        - mountPath: /custom-tools
-          name: custom-tools
   server:
     extraArgs:
       - --insecure
