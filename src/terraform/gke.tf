@@ -13,6 +13,11 @@ variable "gke_num_nodes" {
   description = "number of gke nodes"
 }
 
+variable "gke_machine_type" {
+  default     = "n1-standard-1"
+  description = "number of gke nodes"
+}
+
 variable "gke_cluster_location" {
   description = "gke cluster location"
 }
@@ -81,7 +86,7 @@ resource "google_container_node_pool" "primary_nodes" {
     }
 
     # preemptible  = true
-    machine_type = "e2-small"
+    machine_type = var.gke_machine_type
     tags         = ["gke-node", "${google_project.ph.project_id}-gke"]
     metadata = {
       disable-legacy-endpoints = "true"
