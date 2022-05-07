@@ -1,0 +1,45 @@
+apiVersion: config.kio.kasten.io/v1alpha1
+kind: Policy
+metadata:
+  labels:
+{{ include "helm.labels" . | indent 4 }}
+  namespace: {{ .Release.Namespace }}
+  name: k10-{{ .Release.Namespace }}-policy
+spec:
+  comment: ""
+  frequency: "@daily"
+  paused: false
+  actions:
+    - action: backup
+      backupParameters:
+        profile:
+          namespace: ph-k10
+          name: k10-config-icekubes-location-objectstore-de
+    - action: export
+      exportParameters:
+        frequency: "@daily"
+        receiveString: bIzAPpoanmFW6wAhohIsq/ZoW29TH1aI8RCgoGwHV5IkBe9muG+hfMHJJI3AlvczfQm/zKuNGU+u7zELhTr92hAN4w8RbcWqb5Wvsc+I2biLgf9G30BUPyKkw6XdEqUwE89M+G1M3rhD4LOQ7NyW4Hn7ANSI73JV9XGHDU2C5tuikaQpPkqIoWysnGzOL003ufo/QI6q+2QT00o3MTiL9929XXSzHSjrpihH94zbaJdioYyeZS3AdosHtK2Qh965Mo7HaaGIcsFhEjSyoQslpieW4vuefe2C0hKKT2lyXyc/FH7GtmBwrja1tcuM5ch+0EczZdJHkmIDmM1kkz2bE/VM86cDJ18M6J0hi4eaqqjlhCrfmd2V6DpIk0Gxk244uZXiYNtYnK7iATQwxoiwO0bmkrdcAeyarFC2yYZPMSAR36BfIMWEQT5nERCV38/yNAGQ//k8YrulRl9H7RR5RXvxz7dSpqUzPGykaX4c9sMruRgFgQy3AxVdKCxKQ8r7nOaVexnFz3su4JBPjQOwmy5Zs+E1YfqcbC90Zpiw3jbwUgjiUTfNQZWfkdZTW/4X
+        migrationToken:
+          name: "k10-{{ .Release.Namespace }}-migration-token"
+          namespace: "{{ .Release.Namespace }}"
+        profile:
+          name: k10-config-icekubes-location-objectstore-de
+          namespace: ph-k10
+        exportData:
+          enabled: true
+      retention:
+        daily: 0
+        weekly: 0
+        monthly: 0
+        yearly: 0
+  retention:
+    daily: 7
+    weekly: 4
+    monthly: 12
+    yearly: 7
+  selector:
+    matchExpressions:
+      - key: k10.kasten.io/appNamespace
+        operator: In
+        values:
+          - ph-keycloak
