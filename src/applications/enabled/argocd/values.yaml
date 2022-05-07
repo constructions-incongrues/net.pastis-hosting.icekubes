@@ -12,7 +12,7 @@ argo-cd:
       name: argocd-repo-server
     extraArgs:
       - '--parallelismlimit'
-      - '3'
+      - '2'
   server:
     extraArgs:
       - --insecure
