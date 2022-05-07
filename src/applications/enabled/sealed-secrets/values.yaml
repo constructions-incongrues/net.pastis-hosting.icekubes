@@ -1,0 +1,133 @@
+#
+# IMPORTANT NOTE
+#
+# This chart inherits from our common library chart. You can check the default values/options here:
+# https://github.com/k8s-at-home/library-charts/tree/main/charts/stable/common/values.yaml
+#
+
+homer:
+  # -- environment variables.
+  # @default -- See below
+  env:
+    # -- Set the container timezone
+    TZ: Europe/Paris
+
+  controller:
+    strategy: RollingUpdate
+
+  ingress:
+      # -- Enable and configure ingress settings for the chart under this key.
+      # @default -- See values.yaml
+    main:
+      # -- Enables or disables the ingress
+      enabled: true
+
+      # -- Provide additional annotations which may be required.
+      annotations:
+        cert-manager.io/cluster-issuer: cert-manager-pastis-hosting-net-issuer
+        external-dns.alpha.kubernetes.io/hostname: www.pastis-hosting.net
+        traefik.ingress.kubernetes.io/router.tls: "true"
+
+      ## Configure the hosts for the ingress
+      hosts:
+        -  # -- Host address. Helm template can be passed.
+          host: www.pastis-hosting.net
+
+          ## Configure the paths for the host
+          paths:
+            -  # -- Path.  Helm template can be passed.
+              path: /
+
+      # -- Configure TLS for the ingress. Both secretName and hosts can process a Helm template.
+      tls:
+       - secretName: homer-tls
+         hosts:
+           - www.pastis-hosting.net
+
+  configmap:
+    config:
+      # -- Store homer configuration as a ConfigMap
+      enabled: true
+      # -- Homer configuration. See [image documentation](https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md) for more information.
+      # -- Font Awesome Icons : https://fontawesome.com/v5/icons
+      # @default -- See values.yaml
+      data:
+        config.yml: |
+          title: "Pastis Hosting"
+          subtitle: "L'Affreux Pastis de la Rue des Gardes"
+          icon: "fab fa-glass"
+
+          header: false # Set to false to hide the header
+          footer: ""
+
+          columns: "auto" # "auto" or number (must be a factor of 12: 1, 2, 3, 4, 6, 12)
+          connectivityCheck: true # whether you want to display a message when the apps are not accessible anymore (VPN disconnected for example)
+
+          # Optional navbar
+          links:
+            - name: "Connexion"
+              icon: "fas fa-user"
+              url: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net/account/
+              target: "_blank"
+            - name: "État des services"
+              icon: "fas fa-check"
+              url: "https://status.pastis-hosting.net"
+              target: "_blank"
+
+          # Services
+          # First level array represents a group.
+          # Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+          services:
+            - name: "Outils"
+              icon: "fas fa-wrench"
+              items:
+                - name: "ArgoCD"
+                  icon: "fas fa-lock"
+                  url: "https://argocd.pastis-hosting.net"
+                  target: "_blank"
+                - name: "Cloudflare"
+                  icon: "fas fa-lock"
+                  url: "https://dash.cloudflare.com/bb7602930482a97a4a403a52a17cb524/pastis-hosting.net"
+                  target: "_blank"
+                - name: "Keycloak"
+                  icon: "fas fa-lock"
+                  url: "https://keycloak.pastis-hosting.net/auth/admin/master/console"
+                  target: "_blank"
+                - name: "Mailjet"
+                  icon: "fas fa-lock"
+                  url: "https://app.mailjet.com/dashboard"
+                  target: "_blank"
+                - name: "OVHcloud"
+                  icon: "fas fa-lock"
+                  url: "https://www.ovh.com/manager/public-cloud/#/pci/projects/de9eaa1e9cc94734bf787165a68f4d01"
+                  target: "_blank"
+                - name: "Traefik"
+                  icon: "fas fa-lock"
+                  url: "https://trfk.pastis-hosting.net/dashboard/"
+                  target: "_blank"
+            - name: "Sources"
+              icon: "fas fa-code"
+              items:
+                - name: "k8s"
+                  icon: "fab fa-github"
+                  url: "https://vscode.dev/github/constructions-incongrues/net.pastis-hosting.k8s"
+                  target: "_blank"
+                - name: "status"
+                  icon: "fab fa-github"
+                  url: "https://vscode.dev/github/constructions-incongrues/net.pastis-hosting.status"
+                  target: "_blank"
+            - name: "Environnements"
+              icon: "fas fa-water"
+              items:
+                - name: "Constructions Incongrues"
+                  icon: "fas fa-fish"
+                  url: "https://www.constructions-incongrues.net"
+                  target: "_blank"
+                - name: "Club Jean-Cloude"
+                  icon: "fas fa-fish"
+                  url: "https://www.jeancloude.club"
+                  target: "_blank"
+                - name: "Pastis Hosting"
+                  icon: "fas fa-fish"
+                  url: "https://www.pastis-hosting.net"
+                  target: "_blank"
