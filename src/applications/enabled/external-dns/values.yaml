@@ -2,7 +2,7 @@
 external-dns:
   provider: cloudflare
   cloudflare:
-    secretName: external-dns
+    secretName: external-dns-secrets
     proxied: true
   policy: upsert-only
   domainFilters:
