@@ -2,7 +2,7 @@
 external-dns:
   provider: cloudflare
   cloudflare:
-    apiToken: "BYR8IAr6DNRc5JfUZtGtirRzLJV-XMJAfwYjIKHK"
+    secretName: external-dns
     proxied: true
   policy: upsert-only
   domainFilters:
