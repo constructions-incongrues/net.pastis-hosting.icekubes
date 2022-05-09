@@ -33,6 +33,7 @@ resource "google_project" "ph" {
   project_id          = var.project_id
   auto_create_network = false
   billing_account     = data.google_billing_account.tristan.id
+  skip_delete         = true
 }
 
 resource "google_project_service" "container" {
