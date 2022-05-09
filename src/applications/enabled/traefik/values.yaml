@@ -53,11 +53,9 @@ traefik-forward-auth:
     PROVIDERS_OIDC_ISSUER_URL: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
     PROVIDERS_OIDC_CLIENT_ID:
       valueFrom:
-        secretKeyRef:
-          name: "traefik-secrets"
-          key: providers_oidc_client_id
+        name: "traefik-secrets"
+        key: providers_oidc_client_id
     PROVIDERS_OIDC_CLIENT_SECRET:
       valueFrom:
-        secretKeyRef:
-          name: "traefik-secrets"
-          key: providers_oidc_client_secret
+        name: "traefik-secrets"
+        key: providers_oidc_client_secret
