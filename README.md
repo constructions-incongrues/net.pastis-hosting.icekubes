@@ -23,14 +23,14 @@ metadata:
   namespace: {{ .Release.Namespace }}
   name: {{ .Release.Name }}-secrets
 spec:
-  encryptedData: ~
+  encryptedData:
   template:
-    data: null
     metadata:
       labels:
-    {{ include "helm.labels" . | indent 6 }}
+{{ include "helm.labels" . | indent 8 }}
       namespace: {{ .Release.Namespace }}
       name: {{ .Release.Name }}-secrets
+
 ```
 
 # gcloud 
