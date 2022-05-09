@@ -27,7 +27,8 @@ keycloak:
   proxyAddressForwarding: true
   auth: 
     adminUser: admin
-    createAdminUser: false
+    adminPassword: admin
+    createAdminUser: true
     existingSecret: {{ .Release.Name }}-secrets
   postgresql:
     persistence:
