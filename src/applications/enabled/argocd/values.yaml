@@ -13,6 +13,9 @@ argo-cd:
     extraArgs:
       - '--parallelismlimit'
       - '2'
+  configs:
+    secret:
+      createSecret: false
   server:
     extraArgs:
       - --insecure
@@ -21,8 +24,8 @@ argo-cd:
       oidc.config: |
         name: Keycloak
         issuer: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
-        clientID: argocd
-        clientSecret: Evc9Sx9x5pktvCFsFdFNhn0RhCXGeJZi
+        clientID: $oidc.keycloak.client_id
+        clientSecret: $oidc.keycloak.client_secret
         requestedScopes: ["openid", "profile", "email", "groups"]
     rbacConfig:
       policy.csv: |
