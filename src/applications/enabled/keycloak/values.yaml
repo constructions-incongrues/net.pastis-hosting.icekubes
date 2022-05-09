@@ -29,7 +29,7 @@ keycloak:
     adminUser: admin
     adminPassword: admin
     createAdminUser: true
-    existingSecret: {{ .Release.Name }}-secrets
+    existingSecret: "{{ .Release.Name }}-secrets"
   postgresql:
     persistence:
       enabled: true
