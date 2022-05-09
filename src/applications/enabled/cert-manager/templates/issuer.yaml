@@ -7,7 +7,7 @@ metadata:
   name: {{ .Release.Name }}-pastis-hosting-net-issuer
 spec:
   acme:
-    email: tristan@jeancloude.club
+    email: tristan@pastis-hosting.net
     server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       name: {{ .Release.Name }}-pastis-hosting-net-issuer-account-key
@@ -16,8 +16,8 @@ spec:
         cloudflare:
           email: contact@constructions-incongrues.net
           apiTokenSecretRef:
-            name: {{ .Release.Name }}-cloudflare-api-token-secret
-            key: api-token
+            name: {{ .Release.Name }}-secrets
+            key: cloudflare_api_token
       selector:
         dnsZones:
         - 'pastis-hosting.net'
