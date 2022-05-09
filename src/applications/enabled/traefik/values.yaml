@@ -34,12 +34,12 @@ traefik:
     - name: CF_API_EMAIL
       valueFrom: 
         secretKeyRef:
-          name: traefik-secrets"
+          name: traefik-secrets
           key: cloudflare_api_email
     - name: CF_DNS_API_TOKEN
       valueFrom:
         secretKeyRef:
-          name: traefik-secrets"
+          name: traefik-secrets
           key: cloudflare_dns_api_token
   ports:
     web:
@@ -56,10 +56,10 @@ traefik-forward-auth:
     PROVIDERS_OIDC_CLIENT_ID:
       valueFrom:
         secretKeyRef:
-          name: "traefik-secrets"
+          name: traefik-secrets
           key: providers_oidc_client_id
     PROVIDERS_OIDC_CLIENT_SECRET:
       valueFrom:
         secretKeyRef:
-          name: "traefik-secrets"
+          name: traefik-secrets
           key: providers_oidc_client_secret
