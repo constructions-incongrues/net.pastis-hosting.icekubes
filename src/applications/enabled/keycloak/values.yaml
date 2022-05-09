@@ -25,10 +25,10 @@ keycloak:
         - key: "realms.json"
           path: "realms.json"
   proxyAddressForwarding: true
+  auth: 
+    existingSecret: 
+      name: {{ .Release.Name }}-secrets
   postgresql:
-    auth:
-      existingSecret: 
-        name: {{ .Release.Name }}-secrets
     persistence:
       enabled: true
       size: 1Gi
