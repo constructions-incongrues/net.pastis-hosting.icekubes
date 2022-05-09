@@ -59,3 +59,7 @@ traefik-forward-auth:
     #   valueFrom:
     #     name: "traefik-secrets"
     #     key: providers_oidc_client_secret
+    SECRET:
+      valueFrom:
+        name: "traefik-secrets"
+        key: secret
