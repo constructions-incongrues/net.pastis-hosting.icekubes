@@ -47,19 +47,17 @@ rollingUpdate:
 
 traefik-forward-auth:
   env:
-    - name: TZ
-      value : Europe/Paris
-    - name: COOKIE_DOMAIN
-      value : pastis-hosting.net
-    - name: DEFAULT_PROVIDER
-      value : oidc
-    - name: PROVIDERS_OIDC_ISSUER_URL
-      value : https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
-    - name: PROVIDERS_OIDC_CLIENT_ID
+    TZ: Europe/Paris
+    COOKIE_DOMAIN: pastis-hosting.net
+    DEFAULT_PROVIDER: oidc
+    PROVIDERS_OIDC_ISSUER_URL: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
+    PROVIDERS_OIDC_CLIENT_ID:
       valueFrom:
-        name: "{{ .Release.Name }}-secrets"
-        key: providers_oidc_client_id
-    - name: PROVIDERS_OIDC_CLIENT_SECRET
+        secretKeyRef:
+          name: "{{ .Release.Name }}-secrets"
+          key: providers_oidc_client_id
+    PROVIDERS_OIDC_CLIENT_SECRET:
       valueFrom:
-        name: "{{ .Release.Name }}-secrets"
-        key: providers_oidc_client_secret
+        secretKeyRef:
+          name: "{{ .Release.Name }}-secrets"
+          key: providers_oidc_client_secret
