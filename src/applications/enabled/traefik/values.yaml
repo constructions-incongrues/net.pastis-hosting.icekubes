@@ -61,24 +61,3 @@ traefik-forward-auth:
         secretKeyRef:
           name: "{{ .Release.Name }}-secrets"
           value: providers_oidc_client_secret
-
-  # -- Configures service settings for the chart.
-  # @default -- See values.yaml
-  service:
-    main:
-      ports:
-        http:
-          port: 4181
-
-  middleware:
-    # -- Enable a preconfigured middleware.
-    enabled: true
-    # -- Override the middleware name.
-    nameOverride: ""
-
-    providers:
-      oidc:
-        enabled: true
-        issuerUrl: 
-        clientId: traefik
-        clientSecret: 
