@@ -51,11 +51,11 @@ traefik-forward-auth:
     COOKIE_DOMAIN: pastis-hosting.net
     DEFAULT_PROVIDER: oidc
     PROVIDERS_OIDC_ISSUER_URL: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
-    PROVIDERS_OIDC_CLIENT_ID:
-      valueFrom:
-        name: "traefik-secrets"
-        key: providers_oidc_client_id
-    PROVIDERS_OIDC_CLIENT_SECRET:
-      valueFrom:
-        name: "traefik-secrets"
-        key: providers_oidc_client_secret
+    # PROVIDERS_OIDC_CLIENT_ID:
+    #   valueFrom:
+    #     name: "traefik-secrets"
+    #     key: providers_oidc_client_id
+    # PROVIDERS_OIDC_CLIENT_SECRET:
+    #   valueFrom:
+    #     name: "traefik-secrets"
+    #     key: providers_oidc_client_secret
