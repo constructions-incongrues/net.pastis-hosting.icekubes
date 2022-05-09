@@ -27,14 +27,18 @@ traefik:
     - "--entryPoints.websecure.proxyProtocol.insecure=true"
     - "--entryPoints.websecure.forwardedHeaders.insecure=true"
     - "--certificatesresolvers.cloudflare.acme.dnschallenge.provider=cloudflare"
-    - "--certificatesresolvers.cloudflare.acme.email=tristan@jeancloude.club"
+    - "--certificatesresolvers.cloudflare.acme.email=tristan@pastis-hosting.net"
     - "--certificatesresolvers.cloudflare.acme.dnschallenge.resolvers=1.1.1.1"
     - "--certificatesresolvers.cloudflare.acme.storage=/data/acme.json"
   env:
     - name: CF_API_EMAIL
-      value: contact@constructions-incongrues.net
+      valueFrom: 
+        name: "{{ .Release.Name }}-secrets"
+        key: cloudflare_api_email
     - name: CF_DNS_API_TOKEN
-      value: BYR8IAr6DNRc5JfUZtGtirRzLJV-XMJAfwYjIKHK
+      valueFrom:
+        name: "{{ .Release.Name }}-secrets"
+        key: cloudflare_dns_api_token
   ports:
     web:
       redirectTo: websecure
@@ -42,13 +46,39 @@ rollingUpdate:
   maxUnavailable: 0
 
 traefik-forward-auth:
-  default:
-    provider: oidc
-  cookie:
-    domain: pastis-hosting.net
-  providers:
-    oidc:
-      enabled: true
-      issuerUrl: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
-      clientId: traefik
-      clientSecret: hRjBDv4TYC3vfXS1tIiU7DFDMR8nwsF2
+  env:
+    TZ: Europe/Paris
+    COOKIE_DOMAIN: pastis-hosting.net
+    DEFAULT_PROVIDER: oidc
+    PROVIDERS_OIDC_ISSUER_URL: 'https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net'
+    PROVIDERS_OIDC_CLIENT_ID:
+      valueFrom:
+        secretKeyRef:
+          name: "{{ .Release.Name }}-secrets"
+          value: providers_oidc_client_id
+    PROVIDERS_OIDC_CLIENT_SECRET:
+      valueFrom:
+        secretKeyRef:
+          name: "{{ .Release.Name }}-secrets"
+          value: providers_oidc_client_secret
+
+  # -- Configures service settings for the chart.
+  # @default -- See values.yaml
+  service:
+    main:
+      ports:
+        http:
+          port: 4181
+
+  middleware:
+    # -- Enable a preconfigured middleware.
+    enabled: true
+    # -- Override the middleware name.
+    nameOverride: ""
+
+    providers:
+      oidc:
+        enabled: true
+        issuerUrl: 
+        clientId: traefik
+        clientSecret: 
