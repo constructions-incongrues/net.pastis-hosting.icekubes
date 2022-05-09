@@ -34,12 +34,12 @@ traefik:
     - name: CF_API_EMAIL
       valueFrom: 
         secretKeyRef:
-          name: "{{ .Values.Release.Name }}-secrets"
+          name: traefik-secrets"
           key: cloudflare_api_email
     - name: CF_DNS_API_TOKEN
       valueFrom:
         secretKeyRef:
-          name: "{{ .Values.Release.Name }}-secrets"
+          name: traefik-secrets"
           key: cloudflare_dns_api_token
   ports:
     web:
