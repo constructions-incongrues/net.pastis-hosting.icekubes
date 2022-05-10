@@ -4,7 +4,7 @@ metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
   namespace: ph-k10
-  name: k10-disaster-recovery-policy
+  name: "{{ .Release.Name }}-disaster-recovery-policy"
 spec:
   frequency: "@daily"
   retention:
@@ -16,7 +16,7 @@ spec:
     - action: backup
       backupParameters:
         profile:
-          name: {{ .Release.Name }}-gcp
+          name: "{{ .Release.Name }}-infrastructure"
           namespace: ph-k10
   selector:
     matchExpressions:
