@@ -6,7 +6,7 @@ profiles:
     parameters:
       project_id: ph-prod-1
   location: 
-    provider: gcp
+    provider: gcs
     parameters:
       project_id: ph-prod-1
       object_store: pastis-hosting
