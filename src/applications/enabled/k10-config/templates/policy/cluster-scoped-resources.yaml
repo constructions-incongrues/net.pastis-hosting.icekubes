@@ -23,7 +23,7 @@ spec:
       backupParameters:
         filters: {}
         profile:
-          name: "{{ .Release.Name }}-{{ .Values.profiles.location.provider }}"
+          name: "{{ .Release.Name }}-{{ .Values.profiles.infra.provider }}"
           namespace: {{ .Values.k10.namespace }}
     - action: export
       exportParameters:
