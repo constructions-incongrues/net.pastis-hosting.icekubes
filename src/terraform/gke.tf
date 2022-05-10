@@ -71,6 +71,10 @@ resource "google_container_node_pool" "primary_nodes" {
   cluster    = google_container_cluster.primary.name
   node_count = var.gke_num_nodes
   project    = google_project.ph.project_id
+  autoscaling {
+    min_node_count = 1
+    max_node_count = 2
+  }
 
   depends_on = [
     google_project_service.container
