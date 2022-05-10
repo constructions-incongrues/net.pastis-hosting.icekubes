@@ -10,7 +10,6 @@ k10:
   auth:
     basicAuth:
       enabled: false
-      htpasswd: "tristan:{SHA}K+iK4HpzuMKnVlbTaxQSkD9/eLg="
     oidcAuth:
       enabled: true
       providerURL: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
@@ -23,9 +22,8 @@ k10:
       prompt: connect
   eula:
     accept: true
-    company: "Club Jean-Cloude"
-    email: jeancloude@jeancloude.club
-  clusterName: Icekubes
+    company: "Pastis Hosting"
+    email: contact@pastis-hosting.net
   ingress:
     create: true
     host: k10.pastis-hosting.net
