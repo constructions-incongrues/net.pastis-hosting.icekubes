@@ -31,6 +31,8 @@ resource "helm_release" "argocd" {
   timeout    = 1800
   atomic     = true
   dependency_update = true
+}
+
 
 # provider "argocd" {
 #   server_addr = "argocd.pastis-hosting.net:443"
