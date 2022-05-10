@@ -33,8 +33,6 @@ spec:
 
 ```
 
-MbGA&2pzH$6@MMR5fD^Pk9rZx#fPQZHt
-
 # gcloud 
 
 ```sh
