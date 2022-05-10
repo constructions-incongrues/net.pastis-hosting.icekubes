@@ -13,7 +13,7 @@ spec:
         kind: Secret
         name: "{{ .Release.Name }}-gcp"
         namespace: {{ .Values.k10.namespace }}
-      secretType: GCP
+      secretType: Opaque
     objectStore:
       name: {{ .Values.profiles.location.parameters.object_store }}
       objectStoreType: GCS
