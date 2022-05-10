@@ -10,7 +10,7 @@ spec:
     credential:
       secret:
         apiVersion: v1
-        kind: secret
+        kind: Secret
         name: "{{ .Release.Name }}-gcp"
         namespace: {{ .Values.k10.namespace }}
       secretType: GcpServiceAccountKey
