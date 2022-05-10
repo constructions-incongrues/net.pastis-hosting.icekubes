@@ -16,7 +16,7 @@ spec:
     - action: backup
       backupParameters:
         profile:
-          name: "{{ .Release.Name }}-{{ .Values.profiles.infra.provider}}"
+          name: "{{ .Release.Name }}-{{ .Values.profiles.location.provider}}"
           namespace: {{ .Values.k10.namespace }}
   selector:
     matchExpressions:
