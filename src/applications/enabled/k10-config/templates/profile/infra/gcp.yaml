@@ -4,7 +4,7 @@ metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
   name: "{{ .Release.Name }}-gcp"
-  namespace: {{ .Values.k10.namespace }}
+  namespace: {{ .Release.Namespace }}
 spec:
   infra:
     credential:
@@ -12,7 +12,7 @@ spec:
         apiVersion: v1
         kind: secret
         name: "{{ .Release.Name }}-gcp"
-        namespace: {{ .Values.k10.namespace }}
+        namespace: {{ .Release.Namespace }}
       secretType: GcpServiceAccountKey
     type: GCP
   type: Infra
