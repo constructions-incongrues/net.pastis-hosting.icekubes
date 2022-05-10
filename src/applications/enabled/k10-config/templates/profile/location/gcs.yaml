@@ -22,3 +22,4 @@ spec:
       region: {{ .Values.profiles.location.parameters.region }}
     type: ObjectStore
   type: Location
+  
