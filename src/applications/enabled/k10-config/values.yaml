@@ -1,4 +1,10 @@
-k10-config:
-  profiles:
-    location: gcs
-    infrastructure: gcp
+k10namespace: ph-k10
+profiles:
+  infrastructure: 
+    name: gcp
+    config:
+      project_id: ph-prod-1
+  location: 
+    name: gcs
+    config:
+      project_id: ph-prod-1

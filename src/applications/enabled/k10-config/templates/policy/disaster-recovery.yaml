@@ -16,7 +16,7 @@ spec:
     - action: backup
       backupParameters:
         profile:
-          name: "{{ .Release.Name }}-infrastructure"
+          name: "{{ .Release.Name }}-{{ .Values.profiles.infrastructure.name }}"
           namespace: ph-k10
   selector:
     matchExpressions:
