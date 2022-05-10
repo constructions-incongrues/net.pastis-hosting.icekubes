@@ -68,6 +68,12 @@ resource "google_container_node_pool" "primary_nodes" {
     max_node_count = 2
   }
 
+  lifecycle {
+    ignore_changes = [
+      node_count
+    ]
+  }
+
   depends_on = [
     google_project_service.container
   ]
