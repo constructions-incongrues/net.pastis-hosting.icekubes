@@ -1,0 +1,26 @@
+apiVersion: config.kio.kasten.io/v1alpha1
+kind: Policy
+metadata:
+  labels:
+{{ include "helm.labels" . | indent 4 }}
+  namespace: ph-k10
+  name: k10-disaster-recovery-policy
+spec:
+  frequency: "@daily"
+  retention:
+    daily: 1
+    monthly: 1
+    weekly: 1
+    yearly: 1
+  actions:
+    - action: backup
+      backupParameters:
+        profile:
+          name: {{ .Release.Name }}-icekubes-location-objectstore-de
+          namespace: ph-k10
+  selector:
+    matchExpressions:
+      - key: k10.kasten.io/appNamespace
+        operator: In
+        values:
+          - {{ .Release.Namespace }}
