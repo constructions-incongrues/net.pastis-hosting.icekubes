@@ -65,7 +65,7 @@ resource "google_container_node_pool" "primary_nodes" {
   project    = var.project_id
   autoscaling {
     min_node_count = 1
-    max_node_count = 2
+    max_node_count = 3
   }
 
   lifecycle {
