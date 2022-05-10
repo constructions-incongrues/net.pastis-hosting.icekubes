@@ -16,7 +16,7 @@ spec:
     - action: backup
       backupParameters:
         profile:
-          name: {{ .Release.Name }}-icekubes-location-objectstore-de
+          name: {{ .Release.Name }}-gcp
           namespace: ph-k10
   selector:
     matchExpressions:
