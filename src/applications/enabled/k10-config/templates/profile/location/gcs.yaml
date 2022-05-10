@@ -15,7 +15,7 @@ spec:
         namespace: {{ .Values.k10.namespace }}
       secretType: GcpServiceAccountKey
     objectStore:
-      name: {{ .Values.profiles.location.parameters.provider}}
+      name: {{ .Values.profiles.location.parameters.object_store }}
       objectStoreType: GCS
       path: k10/762c2e5f-53ca-4e52-a440-60b0f3f5f58b/migration
       pathType: Directory
