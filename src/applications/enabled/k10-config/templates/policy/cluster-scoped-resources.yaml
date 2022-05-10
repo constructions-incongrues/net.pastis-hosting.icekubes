@@ -8,7 +8,7 @@ metadata:
 spec:
   frequency: "@daily"
   retention:
-    daily: 1²
+    daily: 1
     weekly: 1
     monthly: 1
     yearly: 1

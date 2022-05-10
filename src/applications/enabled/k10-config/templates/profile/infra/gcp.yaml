@@ -3,7 +3,7 @@ kind: Profile
 metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
-  name: "{{ .Release.Name }}-{{ .Values.profiles.infra.provider}}"
+  name: "{{ .Release.Name }}-gcp"
   namespace: {{ .Values.k10.namespace }}
 spec:
   infra:
@@ -11,7 +11,7 @@ spec:
       secret:
         apiVersion: v1
         kind: secret
-        name: "{{ .Release.Name }}-{{ .Values.profiles.infra.provider}}"
+        name: "{{ .Release.Name }}-gcp"
         namespace: {{ .Values.k10.namespace }}
       secretType: GcpServiceAccountKey
     type: GCP
