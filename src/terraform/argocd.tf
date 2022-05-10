@@ -24,6 +24,15 @@ resource "kubernetes_namespace" "ph-argocd" {
   ]
 }
 
+resource "helm_release" "sealed-secrets" {
+  name       = "sealed-secrets"
+  chart      = "../applications/enabled/sealed-secrets"
+  namespace  = kubernetes_namespace.ph-sealed-secrets.metadata[0].annotations.name
+  timeout    = 1800
+  atomic     = true
+  dependency_update = true
+}
+
 resource "helm_release" "argocd" {
   name       = "argocd"
   chart      = "../applications/enabled/argocd"
@@ -31,6 +40,9 @@ resource "helm_release" "argocd" {
   timeout    = 1800
   atomic     = true
   dependency_update = true
+  depends_on = [
+    helm_release.sealed-secrets
+  ]
 }
 
 
