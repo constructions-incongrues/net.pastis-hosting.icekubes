@@ -4,7 +4,7 @@ metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
   namespace: ph-k10
-  name: k10-cluster-scoped-resources-backup
+  name: "{{ .Release.Name }}-cluster-scoped-resources-backup"
 spec:
   frequency: "@daily"
   retention:
@@ -23,11 +23,11 @@ spec:
       backupParameters:
         filters: {}
         profile:
-          name: {{ .Release.Name }}-gcs
+          name: {{ .Release.Name }}-location
           namespace: ph-k10
     - action: export
       exportParameters:
         frequency: "@daily"
         profile:
-          name: {{ .Release.Name }}-gcs
+          name: {{ .Release.Name }}-location
           namespace: ph-k10

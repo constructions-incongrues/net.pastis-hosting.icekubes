@@ -3,7 +3,7 @@ kind: Profile
 metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
-  name: {{ .Release.Name }}-gcs
+  name: {{ .Release.Name }}-location
   namespace: ph-k10
 spec:
   locationSpec:
@@ -11,7 +11,7 @@ spec:
       secret:
         apiVersion: v1
         kind: secret
-        name: {{ .Release.Name }}-gcs
+        name: {{ .Release.Name }}-location
         namespace: ph-k10
       secretType: GcpServiceAccountKey
     objectStore:
