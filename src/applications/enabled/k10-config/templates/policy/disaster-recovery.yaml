@@ -3,7 +3,7 @@ kind: Policy
 metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
-  namespace: ph-k10
+  namespace: {{ .Values.k10.namespace }}
   name: "{{ .Release.Name }}-disaster-recovery"
 spec:
   frequency: "@daily"
@@ -16,8 +16,8 @@ spec:
     - action: backup
       backupParameters:
         profile:
-          name: "{{ .Release.Name }}-{{ .Values.profiles.infrastructure.name }}"
-          namespace: ph-k10
+          name: "{{ .Release.Name }}-{{ .Values.profiles.infra.provider}}"
+          namespace: {{ .Values.k10.namespace }}
   selector:
     matchExpressions:
       - key: k10.kasten.io/appNamespace

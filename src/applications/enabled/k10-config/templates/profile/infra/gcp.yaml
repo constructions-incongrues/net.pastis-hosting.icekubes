@@ -3,16 +3,16 @@ kind: Profile
 metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
-  name: "{{ .Release.Name }}-{{ .Values.profiles.infrastructure.name }}"
-  namespace: ph-k10
+  name: "{{ .Release.Name }}-{{ .Values.profiles.infra.provider}}"
+  namespace: {{ .Values.k10.namespace }}
 spec:
   infra:
     credential:
       secret:
         apiVersion: v1
         kind: secret
-        name: "{{ .Release.Name }}-{{ .Values.profiles.infrastructure.name }}"
-        namespace: ph-k10
+        name: "{{ .Release.Name }}-{{ .Values.profiles.infra.provider}}"
+        namespace: {{ .Values.k10.namespace }}
       secretType: GcpServiceAccountKey
     type: GCP
   type: Infra

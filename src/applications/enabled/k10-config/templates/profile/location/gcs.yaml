@@ -4,7 +4,7 @@ metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
   name: "{{ .Release.Name }}-gcs"
-  namespace: ph-k10
+  namespace: {{ .Values.k10.namespace }}
 spec:
   locationSpec:
     credential:
@@ -12,13 +12,13 @@ spec:
         apiVersion: v1
         kind: secret
         name: "{{ .Release.Name }}-gcs"
-        namespace: ph-k10
+        namespace: {{ .Values.k10.namespace }}
       secretType: GcpServiceAccountKey
     objectStore:
-      name: ph-prod-1
+      name: {{ .Values.profiles.location.parameters.provider}}
       objectStoreType: GCS
       path: k10/762c2e5f-53ca-4e52-a440-60b0f3f5f58b/migration
       pathType: Directory
-      region: europe-west1
+      region: {{ .Values.profiles.location.parameters.region }}
     type: ObjectStore
   type: Location

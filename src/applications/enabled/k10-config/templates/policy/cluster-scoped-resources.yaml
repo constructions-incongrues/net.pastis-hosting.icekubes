@@ -3,12 +3,12 @@ kind: Policy
 metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
-  namespace: ph-k10
+  namespace: {{ .Values.k10.namespace }}
   name: "{{ .Release.Name }}-cluster-scoped-resources"
 spec:
   frequency: "@daily"
   retention:
-    daily: 1
+    daily: 1²
     weekly: 1
     monthly: 1
     yearly: 1
@@ -23,11 +23,11 @@ spec:
       backupParameters:
         filters: {}
         profile:
-          name: "{{ .Release.Name }}-{{ .Values.profiles.location.name }}"
-          namespace: ph-k10
+          name: "{{ .Release.Name }}-{{ .Values.profiles.location.provider}}"
+          namespace: {{ .Values.k10.namespace }}
     - action: export
       exportParameters:
         frequency: "@daily"
         profile:
-          name: "{{ .Release.Name }}-{{ .Values.profiles.location.name }}"
-          namespace: ph-k10
+          name: "{{ .Release.Name }}-{{ .Values.profiles.location.provider}}"
+          namespace: {{ .Values.k10.namespace }}

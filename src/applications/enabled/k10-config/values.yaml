@@ -1,10 +1,13 @@
-k10namespace: ph-k10
+k10:
+  namespace: ph-k10
 profiles:
-  infrastructure: 
-    name: gcp
-    config:
+  infra: 
+    provider: gcp
+    parameters:
       project_id: ph-prod-1
   location: 
-    name: gcs
-    config:
+    provider: gcp
+    parameters:
       project_id: ph-prod-1
+      object_store: pastis-hosting
+      region: europe-west1

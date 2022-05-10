@@ -3,7 +3,7 @@ kind: Policy
 metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
-  namespace: ph-k10
+  namespace: {{ .Values.k10.namespace }}
   name: "{{ .Release.Name }}-system-reports"
 spec:
   actions:
