@@ -35,7 +35,7 @@ resource "google_project" "ph" {
   billing_account     = data.google_billing_account.tristan.id
   lifecycle {
     ignore_changes = [
-      all
+      "all"
     ]
   }
 }
