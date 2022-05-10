@@ -11,6 +11,19 @@ provider "helm" {
   }
 }
 
+resource "kubernetes_namespace" "ph-sealed-secrets" {
+  metadata {
+    annotations = {
+      name = "ph-sealed-secrets"
+    }
+    name = "ph-sealed-secrets"
+  }
+
+  depends_on = [
+    google_container_node_pool.primary_nodes
+  ]
+}
+
 resource "kubernetes_namespace" "ph-argocd" {
   metadata {
     annotations = {
@@ -23,6 +36,7 @@ resource "kubernetes_namespace" "ph-argocd" {
     google_container_node_pool.primary_nodes
   ]
 }
+
 
 resource "helm_release" "sealed-secrets" {
   name       = "sealed-secrets"
