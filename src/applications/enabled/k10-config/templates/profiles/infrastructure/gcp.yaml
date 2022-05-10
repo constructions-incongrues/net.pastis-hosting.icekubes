@@ -3,15 +3,15 @@ kind: Profile
 metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
-  name: {{ .Release.Name }}-{{ .Values.profiles.infrastructure }}
+  name: "{{ .Release.Name }}-{{ .Values.profiles.infrastructure }}"
   namespace: ph-k10
 spec:
   infra:
     credential:
       secret:
         apiVersion: v1
-        kind: secret
-        name: {{ .Release.Name }}-{{ .Values.profiles.infrastructure }}
+        kind: secret²
+        name: "{{ .Release.Name }}-{{ .Values.profiles.infrastructure }}"
         namespace: ph-k10
       secretType: GcpServiceAccountKey
     type: GCP
