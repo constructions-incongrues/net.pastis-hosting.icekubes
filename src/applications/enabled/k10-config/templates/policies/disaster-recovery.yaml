@@ -4,7 +4,7 @@ metadata:
   labels:
 {{ include "helm.labels" . | indent 4 }}
   namespace: ph-k10
-  name: "{{ .Release.Name }}-disaster-recovery-policy"
+  name: "{{ .Release.Name }}-disaster-recovery"
 spec:
   frequency: "@daily"
   retention:
