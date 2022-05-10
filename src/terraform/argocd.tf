@@ -30,7 +30,7 @@ resource "helm_release" "argocd" {
   namespace  = kubernetes_namespace.ph-argocd.metadata[0].annotations.name
   timeout    = 1800
   atomic     = true
-}
+  dependency_update = true
 
 # provider "argocd" {
 #   server_addr = "argocd.pastis-hosting.net:443"
