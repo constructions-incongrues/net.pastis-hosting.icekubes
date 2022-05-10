@@ -1,1 +1,4 @@
 kubecostToken: dHJpc3RhbkBwYXN0aXMtaG9zdGluZy5uZXQ=xm343yadf98
+prometheus:
+  enabled: false
+  fqdn: prometheus-kube-prometheus-prometheus.ph-prometheus
