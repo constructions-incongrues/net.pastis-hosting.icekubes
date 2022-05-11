@@ -133,7 +133,7 @@ resource "google_project_iam_custom_role" "kasten" {
 
 resource "google_project_iam_binding" "kasten" {
   project = var.project_id
-  role    = "roles/kasten"
+  role    = google_project_iam_custom_role.kasten.role_id
   members = [
     "serviceAccount:${google_service_account.kasten.email}"
   ]
