@@ -58,7 +58,7 @@ resource "google_container_cluster" "primary" {
   project  = var.project_id
   name     = "${var.project_id}-gke"
   location = var.gke_cluster_location
-  
+
   # We can't create a cluster with no node pool defined, but we want to only use
   # separately managed node pools. So we create the smallest possible default
   # node pool and immediately delete it.
@@ -110,36 +110,32 @@ resource "google_container_node_pool" "primary_nodes" {
   }
 }
 
-resource "google_service_account" "k10-agent" {
+# k10
+resource "google_service_account" "kasten" {
   project      = var.project_id
-  account_id   = "k10-agent"
-  display_name = "k10-agent"
+  account_id   = "kasten"
+  display_name = "kasten"
 }
 
-resource "google_project_iam_member" "compute" {
+resource "google_service_account_key" "kasten" {
+  service_account_id = google_service_account.kasten.name
+}
+
+resource "google_project_iam_custom_role" "kasten" {
+  role_id = "kasten"
+  title   = "kasten"
+  permissions = [
+    "roles/compute.admin",
+    "roles/container.admin",
+    "roles/storage.admin"
+  ]
+}
+
+resource "google_project_iam_binding" "kasten" {
   project = var.project_id
-  role    = "roles/compute.admin"
-  member  = "serviceAccount:${google_service_account.k10-agent.email}"
-}
-
-resource "google_project_iam_member" "snapshots" {
-  project = var.project_id
-  role    = "roles/compute.snapshots.*"
-  member  = "serviceAccount:${google_service_account.k10-agent.email}"
-}
-
-resource "google_project_iam_member" "container" {
-  project = var.project_id
-  role    = "roles/container.admin"
-  member  = "serviceAccount:${google_service_account.k10-agent.email}"
-}
-
-resource "google_project_iam_member" "storage" {
-  project = var.project_id
-  role    = "roles/storage.admin"
-  member  = "serviceAccount:${google_service_account.k10-agent.email}"
-}
-
-resource "google_service_account_key" "k10-agent" {
-  service_account_id = google_service_account.k10-agent.name
+  role    = "roles/kasten"
+  members = [
+    "serviceAccount:${google_service_account.kasten.email}"
+  ]
+  depends_on = [google_service_account.kasten]
 }
