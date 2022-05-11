@@ -25,13 +25,13 @@ variable "gke_cluster_location" {
 # GCP project
 resource "google_project_service" "cloudresourcemanager" {
   project                    = var.project_id
-  service                    = "cloudresourcemanager"
+  service                    = "cloudresourcemanager.googleapis.com"
   disable_dependent_services = true
 }
 
 resource "google_project_service" "cloudbilling" {
   project                    = var.project_id
-  service                    = "cloudbilling"
+  service                    = "cloudbilling.googleapis.com"
   disable_dependent_services = true
   depends_on = [
     google_project_service.serviceusage
@@ -40,7 +40,7 @@ resource "google_project_service" "cloudbilling" {
 
 resource "google_project_service" "serviceusage" {
   project                    = var.project_id
-  service                    = "serviceusage"
+  service                    = "serviceusage.googleapis.com"
   disable_dependent_services = true
 }
 
@@ -55,7 +55,7 @@ data "google_billing_account" "tristan" {
 
 resource "google_project_service" "container" {
   project                    = var.project_id
-  service                    = "container"
+  service                    = "container.googleapis.com"
   disable_dependent_services = true
   depends_on = [
     google_project_service.cloudresourcemanager,
@@ -65,7 +65,7 @@ resource "google_project_service" "container" {
 
 resource "google_project_service" "compute" {
   project                    = var.project_id
-  service                    = "compute"
+  service                    = "compute.googleapis.com"
   disable_dependent_services = true
   depends_on = [
     google_project_service.cloudresourcemanager
