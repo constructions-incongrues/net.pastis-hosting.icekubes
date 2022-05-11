@@ -127,9 +127,7 @@ resource "google_project_iam_custom_role" "drp-admin" {
   title       = "drp"
   description = "Disaster Recovery Plan Administrator"
   permissions = [
-    "compute.*",
-    "container.*",
-    "storage.*"
+    "roles/compute.storageAdmin"
   ]
 }
 
