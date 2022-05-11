@@ -129,6 +129,7 @@ data "google_service_account" "tfcloud" {
 }
 
 resource "google_project_iam_custom_role" "tfcloud" {
+  project = var.project_id
   role_id = "tfcloud"
   title   = "Terraform Cloud Role"
   permissions = [
