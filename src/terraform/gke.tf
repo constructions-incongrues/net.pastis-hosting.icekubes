@@ -130,9 +130,10 @@ resource "google_container_node_pool" "primary_nodes" {
 }
 
 resource "google_service_account" "kasten" {
+  project      = var.project_id
   account_id   = "kasten"
   display_name = "kasten"
-  depends_on = [
+  depends_on   = [
     google_project_service.cloudresourcemanager
   ]
 }
