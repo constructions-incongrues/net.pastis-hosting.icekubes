@@ -95,6 +95,7 @@ homer:
                   target: "_blank"
                 - name: "K10"
                   icon: "fas fa-lock"
+                  target: "_blank"
                   url: "https://k10.pastis-hosting.net/k10/"
                 - name: "Keycloak"
                   icon: "fas fa-lock"
