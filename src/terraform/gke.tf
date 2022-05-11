@@ -113,7 +113,7 @@ resource "google_container_node_pool" "primary_nodes" {
 # k10
 resource "google_service_account" "kasten" {
   project      = var.project_id
-  account_id   = "kasten"
+  account_id   = "kasten-zis8"
   display_name = "kasten"
 }
 
@@ -121,10 +121,10 @@ resource "google_service_account_key" "kasten" {
   service_account_id = google_service_account.kasten.name
 }
 
-resource "google_project_iam_custom_role" "kasten" {
+resource "google_project_iam_custom_role" "drp" {
   project = var.project_id
-  role_id = "kasten"
-  title   = "kasten"
+  role_id = "drp"
+  title   = "Disaster recovery"
   permissions = [
     "roles/compute.admin",
     "roles/container.admin",
@@ -134,7 +134,7 @@ resource "google_project_iam_custom_role" "kasten" {
 
 resource "google_project_iam_binding" "kasten" {
   project = var.project_id
-  role    = google_project_iam_custom_role.kasten.role_id
+  role    = google_project_iam_custom_role.drp.role_id
   members = [
     "serviceAccount:${google_service_account.kasten.email}"
   ]
