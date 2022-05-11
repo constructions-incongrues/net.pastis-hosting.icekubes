@@ -45,7 +45,7 @@ resource "google_project_service" "serviceusage" {
 }
 
 data "google_billing_account" "tristan" {
-  id = "0110AD-0485A8-CF7591"
+  display_name = "Tristan, 0110AD-0485A8-CF7591"
   open         = true
   depends_on   = [
     google_project_service.cloudbilling,
