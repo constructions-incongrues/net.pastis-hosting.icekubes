@@ -23,6 +23,24 @@ variable "gke_cluster_location" {
 }
 
 # GCP project
+resource "google_project_service" "cloudresourcemanager" {
+  project                    = var.project_id
+  service                    = "cloudresourcemanager.googleapis.com"
+  disable_dependent_services = true
+}
+
+resource "google_project_service" "cloudbilling" {
+  project                    = var.project_id
+  service                    = "cloudbilling.googleapis.com"
+  disable_dependent_services = true
+}
+
+resource "google_project_service" "serviceusage" {
+  project                    = var.project_id
+  service                    = "serviceusage.googleapis.com"
+  disable_dependent_services = true
+}
+
 resource "google_project_service" "container" {
   project                    = var.project_id
   service                    = "container.googleapis.com"
