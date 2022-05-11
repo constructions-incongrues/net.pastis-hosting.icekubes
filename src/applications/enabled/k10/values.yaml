@@ -13,14 +13,6 @@ k10:
       enabled: false
     oidcAuth:
       enabled: true
-      providerURL: https://keycloak.pastis-hosting.net/auth/realms/pastis-hosting.net
-      scopes: email groups profile
-      clientID: k10
-      clientSecret: wVEHH8E7znBbCv44ajP4Be4Y2N8CffI2
-      usernameClaim: email
-      groupClaim: groups
-      redirectURL: https://k10.pastis-hosting.net/
-      prompt: connect
   eula:
     accept: true
     company: "Pastis Hosting"
