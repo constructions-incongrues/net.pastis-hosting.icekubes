@@ -122,6 +122,7 @@ resource "google_service_account_key" "kasten" {
 }
 
 resource "google_project_iam_custom_role" "kasten" {
+  project = var.project_id
   role_id = "kasten"
   title   = "kasten"
   permissions = [
