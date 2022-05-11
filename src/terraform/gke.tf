@@ -127,7 +127,35 @@ resource "google_project_iam_binding" "kasten" {
   members = [
     "serviceAccount:${google_service_account.kasten.email}"
   ]
-  depends_on = [google_service_account.kasten]
+
+  depends_on = [
+    google_service_account.kasten
+  ]
+}
+
+data "google_service_account" "tfcloud" {
+  account_id = "tfcloud"
+}
+
+resource "google_project_iam_custom_role" "tfcloud" {
+  role_id = "tfcloud"
+  title   = "Terraform Cloud Role"
+  permissions = [
+    "billing.accounts.get",
+    "billing.budgets.*"
+  ]
+
+  depends_on = [
+    data.google_service_account.tfcloud
+  ]
+}
+
+resource "google_project_iam_binding" "tfcloud" {
+  project = var.project_id
+  role    = google_project_iam_custom_role.tfcloud.role_id
+  members = [
+    "serviceAccount:${data.google_service_account.tfcloud.email}"
+  ]
 }
 
 # Budgets
