@@ -134,6 +134,7 @@ resource "google_project_iam_binding" "kasten" {
 }
 
 data "google_service_account" "tfcloud" {
+  project    = var.project_id
   account_id = "tfcloud"
 }
 
@@ -161,6 +162,10 @@ resource "google_project_iam_binding" "tfcloud" {
 # Budgets
 data "google_billing_account" "tristan" {
   billing_account = "0110AD-0485A8-CF7591"
+
+  depends_on = [
+    google_project_iam_binding.tfcloud
+  ]
 }
 
 resource "google_billing_budget" "all" {
