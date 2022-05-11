@@ -129,3 +129,28 @@ resource "google_project_iam_binding" "kasten" {
   ]
   depends_on = [google_service_account.kasten]
 }
+
+# Budgets
+data "google_billing_account" "tristan" {
+  billing_account = "0110AD-0485A8-CF7591"
+}
+
+resource "google_billing_budget" "all" {
+  billing_account = data.google_billing_account.tristan.id
+  display_name    = "All projects"
+  amount {
+    specified_amount {
+      currency_code = "EUR"
+      units         = "75"
+    }
+  }
+
+  threshold_rules {
+    threshold_percent = 0.5
+  }
+
+  threshold_rules {
+    threshold_percent = 0.9
+    spend_basis       = "FORECASTED_SPEND"
+  }
+}
