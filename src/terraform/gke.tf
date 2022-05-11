@@ -27,19 +27,12 @@ resource "google_project_service" "container" {
   project                    = var.project_id
   service                    = "container.googleapis.com"
   disable_dependent_services = true
-  depends_on = [
-    google_project_service.cloudresourcemanager,
-    google_project_service.serviceusage
-  ]
 }
 
 resource "google_project_service" "compute" {
   project                    = var.project_id
   service                    = "compute.googleapis.com"
   disable_dependent_services = true
-  depends_on = [
-    google_project_service.cloudresourcemanager
-  ]
 }
 
 # GKE cluster
@@ -103,9 +96,6 @@ resource "google_service_account" "k10-agent" {
   project      = var.project_id
   account_id   = "k10-agent"
   display_name = "k10-agent"
-  depends_on   = [
-    google_project_service.cloudresourcemanager
-  ]
 }
 
 resource "google_project_iam_member" "compute" {
