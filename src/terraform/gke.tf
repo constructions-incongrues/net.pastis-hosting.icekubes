@@ -120,10 +120,10 @@ resource "google_container_node_pool" "primary_nodes" {
   }
 }
 
-resource "google_service_account" "kasten" {
+resource "google_service_account" "k10-agent" {
   project      = var.project_id
-  account_id   = "kasten"
-  display_name = "kasten"
+  account_id   = "k10-agent"
+  display_name = "k10-agent"
   depends_on   = [
     google_project_service.cloudresourcemanager
   ]
@@ -131,10 +131,16 @@ resource "google_service_account" "kasten" {
 
 resource "google_project_iam_member" "compute" {
   project = var.project_id
-  role    = "roles/compute.storageAdmin"
-  member  = "serviceAccount:${google_service_account.kasten.email}"
+  role    = "roles/compute.admin"
+  member  = "serviceAccount:${google_service_account.k10-agent.email}"
 }
 
-resource "google_service_account_key" "kasten" {
-  service_account_id = google_service_account.kasten.name
+resource "google_project_iam_member" "container" {
+  project = var.project_id
+  role    = "roles/container.admin"
+  member  = "serviceAccount:${google_service_account.k10-agent.email}"
+}
+
+resource "google_service_account_key" "k10-agent" {
+  service_account_id = google_service_account.k10-agent.name
 }
