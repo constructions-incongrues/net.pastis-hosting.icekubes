@@ -19,7 +19,7 @@ output "kubernetes_cluster_host" {
 }
 
 output "kasten_service_account_key" {
-  value       = google_service_account_key.kasten.private_key
+  value       = google_service_account_key.k10-agent.private_key
   description = "Service Account Key for Kasten"
   sensitive   = true
 }
