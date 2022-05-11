@@ -25,7 +25,7 @@ variable "gke_cluster_location" {
 # GCP project
 resource "google_project_service" "cloudresourcemanager" {
   project                    = var.project_id
-  service                    = "cloudresourcemanager²"
+  service                    = "cloudresourcemanager.googleapis.com"
   disable_dependent_services = true
 }
 
