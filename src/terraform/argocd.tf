@@ -20,7 +20,7 @@ resource "kubernetes_namespace" "ph-sealed-secrets" {
   }
 
   depends_on = [
-    google_container_node_pool.primary_nodes
+    google_container_cluster.primary
   ]
 }
 
@@ -33,7 +33,7 @@ resource "kubernetes_namespace" "ph-argocd" {
   }
 
   depends_on = [
-    google_container_node_pool.primary_nodes
+    google_container_cluster.primary
   ]
 }
 
@@ -47,7 +47,7 @@ resource "helm_release" "sealed-secrets" {
   dependency_update = true
 
   depends_on = [
-    google_container_node_pool.primary_nodes
+    google_container_cluster.primary
   ]
 }
 
@@ -60,7 +60,7 @@ resource "helm_release" "argocd" {
   dependency_update = true
 
   depends_on = [
-    google_container_node_pool.primary_nodes
+    google_container_cluster.primary
   ]
 }
 
