@@ -24,38 +24,32 @@ variable "gke_cluster_location" {
 
 # GCP project
 resource "google_project_service" "cloudresourcemanager" {
-  project                    = var.project_id
   service                    = "cloudresourcemanager.googleapis.com"
   disable_dependent_services = true
 }
 
 resource "google_project_service" "cloudbilling" {
-  project                    = var.project_id
   service                    = "cloudbilling.googleapis.com"
   disable_dependent_services = true
 }
 
 resource "google_project_service" "serviceusage" {
-  project                    = var.project_id
   service                    = "serviceusage.googleapis.com"
   disable_dependent_services = true
 }
 
 resource "google_project_service" "container" {
-  project                    = var.project_id
   service                    = "container.googleapis.com"
   disable_dependent_services = true
 }
 
 resource "google_project_service" "compute" {
-  project                    = var.project_id
   service                    = "compute.googleapis.com"
   disable_dependent_services = true
 }
 
 # GKE cluster
 resource "google_container_cluster" "primary" {
-  project  = var.project_id
   name     = "${var.project_id}-gke"
   location = var.gke_cluster_location
 
@@ -75,7 +69,6 @@ resource "google_container_node_pool" "primary_nodes" {
   location   = var.gke_cluster_location
   cluster    = google_container_cluster.primary.name
   node_count = var.gke_num_nodes
-  project    = var.project_id
   autoscaling {
     min_node_count = 1
     max_node_count = 3
@@ -98,7 +91,6 @@ resource "google_container_node_pool" "primary_nodes" {
     ]
 
     labels = {
-      env = var.project_id
     }
 
     # preemptible  = true
@@ -112,7 +104,6 @@ resource "google_container_node_pool" "primary_nodes" {
 
 # k10
 resource "google_service_account" "kasten" {
-  project      = var.project_id
   account_id   = "kasten-zis8"
   display_name = "kasten"
 }
@@ -134,7 +125,6 @@ resource "google_project_iam_binding" "kasten" {
 }
 
 data "google_service_account" "tfcloud" {
-  project    = var.project_id
   account_id = "tfcloud"
 }
 
