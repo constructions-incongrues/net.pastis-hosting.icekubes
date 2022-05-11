@@ -44,15 +44,6 @@ resource "google_project_service" "serviceusage" {
   disable_dependent_services = true
 }
 
-data "google_billing_account" "tristan" {
-  billing_account = "0110AD-0485A8-CF7591"
-  open            = true
-  depends_on      = [
-    google_project_service.cloudbilling,
-    google_project_service.serviceusage
-  ]
-}
-
 resource "google_project_service" "container" {
   project                    = var.project_id
   service                    = "container.googleapis.com"
