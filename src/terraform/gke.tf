@@ -23,15 +23,15 @@ variable "gke_cluster_location" {
 }
 
 # GCP project
-data "google_billing_account" "tristan" {
-  display_name = "Mon compte de facturation"
-  open         = true
-}
-
 resource "google_project_service" "cloudresourcemanager" {
   project                    = var.project_id
   service                    = "cloudresourcemanager.googleapis.com"
   disable_dependent_services = true
+}
+
+data "google_billing_account" "tristan" {
+  display_name = "Mon compte de facturation"
+  open         = true
 }
 
 resource "google_project_service" "container" {
