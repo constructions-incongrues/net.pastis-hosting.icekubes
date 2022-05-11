@@ -106,6 +106,9 @@ resource "google_container_node_pool" "primary_nodes" {
 resource "google_service_account" "kasten" {
   account_id   = "kasten"
   display_name = "kasten"
+  depends_on = [
+    google_project_service.cloudresourcemanager
+  ]
 }
 
 resource "google_project_iam_member" "compute" {
