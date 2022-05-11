@@ -47,12 +47,18 @@ resource "google_project_service" "container" {
   project                    = var.project_id
   service                    = "container.googleapis.com"
   disable_dependent_services = true
+  depends_on = [
+    google_project_service.cloudresourcemanager
+  ]
 }
 
 resource "google_project_service" "compute" {
   project                    = var.project_id
   service                    = "compute.googleapis.com"
   disable_dependent_services = true
+  depends_on = [
+    google_project_service.cloudresourcemanager
+  ]
 }
 
 # GKE cluster
