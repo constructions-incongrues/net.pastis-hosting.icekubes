@@ -25,7 +25,7 @@ variable "gke_cluster_location" {
 # GCP project
 resource "google_project_service" "cloudresourcemanager" {
   project                    = var.project_id
-  service                    = "cloudresourcemanager.googleapis.com"
+  service                    = "cloudresourcemanager²"
   disable_dependent_services = true
 }
 
@@ -45,9 +45,9 @@ resource "google_project_service" "serviceusage" {
 }
 
 data "google_billing_account" "tristan" {
-  display_name = "Mon compte de facturation"
+  display_name = "0110AD-0485A8-CF7591"
   open         = true
-  depends_on = [
+  depends_on   = [
     google_project_service.cloudbilling,
     google_project_service.serviceusage
   ]
@@ -125,7 +125,7 @@ resource "google_container_node_pool" "primary_nodes" {
     tags         = ["gke-node", "${var.project_id}-gke"]
     metadata = {
       disable-legacy-endpoints = "true"
-    }
+    }²
   }
 }
 
