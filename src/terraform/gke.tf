@@ -133,7 +133,11 @@ resource "google_project_iam_custom_role" "tfcloud" {
   title   = "Terraform Cloud Role"
   permissions = [
     "billing.accounts.get",
-    "billing.budgets.*"
+    "billing.budgets.create",
+    "billing.budgets.delete",
+    "billing.budgets.get",
+    "billing.budgets.list",
+    "billing.budgets.update"
   ]
 
   depends_on = [
