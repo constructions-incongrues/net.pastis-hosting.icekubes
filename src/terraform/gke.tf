@@ -123,7 +123,7 @@ resource "google_service_account_key" "kasten" {
 
 resource "google_project_iam_binding" "kasten" {
   project = var.project_id
-  role    = "compute.storageAdmin"
+  role    = "roles/compute.storageAdmin"
   members = [
     "serviceAccount:${google_service_account.kasten.email}"
   ]
