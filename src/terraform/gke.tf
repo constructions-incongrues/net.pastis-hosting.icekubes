@@ -121,9 +121,9 @@ resource "google_service_account_key" "kasten" {
   service_account_id = google_service_account.kasten.name
 }
 
-resource "google_project_iam_custom_role" "drp-admin" {
+resource "google_project_iam_custom_role" "dr-admin" {
   project     = var.project_id
-  role_id     = "drp.admin"
+  role_id     = "disaster.admin"
   title       = "drp"
   description = "Disaster Recovery Administrator"
   permissions = [
@@ -135,7 +135,7 @@ resource "google_project_iam_custom_role" "drp-admin" {
 
 resource "google_project_iam_binding" "kasten" {
   project = var.project_id
-  role    = google_project_iam_custom_role.drp-admin.role_id
+  role    = google_project_iam_custom_role.dr-admin.role_id
   members = [
     "serviceAccount:${google_service_account.kasten.email}"
   ]
