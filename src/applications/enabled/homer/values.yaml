@@ -103,7 +103,7 @@ homer:
                   target: "_blank"
                 - name: "Terraform Cloud"
                   icon: "fas fa-lock"
-                  url: "https://app.terraform.io/app/pastis-hosting/workspaces/production"
+                  url: "https://app.terraform.io/app/pastis-hosting/workspaces/ph-prod"
                   target: "_blank"
                 - name: "Traefik"
                   icon: "fas fa-lock"
