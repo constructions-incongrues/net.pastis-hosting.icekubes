@@ -124,61 +124,56 @@ resource "google_project_iam_binding" "kasten" {
   ]
 }
 
-data "google_service_account" "tfcloud" {
-  account_id = "tfcloud"
-}
+# data "google_service_account" "tfcloud" {
+#   account_id = "tfcloud"
+# }
 
-resource "google_project_iam_custom_role" "tfcloud" {
-  project = var.project_id
-  role_id = "tfcloud"
-  title   = "Terraform Cloud Role"
-  permissions = [
-    "billing.accounts.get",
-    "billing.budgets.create",
-    "billing.budgets.delete",
-    "billing.budgets.get",
-    "billing.budgets.list",
-    "billing.budgets.update"
-  ]
+# resource "google_project_iam_custom_role" "tfcloud" {
+#   project = var.project_id
+#   role_id = "tfcloud"
+#   title   = "Terraform Cloud Role"
+#   permissions = [
+#     "billing.accounts.get"
+#   ]
 
-  depends_on = [
-    data.google_service_account.tfcloud
-  ]
-}
+#   depends_on = [
+#     data.google_service_account.tfcloud
+#   ]
+# }
 
-resource "google_project_iam_binding" "tfcloud" {
-  project = var.project_id
-  role    = google_project_iam_custom_role.tfcloud.role_id
-  members = [
-    "serviceAccount:${data.google_service_account.tfcloud.email}"
-  ]
-}
+# resource "google_project_iam_binding" "tfcloud" {
+#   project = var.project_id
+#   role    = google_project_iam_custom_role.tfcloud.role_id
+#   members = [
+#     "serviceAccount:${data.google_service_account.tfcloud.email}"
+#   ]
+# }
 
-# Budgets
-data "google_billing_account" "tristan" {
-  billing_account = "0110AD-0485A8-CF7591"
+# # Budgets
+# data "google_billing_account" "tristan" {
+#   billing_account = "0110AD-0485A8-CF7591"
 
-  depends_on = [
-    google_project_iam_binding.tfcloud
-  ]
-}
+#   depends_on = [
+#     google_project_iam_binding.tfcloud
+#   ]
+# }
 
-resource "google_billing_budget" "all" {
-  billing_account = data.google_billing_account.tristan.id
-  display_name    = "All projects"
-  amount {
-    specified_amount {
-      currency_code = "EUR"
-      units         = "75"
-    }
-  }
+# resource "google_billing_budget" "all" {
+#   billing_account = data.google_billing_account.tristan.id
+#   display_name    = "All projects"
+#   amount {
+#     specified_amount {
+#       currency_code = "EUR"
+#       units         = "75"
+#     }
+#   }
 
-  threshold_rules {
-    threshold_percent = 0.5
-  }
+#   threshold_rules {
+#     threshold_percent = 0.5
+#   }
 
-  threshold_rules {
-    threshold_percent = 0.9
-    spend_basis       = "FORECASTED_SPEND"
-  }
-}
+#   threshold_rules {
+#     threshold_percent = 0.9
+#     spend_basis       = "FORECASTED_SPEND"
+#   }
+# }
