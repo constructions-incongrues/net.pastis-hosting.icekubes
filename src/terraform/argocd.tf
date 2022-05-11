@@ -54,8 +54,9 @@ resource "helm_release" "argocd" {
   timeout           = 1800
   atomic            = true
   dependency_update = true
+
   depends_on = [
-    helm_release.sealed-secrets
+    google_container_node_pool.primary_nodes
   ]
 }
 
