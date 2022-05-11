@@ -17,9 +17,3 @@ output "kubernetes_cluster_host" {
   value       = google_container_cluster.primary.endpoint
   description = "GKE Cluster Host"
 }
-
-output "kasten_service_account_key" {
-  value       = google_service_account_key.k10-agent.private_key
-  description = "Service Account Key for Kasten"
-  sensitive   = true
-}
