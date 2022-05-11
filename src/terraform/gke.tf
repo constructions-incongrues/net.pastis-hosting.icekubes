@@ -96,3 +96,18 @@ resource "google_container_node_pool" "primary_nodes" {
     }
   }
 }
+
+resource "google_service_account" "kasten" {
+  account_id   = "kasten"
+  display_name = "kasten"
+}
+
+resource "google_project_iam_member" "compute" {
+  project = var.project_id
+  role    = "roles/compute.storageAdmin"
+  member  = "serviceAccount:${google_service_account.kasten.email}"
+}
+
+resource "google_service_account_key" "kasten" {
+  service_account_id = google_service_account.kasten.name
+}
