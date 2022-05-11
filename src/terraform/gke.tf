@@ -33,6 +33,9 @@ resource "google_project_service" "cloudbilling" {
   project                    = var.project_id
   service                    = "cloudbilling.googleapis.com"
   disable_dependent_services = true
+  depends_on = [
+    google_project_service.serviceusage
+  ]
 }
 
 resource "google_project_service" "serviceusage" {
