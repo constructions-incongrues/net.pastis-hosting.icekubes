@@ -124,7 +124,7 @@ resource "google_project_iam_member" "compute" {
 
 resource "google_project_iam_member" "snapshots" {
   project = var.project_id
-  role    = "roles/compute.snapshots.admin"
+  role    = "roles/compute.snapshots.*"
   member  = "serviceAccount:${google_service_account.k10-agent.email}"
 }
 
