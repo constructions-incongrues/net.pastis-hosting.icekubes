@@ -35,11 +35,18 @@ resource "google_project_service" "cloudbilling" {
   disable_dependent_services = true
 }
 
+resource "google_project_service" "serviceusage" {
+  project                    = var.project_id
+  service                    = "serviceusage.googleapis.com"
+  disable_dependent_services = true
+}
+
 data "google_billing_account" "tristan" {
   display_name = "Mon compte de facturation"
   open         = true
   depends_on = [
-    google_project_service.cloudbilling
+    google_project_service.cloudbilling,
+    google_project_service.serviceusage
   ]
 }
 
@@ -48,7 +55,8 @@ resource "google_project_service" "container" {
   service                    = "container.googleapis.com"
   disable_dependent_services = true
   depends_on = [
-    google_project_service.cloudresourcemanager
+    google_project_service.cloudresourcemanager,
+    google_project_service.serviceusage
   ]
 }
 
